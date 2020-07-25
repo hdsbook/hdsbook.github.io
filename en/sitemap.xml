@@ -2,34 +2,10 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://hdsbook.github.io/tags/html/</loc><lastmod>2020-07-15T15:19:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://hdsbook.github.io/fr/tags/html/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://hdsbook.github.io/tags/html/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/tags/markdown/</loc><lastmod>2020-07-15T15:19:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://hdsbook.github.io/fr/tags/markdown/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://hdsbook.github.io/tags/markdown/"
-                    /></url><url>
+            <loc>https://hdsbook.github.io/tags/html/</loc><lastmod>2020-07-15T15:19:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
+            <loc>https://hdsbook.github.io/tags/markdown/</loc><lastmod>2020-07-15T15:19:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://hdsbook.github.io/20200715-markdown-editor-by-ace-and-showdown/</loc><lastmod>2020-07-15T15:19:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
-            <loc>https://hdsbook.github.io/posts/</loc><lastmod>2020-07-15T15:19:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://hdsbook.github.io/fr/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://hdsbook.github.io/posts/"
-                    /></url><url>
+            <loc>https://hdsbook.github.io/posts/</loc><lastmod>2020-07-15T15:19:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority></url><url>
             <loc>https://hdsbook.github.io/tags/</loc><lastmod>2020-07-15T15:19:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.9</priority><xhtml:link
                         rel="alternate"
                         hreflang="fr"
@@ -59,62 +35,14 @@
                     /></url><url>
             <loc>https://hdsbook.github.io/theme-documentation-basics/</loc><lastmod>2020-05-29T11:11:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/theme-documentation-content/</loc><lastmod>2020-05-29T11:11:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hdsbook.github.io/tags/shortcodes/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://hdsbook.github.io/fr/tags/shortcodes/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://hdsbook.github.io/tags/shortcodes/"
-                    /></url><url>
+            <loc>https://hdsbook.github.io/tags/shortcodes/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/theme-documentation-built-in-shortcodes/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hdsbook.github.io/theme-documentation-extended-shortcodes/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://hdsbook.github.io/fr/theme-documentation-extended-shortcodes/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://hdsbook.github.io/theme-documentation-extended-shortcodes/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/basic-markdown-syntax/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://hdsbook.github.io/fr/basic-markdown-syntax/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://hdsbook.github.io/basic-markdown-syntax/"
-                    /></url><url>
+            <loc>https://hdsbook.github.io/theme-documentation-extended-shortcodes/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/basic-markdown-syntax/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/categories/loveit/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hdsbook.github.io/categories/markdown/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://hdsbook.github.io/fr/categories/markdown/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://hdsbook.github.io/categories/markdown/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/tags/emoji/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://hdsbook.github.io/fr/tags/emoji/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://hdsbook.github.io/tags/emoji/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/emoji-support/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://hdsbook.github.io/fr/emoji-support/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://hdsbook.github.io/emoji-support/"
-                    /></url><url>
+            <loc>https://hdsbook.github.io/categories/markdown/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/tags/emoji/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/emoji-support/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/categories/documentation/</loc><lastmod>2020-04-23T01:22:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="fr"

@@ -2,34 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://hdsbook.github.io/fr/theme-documentation-extended-shortcodes/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://hdsbook.github.io/theme-documentation-extended-shortcodes/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="fr"
-                    href="https://hdsbook.github.io/fr/theme-documentation-extended-shortcodes/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/fr/basic-markdown-syntax/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://hdsbook.github.io/basic-markdown-syntax/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="fr"
-                    href="https://hdsbook.github.io/fr/basic-markdown-syntax/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/fr/emoji-support/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://hdsbook.github.io/emoji-support/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="fr"
-                    href="https://hdsbook.github.io/fr/emoji-support/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/fr/categories/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>https://hdsbook.github.io/fr/categories/</loc><lastmod>2020-04-23T01:22:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
                         href="https://hdsbook.github.io/categories/"
@@ -37,78 +10,6 @@
                     rel="alternate"
                     hreflang="fr"
                     href="https://hdsbook.github.io/fr/categories/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/fr/posts/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://hdsbook.github.io/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="fr"
-                    href="https://hdsbook.github.io/fr/posts/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/fr/tags/shortcodes/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://hdsbook.github.io/tags/shortcodes/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="fr"
-                    href="https://hdsbook.github.io/fr/tags/shortcodes/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/fr/tags/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://hdsbook.github.io/tags/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="fr"
-                    href="https://hdsbook.github.io/fr/tags/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/fr/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://hdsbook.github.io/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="fr"
-                    href="https://hdsbook.github.io/fr/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/fr/tags/html/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://hdsbook.github.io/tags/html/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="fr"
-                    href="https://hdsbook.github.io/fr/tags/html/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/fr/tags/markdown/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://hdsbook.github.io/tags/markdown/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="fr"
-                    href="https://hdsbook.github.io/fr/tags/markdown/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/fr/categories/markdown/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://hdsbook.github.io/categories/markdown/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="fr"
-                    href="https://hdsbook.github.io/fr/categories/markdown/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/fr/tags/emoji/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://hdsbook.github.io/tags/emoji/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="fr"
-                    href="https://hdsbook.github.io/fr/tags/emoji/"
                     /></url><url>
             <loc>https://hdsbook.github.io/fr/tags/content/</loc><lastmod>2020-04-23T01:22:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/fr/categories/documentation/</loc><lastmod>2020-04-23T01:22:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
@@ -119,4 +20,22 @@
                     rel="alternate"
                     hreflang="fr"
                     href="https://hdsbook.github.io/fr/categories/documentation/"
+                    /></url><url>
+            <loc>https://hdsbook.github.io/fr/tags/</loc><lastmod>2020-04-23T01:22:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://hdsbook.github.io/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="fr"
+                    href="https://hdsbook.github.io/fr/tags/"
+                    /></url><url>
+            <loc>https://hdsbook.github.io/fr/</loc><lastmod>2020-04-23T01:22:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://hdsbook.github.io/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="fr"
+                    href="https://hdsbook.github.io/fr/"
                     /></url></urlset>
