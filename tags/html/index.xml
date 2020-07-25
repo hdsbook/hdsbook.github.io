@@ -10,12 +10,5 @@
     <author>Author</author>
     <guid>https://hdsbook.github.io/20200715-markdown-editor-by-ace-and-showdown/</guid>
     <description><![CDATA[<p>ace-code-editor, showdown, github-markdown-css</p>]]></description>
-</item><item>
-    <title>Basic Markdown Syntax</title>
-    <link>https://hdsbook.github.io/basic-markdown-syntax/</link>
-    <pubDate>Sun, 01 Dec 2019 21:57:40 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://hdsbook.github.io/basic-markdown-syntax/</guid>
-    <description><![CDATA[<p>This article offers a sample of basic Markdown syntax that can be used in Hugo content files.</p>]]></description>
 </item></channel>
 </rss>
