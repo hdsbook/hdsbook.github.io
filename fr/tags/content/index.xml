@@ -3,12 +3,5 @@
         <title>contenu - Balise - Zang</title>
         <link>https://hdsbook.github.io/fr/tags/content/</link>
         <description>contenu - Balise - Zang</description>
-        <generator>Hugo -- gohugo.io</generator><atom:link href="https://hdsbook.github.io/fr/tags/content/" rel="self" type="application/rss+xml" /><item>
-    <title>Thème Documentation - Contenu</title>
-    <link>https://hdsbook.github.io/fr/theme-documentation-content/</link>
-    <pubDate>Thu, 05 Mar 2020 16:30:05 &#43;0800</pubDate>
-    <author>Auteur</author>
-    <guid>https://hdsbook.github.io/fr/theme-documentation-content/</guid>
-    <description><![CDATA[<p>Découvrez comment créer et organiser votre contenu rapidement et intuitivement dans le thème <strong>LoveIt</strong>.</p>]]></description>
-</item></channel>
+        <generator>Hugo -- gohugo.io</generator><atom:link href="https://hdsbook.github.io/fr/tags/content/" rel="self" type="application/rss+xml" /></channel>
 </rss>

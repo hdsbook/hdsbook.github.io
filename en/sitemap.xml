@@ -57,24 +57,8 @@
                     hreflang="en"
                     href="https://hdsbook.github.io/categories/"
                     /></url><url>
-            <loc>https://hdsbook.github.io/theme-documentation-basics/</loc><lastmod>2020-05-29T11:11:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://hdsbook.github.io/fr/theme-documentation-basics/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://hdsbook.github.io/theme-documentation-basics/"
-                    /></url><url>
-            <loc>https://hdsbook.github.io/theme-documentation-content/</loc><lastmod>2020-05-29T11:11:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://hdsbook.github.io/fr/theme-documentation-content/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://hdsbook.github.io/theme-documentation-content/"
-                    /></url><url>
+            <loc>https://hdsbook.github.io/theme-documentation-basics/</loc><lastmod>2020-05-29T11:11:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/theme-documentation-content/</loc><lastmod>2020-05-29T11:11:21&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/tags/shortcodes/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="fr"
@@ -84,15 +68,7 @@
                     hreflang="en"
                     href="https://hdsbook.github.io/tags/shortcodes/"
                     /></url><url>
-            <loc>https://hdsbook.github.io/theme-documentation-built-in-shortcodes/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://hdsbook.github.io/fr/theme-documentation-built-in-shortcodes/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://hdsbook.github.io/theme-documentation-built-in-shortcodes/"
-                    /></url><url>
+            <loc>https://hdsbook.github.io/theme-documentation-built-in-shortcodes/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/theme-documentation-extended-shortcodes/</loc><lastmod>2020-05-28T17:05:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="fr"
