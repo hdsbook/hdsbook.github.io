@@ -1,0 +1,3 @@
+[submodule "demos/md-editor-by-ace-and-showdown"]
+	path = demos/md-editor-by-ace-and-showdown
+	url = https://github.com/hdsbook/md-editor-by-ace-and-showdown.git
