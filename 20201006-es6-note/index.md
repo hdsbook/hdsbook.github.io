@@ -32,39 +32,37 @@ es6 features
 
 - let 與 const 可以完全取代 var
 
-- 範例
+```javascript
+var num = 1;
+if (true) {
+  // 用 var 宣告，變數會跑到global
+  var name = "tony";
 
-  ```javascript
-  var num = 1;
-  if (true) {
-    // 用 var 宣告，變數會跑到global
-    var name = "tony";
+  // let 是用大括號來介定它的範圍
+  // 暫時性的變數用 let 宣告 (local 變數)
+  let num = 2;
 
-    // let 是用大括號來介定它的範圍
-    // 暫時性的變數用 let 宣告 (local 變數)
-    let num = 2;
+  // const 是不能被更改的變數，且作用範圍是local，常用在宣告 document.getElementById()
+  const selector = "a";
+  // selector = "b";
+  console.log(selector);
+}
+console.log(name);
+console.log(num); // 1
 
-    // const 是不能被更改的變數，且作用範圍是local，常用在宣告 document.getElementById()
-    const selector = "a";
-    // selector = "b";
-    console.log(selector);
-  }
-  console.log(name);
-  console.log(num); // 1
+// const 只有在 object 和 array 的情況下可以塞東西，但不可以改變型別
+// 所以在嚴謹的情況下會使用 const 來宣告物件或陣列
+const a = {};
+a.name = "Mike";
+a.name = "Judy";
+// a = [];   // 不被允許
+console.log(a);
 
-  // const 只有在 object 和 array 的情況下可以塞東西，但不可以改變型別
-  // 所以在嚴謹的情況下會使用 const 來宣告物件或陣列
-  const a = {};
-  a.name = "Mike";
-  a.name = "Judy";
-  // a = [];   // 不被允許
-  console.log(a);
-
-  const b = [];
-  b.push(1);
-  // b = 2;   // 不被允許
-  console.log(b);
-  ```
+const b = [];
+b.push(1);
+// b = 2;   // 不被允許
+console.log(b);
+```
 
 ## 變數解構
 

@@ -8,8 +8,9 @@
   (<a href='https://codepen.io/hdsbook'>@hdsbook</a>) on <a href='https://codepen.io'>CodePen</a>.
 </iframe>
 
+---
 
-## 使用的 Hugo 主題：LoveIt
+## 網站使用的 Hugo 主題：LoveIt
 
 [![GitHub release (latest by date)](https://img.shields.io/github/v/release/dillonzq/LoveIt?style=flat-square)](https://github.com/dillonzq/LoveIt/releases)
 [![Hugo](https://img.shields.io/badge/Hugo-%5E0.62.0-ff4088?style=flat-square&logo=hugo)](https://gohugo.io/)
