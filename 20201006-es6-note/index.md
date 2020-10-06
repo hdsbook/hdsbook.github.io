@@ -1,7 +1,7 @@
 # ES6 語法學習筆記
 
 
-ace-code-editor, showdown, github-markdown-css
+es6 features
 
 <!--more-->
 
