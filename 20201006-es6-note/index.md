@@ -35,7 +35,7 @@ es6 features
 ```javascript
 var num = 1;
 if (true) {
-  // 用 var 宣告，變數會跑到global
+  // 變數的作用範圍在 global scope
   var name = "tony";
 
   // let 是用大括號來介定它的範圍
