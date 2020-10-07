@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Webpack 學習筆記 - Zang</title><meta name="Description" content="webpack babel"><meta property="og:title" content="Webpack 學習筆記" />
+<meta property="og:description" content="webpack babel" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hdsbook.github.io/20201007-webpack-note/" />
+<meta property="og:image" content="https://hdsbook.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-10-07T12:55:16+08:00" />
+<meta property="article:modified_time" content="2020-10-07T15:41:49+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hdsbook.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Webpack 學習筆記"/>
+<meta name="twitter:description" content="webpack babel"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hdsbook.github.io/20201007-webpack-note/" /><link rel="prev" href="https://hdsbook.github.io/20201006-es6-note/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Webpack 學習筆記",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hdsbook.github.io\/20201007-webpack-note\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hdsbook.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "javascript, webpack","wordcount":  1533 ,
+        "url": "https:\/\/hdsbook.github.io\/20201007-webpack-note\/","datePublished": "2020-10-07T12:55:16+08:00","dateModified": "2020-10-07T15:41:49+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hdsbook.github.io\/images\/author.jpg",
+                    "width":  335 ,
+                    "height":  335 
+                }},"author": {
+                "@type": "Person",
+                "name": "Zang"
+            },"description": "webpack babel"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animated flipInX">Webpack 學習筆記</h1><h2 class="single-subtitle">webpack babel</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/modernweb/"><i class="far fa-folder fa-fw"></i>現代前端開發</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-07">2020-10-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1533 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="webpack-logo.png"
+        data-srcset="/20201007-webpack-note/webpack-logo.png, webpack-logo.png 1.5x, /20201007-webpack-note/webpack-logo.png 2x"
+        data-sizes="auto"
+        alt="/20201007-webpack-note/webpack-logo.png"
+        title="webpack babel" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#什麼是-webpack-">什麼是 Webpack ？</a></li>
+    <li><a href="#什麼是-babel">什麼是 Babel？</a></li>
+    <li><a href="#webpack-的部署">Webpack 的部署</a>
+      <ul>
+        <li><a href="#1-安裝-nodejs">1. 安裝 Node.js</a></li>
+        <li><a href="#2-安裝-webpack">2. 安裝 Webpack</a></li>
+        <li><a href="#3-部署-webpack">3. 部署 Webpack</a></li>
+        <li><a href="#4-掛載-babel-模組">4. 掛載 Babel 模組</a></li>
+        <li><a href="#5-webpack-指令說明">5. webpack 指令說明</a></li>
+        <li><a href="#6-npm-run-script-設定">6. npm run script 設定</a></li>
+      </ul>
+    </li>
+    <li><a href="#參考資料">參考資料</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="什麼是-webpack-">什麼是 Webpack ？</h2>
+<p>隨著時代的演進，現代前端的開發不再只是 html、css、js 三大元素。</p>
+<p>現代前端多了很多新的技術和框架，如 scss、pug、Vue、React、ES6 javascript 等…</p>
+<p>但是我們的瀏覽器可能還是只看得懂最初的 html、css、js (如：古早味的IE)，</p>
+<p>所以我們需要一個第三方的打包工具，來幫我們編譯這些新技術程式碼，</p>
+<p>轉換為瀏覽器看得懂的最原始的三大元素 (html、css、js)，</p>
+<p>並且在打包的過程中可以進行壓縮，優化程式碼的效能。</p>
+<p>而這些第三方的打包工具中(如：Webpack, gulp.js…)，最廣為人知，被許多框架採用的，</p>
+<p>就是 <a href="https://webpack.js.org/" target="_blank" rel="noopener noreffer">Webpack</a>。</p>
+<h2 id="什麼是-babel">什麼是 Babel？</h2>
+<p><a href="https://babeljs.io/" target="_blank" rel="noopener noreffer">Babel</a> 可以幫我們把高版本 (ECMAScript 6 以上) 的 javascript，降轉成舊版本等效的 js 讓瀏覽器能夠去解讀。</p>
+<p>也就是說如果只用 Webpack 打包 javascript，部份瀏覽器還是會因為其中用了 es6 的語法而無法運行。</p>
+<p>若在 Webpack 上掛載 Babel 模組，就可以在打包的過程也進行 js 版本的降轉。</p>
+<br>
+<p>一般我們使用 Webpack ，都會掛載 babel 來為我們降轉 js 版本，</p>
+<p>使打包出來的檔案可以被大部份瀏覽器解讀 (理論上可以支持到 ie 9)，</p>
+<p>在 laravel 中，laravel-mix 所用的 webpack 就預設將 babel 整合了進去。</p>
+<h2 id="webpack-的部署">Webpack 的部署</h2>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="webpack-enviroment.png"
+        data-srcset="/20201007-webpack-note/webpack-enviroment.png, webpack-enviroment.png 1.5x, /20201007-webpack-note/webpack-enviroment.png 2x"
+        data-sizes="auto"
+        alt="/20201007-webpack-note/webpack-enviroment.png"
+        title="/20201007-webpack-note/webpack-enviroment.png" /></p>
+<p>Webpack 建立在 node.js 的開發環境下，所以電腦需先裝好 node.js，</p>
+<p>而 <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener noreffer">nvm(Node Version Manager)</a> 是用來 安裝/使用 不同版本的 node.js 的工具，</p>
+<p>所以在 mac 上安裝 node.js ，可以</p>
+<p><strong>先用 homebrew 安裝 nvm，再用 nvm 安裝 node.js</strong>，步驟記錄如下：</p>
+<h3 id="1-安裝-nodejs">1. 安裝 Node.js</h3>
+<p>(參考自：<a href="https://medium.com/@jamesauble/install-nvm-on-mac-with-brew-adb921fb92cc" target="_blank" rel="noopener noreffer">Install NVM On Mac With Brew</a>)</p>
+<ol>
+<li>
+<p>若電腦中已有安裝 node，先取消安裝之</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">brew uninstall --ignore-dependencies node
+brew uninstall --force node
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>安裝 nvm</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">brew update
+brew install nvm
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>安裝後，它會提示你建立一個資料夾</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mkdir ~/.nvm
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>並在~/.bash_profile 中寫入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell"><span class="nb">export</span> <span class="nv">NVM_DIR</span><span class="o">=</span>~/.nvm
+<span class="nb">source</span> <span class="k">$(</span>brew --prefix nvm<span class="k">)</span>/nvm.sh
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>執行 <code>source ~/.bash_profile</code></p>
+</li>
+<li>
+<p>nvm install [版本號，不用輸入得很精確]</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">nvm install <span class="m">12</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>查看 node.js 版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">nvm ls
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>切換 node.js 版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">nvm use <span class="m">12</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h3 id="2-安裝-webpack">2. 安裝 Webpack</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">npm i -g webpack
+npm i -g webpack-dev-server
+npm i -g webpack-cli
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="3-部署-webpack">3. 部署 Webpack</h3>
+<ol>
+<li>
+<p>建立資料夾並初始化</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mkdir webpack-demo
+<span class="nb">cd</span> webpack-demo
+npm init -y
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>安裝 webpack-cli</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">npm install webpack webpack-cli --save-dev
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>新增 index.js 與 webpack.config.js</p>
+<p><em><strong>webpack-demo/src/index.js</strong></em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">arr</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;1&#39;</span><span class="p">,</span> <span class="s1">&#39;2&#39;</span><span class="p">,</span> <span class="s1">&#39;3&#39;</span><span class="p">];</span>
+<span class="nx">arr</span><span class="p">.</span><span class="nx">map</span><span class="p">(</span><span class="nx">item</span> <span class="p">=&gt;</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">item</span><span class="p">));</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><em><strong>webpack-demo/webpack.config.js</strong></em></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">entry</span><span class="o">:</span> <span class="s1">&#39;./src/index.js&#39;</span><span class="p">,</span>
+    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">path</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">resolve</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;dist&#39;</span><span class="p">),</span>
+        <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;index.bundle.js&#39;</span>
+    <span class="p">},</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>上面的設定就是要把 ./src/index.js 打包到 ./dist/index.bundle.js</p>
+<p>設定好便可執行 <code>webpack</code> 指令進行打包，打包後，檔案結構如下圖所示</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">webpack
+</code></pre></td></tr></table>
+</div>
+</div><p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="webpack-folder-structure.png"
+        data-srcset="/20201007-webpack-note/webpack-folder-structure.png, webpack-folder-structure.png 1.5x, /20201007-webpack-note/webpack-folder-structure.png 2x"
+        data-sizes="auto"
+        alt="/20201007-webpack-note/webpack-folder-structure.png"
+        title="/20201007-webpack-note/webpack-folder-structure.png" /></p>
+<p>到目前為止，因為我們只有用webpack進行打包，還沒有掛載 babel 做js版本的降轉，</p>
+<p>所以如果仔細去看打包出來的 index.bundle.js，裡面的內容還是維持 index.js 中 es6 的語法</p>
+</li>
+</ol>
+<h3 id="4-掛載-babel-模組">4. 掛載 Babel 模組</h3>
+<ol>
+<li>
+<p>安裝 babel-loader (參考自官方文件 <a href="https://webpack.js.org/loaders/babel-loader/" target="_blank" rel="noopener noreffer">babel-loader</a>)，於 webpack-demo 資料夾執行：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">npm install -D babel-loader @babel/core @babel/preset-env
+</code></pre></td></tr></table>
+</div>
+</div><p><code>-D</code> 與 <code>--save-dev</code> 同義，就是要把模組資訊加到 package.json 中</p>
+</li>
+<li>
+<p>於 webpack.config.js 中加入模組設定，加入後 webpack.config.js 如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">const <span class="nv">path</span> <span class="o">=</span> require<span class="o">(</span><span class="s1">&#39;path&#39;</span><span class="o">)</span><span class="p">;</span>
+
+module.exports <span class="o">=</span> <span class="o">{</span>
+    entry: <span class="s1">&#39;./src/index.js&#39;</span>,
+    output: <span class="o">{</span>
+        path: path.resolve<span class="o">(</span>__dirname, <span class="s1">&#39;dist&#39;</span><span class="o">)</span>,
+        filename: <span class="s1">&#39;index.bundle.js&#39;</span>
+    <span class="o">}</span>,
+    module: <span class="o">{</span>
+        rules: <span class="o">[</span>
+            <span class="o">{</span>
+                test: /<span class="se">\.</span>m?js$/,
+                exclude: /<span class="o">(</span>node_modules<span class="p">|</span>bower_components<span class="o">)</span>/,
+                use: <span class="o">{</span>
+                    loader: <span class="s1">&#39;babel-loader&#39;</span>,
+                    options: <span class="o">{</span>
+                        presets: <span class="o">[</span><span class="s1">&#39;@babel/preset-env&#39;</span><span class="o">]</span>
+                    <span class="o">}</span>
+                <span class="o">}</span>
+            <span class="o">}</span>
+        <span class="o">]</span>
+    <span class="o">}</span>
+<span class="o">}</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>此時再執行 webpack 打包，出來的 index.bundle.js 就會是經過降轉的 js 了</p>
+</li>
+</ol>
+<h3 id="5-webpack-指令說明">5. webpack 指令說明</h3>
+<p>webpack 指令其實可以指定 mode (development/production)，和給一個 watch 參數使其能自動打包</p>
+<blockquote>
+<p>development mode 為開發階段所用，為提高打包效率，不進行壓縮；</p>
+<p>production mode 為上線專案所用，進行壓縮以提高程式執行效能，但打包過程需要較多時間。</p>
+<p>當給予 &ndash;watch 參數時，webpack 會監聽檔案的 onchange，當檔案發生變動時，自動進行打包。</p>
+</blockquote>
+<ul>
+<li><code>webpack --mode development</code>
+<ul>
+<li>進行一次打包 (不進行壓縮)</li>
+</ul>
+</li>
+<li><code>webpack --mode production</code>
+<ul>
+<li>進行一次打包 (進行壓縮，較耗效能)</li>
+</ul>
+</li>
+<li><code>webpack --mode development --watch</code>
+<ul>
+<li>持續監聽檔案，若有更動，即時進行打包 (不進行壓縮)</li>
+</ul>
+</li>
+</ul>
+<h3 id="6-npm-run-script-設定">6. npm run script 設定</h3>
+<p>在 package.json 中，有一個很方便的 scripts 設定，讓我們可以簡化執行 webpack 的指令</p>
+<p>打開 package.json，在 scripts 設定中加入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-json" data-lang="json"><span class="s2">&#34;scripts&#34;</span><span class="err">:</span> <span class="p">{</span>
+  <span class="nt">&#34;watch&#34;</span><span class="p">:</span> <span class="s2">&#34;webpack --mode development --watch&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;start&#34;</span><span class="p">:</span> <span class="s2">&#34;webpack --mode development&#34;</span><span class="p">,</span>
+  <span class="nt">&#34;deploy&#34;</span><span class="p">:</span> <span class="s2">&#34;webpack --mode production&#34;</span>
+<span class="p">}</span><span class="err">,</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>這樣當我們想執行 <code>webpack --mode development --watch</code>，就可以直接執行<code>npm run watch</code>；
+想執行 <code>webpack --mode development</code>，就執行 <code>npm run start</code>，以此類推…</p>
+<br>
+<p>開發階段，用 <code>npm run watch</code></p>
+<p>部署到正試機，用 <code>npm run deploy</code></p>
+<h2 id="參考資料">參考資料</h2>
+<ul>
+<li><a href="https://github.com/hdsbook/webpack-demo" target="_blank" rel="noopener noreffer">我的練習檔案</a></li>
+<li><a href="https://www.youtube.com/watch?v=vyI-Ko6fvKU" target="_blank" rel="noopener noreffer">Webpack 前端自動化開發超入門</a></li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-10-07&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/ee9cb28050f391a109c530a19d94fa24193ecee7" target="_blank" title="commit by zang(myginnygo@gmail.com) ee9cb28050f391a109c530a19d94fa24193ecee7: add blog 20201007-webpack-note">
+                                    <i class="fas fa-hashtag fa-fw"></i>ee9cb28</a></span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/20201007-webpack-note/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://hdsbook.github.io/20201007-webpack-note/" data-title="Webpack 學習筆記" data-hashtags="javascript,webpack"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://hdsbook.github.io/20201007-webpack-note/" data-hashtag="javascript"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://hdsbook.github.io/20201007-webpack-note/" data-title="Webpack 學習筆記"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://hdsbook.github.io/20201007-webpack-note/" data-title="Webpack 學習筆記"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://hdsbook.github.io/20201007-webpack-note/" data-title="Webpack 學習筆記" data-image="webpack-logo.png"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/javascript/">javascript</a>,&nbsp;<a href="/tags/webpack/">webpack</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/20201006-es6-note/" class="prev" rel="prev" title="ES6 語法學習筆記"><i class="fas fa-angle-left fa-fw"></i>ES6 語法學習筆記</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.71.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://hd-zang.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"search":{"algoliaAppID":"X5YKLHNDL4","algoliaIndex":"hdsbook.github.io","algoliaSearchKey":"99cf20d2ad0fd1adab76bab604593196","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>
