@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://hdsbook.github.io/20201007-webpack-note/" />
 <meta property="og:image" content="https://hdsbook.github.io/logo.png"/>
 <meta property="article:published_time" content="2020-10-07T12:55:16+08:00" />
-<meta property="article:modified_time" content="2020-10-07T22:40:58+08:00" />
+<meta property="article:modified_time" content="2020-10-08T10:10:08+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://hdsbook.github.io/logo.png"/>
 
@@ -34,8 +34,8 @@
                             "url": "https:\/\/hdsbook.github.io\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","keywords": "javascript, webpack","wordcount":  1533 ,
-        "url": "https:\/\/hdsbook.github.io\/20201007-webpack-note\/","datePublished": "2020-10-07T12:55:16+08:00","dateModified": "2020-10-07T22:40:58+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                        }],"genre": "posts","keywords": "javascript, webpack","wordcount":  1546 ,
+        "url": "https:\/\/hdsbook.github.io\/20201007-webpack-note\/","datePublished": "2020-10-07T12:55:16+08:00","dateModified": "2020-10-08T10:10:08+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -116,7 +116,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animated flipInX">Webpack 學習筆記</h1><h2 class="single-subtitle">webpack &#43; babel</h2><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/modernweb/"><i class="far fa-folder fa-fw"></i>現代前端開發</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-07">2020-10-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1533 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-07">2020-10-07</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1546 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -145,12 +145,13 @@
       </ul>
     </li>
     <li><a href="#參考資料">參考資料</a></li>
+    <li><a href="#練習檔案">練習檔案</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><h2 id="什麼是-webpack-">什麼是 Webpack ？</h2>
 <p>隨著時代的演進，現代前端的開發不再只是 html、css、js 三大元素。</p>
-<p>現代前端多了很多新的技術和框架，如 scss、pug、Vue、React、ES6 javascript 等…</p>
-<p>但是我們的瀏覽器可能還是只看得懂最初的 html、css、js (如：古早味的IE)，</p>
+<p>現代前端多了很多新技術與框架，如 scss、pug、Vue、React、ES6 javascript、CSS3 等…</p>
+<p>但是我們的瀏覽器(如：古早味的IE)可能還是只看得懂舊版的 html、css、js，</p>
 <p>所以我們需要一個第三方的打包工具，來幫我們編譯這些新技術程式碼，</p>
 <p>轉換為瀏覽器看得懂的最原始的三大元素 (html、css、js)，</p>
 <p>並且在打包的過程中可以進行壓縮，優化程式碼的效能。</p>
@@ -163,7 +164,7 @@
 <br>
 <p>一般我們使用 Webpack ，都會掛載 babel 來為我們降轉 js 版本，</p>
 <p>使打包出來的檔案可以被大部份瀏覽器解讀 (理論上可以支持到 ie 9)，</p>
-<p>在 laravel 中，laravel-mix 所用的 webpack 就預設將 babel 整合了進去。</p>
+<p>在 laravel 中，laravel-mix 所用的 webpack 就預設整合了 babel 模組。</p>
 <h2 id="webpack-的部署">Webpack 的部署</h2>
 <p><img
         class="lazyload"
@@ -175,7 +176,7 @@
         title="/20201007-webpack-note/webpack-enviroment.png" /></p>
 <p>Webpack 建立在 node.js 的開發環境下，所以電腦需先裝好 node.js，</p>
 <p>而 <a href="https://github.com/nvm-sh/nvm" target="_blank" rel="noopener noreffer">nvm(Node Version Manager)</a> 是用來 安裝/使用 不同版本的 node.js 的工具，</p>
-<p>所以在 mac 上安裝 node.js ，可以</p>
+<p>因此若要在 mac 上安裝 node.js ，可以</p>
 <p><strong>先用 homebrew 安裝 nvm，再用 nvm 安裝 node.js</strong>，步驟記錄如下：</p>
 <h3 id="1-安裝-nodejs">1. 安裝 Node.js</h3>
 <p>(參考自：<a href="https://medium.com/@jamesauble/install-nvm-on-mac-with-brew-adb921fb92cc" target="_blank" rel="noopener noreffer">Install NVM On Mac With Brew</a>)</p>
@@ -489,14 +490,17 @@ module.exports <span class="o">=</span> <span class="o">{</span>
 <p>部署到正試機，用 <code>npm run deploy</code></p>
 <h2 id="參考資料">參考資料</h2>
 <ul>
-<li><a href="https://github.com/hdsbook/webpack-demo" target="_blank" rel="noopener noreffer">我的練習檔案</a></li>
 <li><a href="https://www.youtube.com/watch?v=vyI-Ko6fvKU" target="_blank" rel="noopener noreffer">Webpack 前端自動化開發超入門</a></li>
+</ul>
+<h2 id="練習檔案">練習檔案</h2>
+<ul>
+<li><a href="https://github.com/hdsbook/webpack-demo">https://github.com/hdsbook/webpack-demo</a></li>
 </ul></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2020-10-07&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/ba9f26184ed4d669a82c013743fcdbe8fa7460c4" target="_blank" title="commit by zang(myginnygo@gmail.com) ba9f26184ed4d669a82c013743fcdbe8fa7460c4: add 20201007-laravel-mix-note">
-                                    <i class="fas fa-hashtag fa-fw"></i>ba9f261</a></span>
+                <span>Updated on 2020-10-08&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/677c2a8243fc43b100809ceb9a4c5fd985cbe72e" target="_blank" title="commit by zang(myginnygo@gmail.com) 677c2a8243fc43b100809ceb9a4c5fd985cbe72e: 文章內容修改">
+                                    <i class="fas fa-hashtag fa-fw"></i>677c2a8</a></span>
             </div>
             <div class="post-info-license"></div>
         </div>

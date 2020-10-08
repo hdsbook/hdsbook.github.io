@@ -7,9 +7,9 @@
 
 隨著時代的演進，現代前端的開發不再只是 html、css、js 三大元素。
 
-現代前端多了很多新的技術和框架，如 scss、pug、Vue、React、ES6 javascript 等…
+現代前端多了很多新技術與框架，如 scss、pug、Vue、React、ES6 javascript、CSS3 等…
 
-但是我們的瀏覽器可能還是只看得懂最初的 html、css、js (如：古早味的IE)，
+但是我們的瀏覽器(如：古早味的IE)可能還是只看得懂舊版的 html、css、js，
 
 所以我們需要一個第三方的打包工具，來幫我們編譯這些新技術程式碼，
 
@@ -35,7 +35,7 @@
 
 使打包出來的檔案可以被大部份瀏覽器解讀 (理論上可以支持到 ie 9)，
 
-在 laravel 中，laravel-mix 所用的 webpack 就預設將 babel 整合了進去。
+在 laravel 中，laravel-mix 所用的 webpack 就預設整合了 babel 模組。
 
 
 ## Webpack 的部署
@@ -46,7 +46,7 @@ Webpack 建立在 node.js 的開發環境下，所以電腦需先裝好 node.js�
 
 而 [nvm(Node Version Manager)](https://github.com/nvm-sh/nvm) 是用來 安裝/使用 不同版本的 node.js 的工具，
 
-所以在 mac 上安裝 node.js ，可以
+因此若要在 mac 上安裝 node.js ，可以
 
 **先用 homebrew 安裝 nvm，再用 nvm 安裝 node.js**，步驟記錄如下：
 
@@ -226,6 +226,7 @@ webpack 指令其實可以指定 mode (development/production)，和給一個 wa
 部署到正試機，用 `npm run deploy`
 
 ## 參考資料
-
-- [我的練習檔案](https://github.com/hdsbook/webpack-demo)
 - [Webpack 前端自動化開發超入門](https://www.youtube.com/watch?v=vyI-Ko6fvKU)
+
+## 練習檔案
+- https://github.com/hdsbook/webpack-demo

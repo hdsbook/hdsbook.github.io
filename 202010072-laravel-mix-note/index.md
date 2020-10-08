@@ -58,7 +58,6 @@ mix.js('resources/js/app.js', 'public/js')
     - `app.js`：打包後的js
   - 📂 css
     - `app.css`：打包後的css
-  - `mix-manifest.json`：自動產生，可以從這個檔案看出所有打包檔案的來源檔案
 - 📂 **resources**
   - 📂 **css**
     - `app.css`：預設的來源css
@@ -133,3 +132,6 @@ mix.scripts([
 
 - [Getting Started with Laravel Mix, Part 2: Setup](https://www.youtube.com/watch?v=0gBKy91k-cQ&list=PLylMDDjFIp1Dc_dgUY7q3TEG86RzXnR5P&index=2)
 - [PostCSS | Summer。桑莫。夏天](https://cythilya.github.io/2018/08/10/postcss/)
+
+## 練習檔案
+- https://github.com/hdsbook/laravelmix-demo.git
