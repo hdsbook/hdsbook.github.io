@@ -11,7 +11,7 @@
     <guid>https://hdsbook.github.io/20201009-phpunit-note/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/phpunit-logo.svg" referrerpolicy="no-referrer">
-            </div>]]></description>
+            </div>我的第一支 php 測試程式]]></description>
 </item><item>
     <title>Laravel mix 學習筆記</title>
     <link>https://hdsbook.github.io/20201007-laravel-mix-note/</link>
@@ -20,7 +20,7 @@
     <guid>https://hdsbook.github.io/20201007-laravel-mix-note/</guid>
     <description><![CDATA[<div class="featured-image">
                 <img src="/laravel-mix-logo.svg" referrerpolicy="no-referrer">
-            </div>]]></description>
+            </div>Laravel Mix 提供了一個優雅的 API 來為你的專案設定 Webpack]]></description>
 </item><item>
     <title>Webpack 學習筆記</title>
     <link>https://hdsbook.github.io/20201007-webpack-note/</link>
@@ -44,5 +44,14 @@
     <author>Author</author>
     <guid>https://hdsbook.github.io/20200715-markdown-editor-by-ace-and-showdown/</guid>
     <description><![CDATA[<p>ace-code-editor, showdown, github-markdown-css</p>]]></description>
+</item><item>
+    <title>Hugo LoveIt admonition</title>
+    <link>https://hdsbook.github.io/0-loveit-admonition-note/</link>
+    <pubDate>Wed, 01 Jul 2020 18:00:01 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/0-loveit-admonition-note/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/shortcode.jpg" referrerpolicy="no-referrer">
+            </div>好用的提示框 shortcode]]></description>
 </item></channel>
 </rss>

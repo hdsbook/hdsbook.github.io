@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Hugo LoveIt admonition - Zang</title><meta name="Description" content="好用的提示框 shortcode"><meta property="og:title" content="Hugo LoveIt admonition" />
+<meta property="og:description" content="好用的提示框 shortcode" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hdsbook.github.io/0-loveit-admonition-note/" />
+<meta property="og:image" content="https://hdsbook.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-07-01T18:00:01+08:00" />
+<meta property="article:modified_time" content="2020-07-01T18:00:01+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hdsbook.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Hugo LoveIt admonition"/>
+<meta name="twitter:description" content="好用的提示框 shortcode"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hdsbook.github.io/0-loveit-admonition-note/" /><link rel="next" href="https://hdsbook.github.io/20200715-markdown-editor-by-ace-and-showdown/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Hugo LoveIt admonition",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hdsbook.github.io\/0-loveit-admonition-note\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hdsbook.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "hugo","wordcount":  328 ,
+        "url": "https:\/\/hdsbook.github.io\/0-loveit-admonition-note\/","datePublished": "2020-07-01T18:00:01+08:00","dateModified": "2020-07-01T18:00:01+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hdsbook.github.io\/images\/author.jpg",
+                    "width":  335 ,
+                    "height":  335 
+                }},"author": {
+                "@type": "Person",
+                "name": "Zang"
+            },"description": "好用的提示框 shortcode"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single post"><h1 class="single-title animated flipInX">Hugo LoveIt admonition</h1><h2 class="single-subtitle">Hugo LoveIt shortcode</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/loveitdoc/"><i class="far fa-folder fa-fw"></i>LoveIt 主題功能</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-07-01">2020-07-01</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;328 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="shortcode.jpg"
+        data-srcset="/0-loveit-admonition-note/shortcode.jpg, shortcode.jpg 1.5x, /0-loveit-admonition-note/shortcode.jpg 2x"
+        data-sizes="auto"
+        alt="/0-loveit-admonition-note/shortcode.jpg"
+        title="好用的提示框 shortcode" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#note">Note</a></li>
+    <li><a href="#abstract">Abstract</a></li>
+    <li><a href="#info">Info</a></li>
+    <li><a href="#tip">Tip</a></li>
+    <li><a href="#success">Success</a></li>
+    <li><a href="#question">Question</a></li>
+    <li><a href="#warning">Warning</a></li>
+    <li><a href="#failure">Failure</a></li>
+    <li><a href="#danger">Danger</a></li>
+    <li><a href="#bug">Bug</a></li>
+    <li><a href="#example">Example</a></li>
+    <li><a href="#quote">Quote</a></li>
+    <li><a href="#admonition-有三個參數可以設定你可以選擇以下兩種寫法">admonition 有三個參數可以設定，你可以選擇以下兩種寫法</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><blockquote>
+<p><code>admonition</code>(警告/訓詞) shortcode 提供 <strong>12</strong> 種樣式讓你可以在文章中放入各種提示</p>
+<p>Markdown 或 HTML 也都可以寫入 <code>admonition</code></p>
+</blockquote>
+<h2 id="note">Note</h2>
+<div class="details admonition note open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-pencil-alt fa-fw"></i>Note<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Some note tips&hellip;</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  {{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="na">note</span> <span class="err">&#34;</span><span class="na">Note</span><span class="err">&#34;</span> <span class="p">&gt;</span>}}
+    Some note tips...
+  {{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="abstract">Abstract</h2>
+<div class="details admonition abstract open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ul fa-fw"></i>Abstract<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Some abstract tips&hellip;</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  {{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="err">&#34;</span><span class="na">Abstract</span><span class="err">&#34;</span> <span class="p">&gt;</span>}}
+    Some abstract tips...
+  {{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="info">Info</h2>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>Info<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Some info tips&hellip;</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  {{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="na">info</span> <span class="err">&#34;</span><span class="na">Info</span><span class="err">&#34;</span> <span class="p">&gt;</span>}}
+    Some info tips...
+  {{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="tip">Tip</h2>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Some tip tips&hellip;</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  {{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="na">tip</span> <span class="err">&#34;</span><span class="na">Tip</span><span class="err">&#34;</span> <span class="p">&gt;</span>}}
+    Some tip tips...
+  {{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="success">Success</h2>
+<div class="details admonition success open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-check-circle fa-fw"></i>Success<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Some success tips&hellip;</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  {{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="na">success</span> <span class="err">&#34;</span><span class="na">Success</span><span class="err">&#34;</span> <span class="p">&gt;</span>}}
+    Some success tips...
+  {{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="question">Question</h2>
+<div class="details admonition question open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-question-circle fa-fw"></i>Question<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Some question tips&hellip;</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  {{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="na">question</span> <span class="err">&#34;</span><span class="na">Question</span><span class="err">&#34;</span> <span class="p">&gt;</span>}}
+    Some question tips...
+  {{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="warning">Warning</h2>
+<div class="details admonition warning open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-exclamation-triangle fa-fw"></i>Warning<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Some warning tips&hellip;</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  {{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="na">warning</span> <span class="err">&#34;</span><span class="na">Warning</span><span class="err">&#34;</span> <span class="p">&gt;</span>}}
+    Some warning tips...
+  {{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="failure">Failure</h2>
+<div class="details admonition failure open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-times-circle fa-fw"></i>Failure<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Some failure tips&hellip;</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  {{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="na">failure</span> <span class="err">&#34;</span><span class="na">Failure</span><span class="err">&#34;</span> <span class="p">&gt;</span>}}
+    Some failure tips...
+  {{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="danger">Danger</h2>
+<div class="details admonition danger open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-skull-crossbones fa-fw"></i>Danger<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Some danger tips&hellip;</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  {{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="na">danger</span> <span class="err">&#34;</span><span class="na">Danger</span><span class="err">&#34;</span> <span class="p">&gt;</span>}}
+    Some danger tips...
+  {{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="bug">Bug</h2>
+<div class="details admonition bug open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-bug fa-fw"></i>Bug<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Some bug tips&hellip;</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  {{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="na">bug</span> <span class="err">&#34;</span><span class="na">Bug</span><span class="err">&#34;</span> <span class="p">&gt;</span>}}
+    Some bug tips...
+  {{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="example">Example</h2>
+<div class="details admonition example open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-list-ol fa-fw"></i>Example<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Some example tips&hellip;</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  {{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="err">*</span> <span class="err">&#34;</span><span class="na">Example</span><span class="err">&#34;</span> <span class="p">&gt;</span>}}
+    Some example tips...
+  {{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="quote">Quote</h2>
+<div class="details admonition quote open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-quote-right fa-fw"></i>Quote<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">Some quote tips&hellip;</div>
+        </div>
+    </div>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">  {{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="na">quote</span> <span class="err">&#34;</span><span class="na">Quote</span><span class="err">&#34;</span> <span class="p">&gt;</span>}}
+    Some quote tips...
+  {{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="admonition-有三個參數可以設定你可以選擇以下兩種寫法">admonition 有三個參數可以設定，你可以選擇以下兩種寫法</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">{{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="na">type</span><span class="o">=</span><span class="s">tip</span> <span class="na">title</span><span class="o">=</span><span class="s">&#34;This is a tip&#34;</span> <span class="na">open</span><span class="o">=</span><span class="s">false</span> <span class="p">&gt;</span>}}
+
+{{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div><p>OR</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-markdown" data-lang="markdown">{{<span class="p">&lt;</span> <span class="nt">admonition</span> <span class="na">tip</span> <span class="err">&#34;</span><span class="na">This</span> <span class="na">is</span> <span class="na">a</span> <span class="na">tip</span><span class="err">&#34;</span> <span class="na">false</span> <span class="p">&gt;</span>}}
+
+{{<span class="p">&lt;</span> <span class="p">/</span><span class="nt">admonition</span> <span class="p">&gt;</span>}}
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-07-01</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/0-loveit-admonition-note/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://hdsbook.github.io/0-loveit-admonition-note/" data-title="Hugo LoveIt admonition" data-hashtags="hugo"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://hdsbook.github.io/0-loveit-admonition-note/" data-hashtag="hugo"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://hdsbook.github.io/0-loveit-admonition-note/" data-title="Hugo LoveIt admonition"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://hdsbook.github.io/0-loveit-admonition-note/" data-title="Hugo LoveIt admonition"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://hdsbook.github.io/0-loveit-admonition-note/" data-title="Hugo LoveIt admonition" data-image="shortcode.jpg"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/hugo/">hugo</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/20200715-markdown-editor-by-ace-and-showdown/" class="next" rel="next" title="Markdown editor with vscode keybinding">Markdown editor with vscode keybinding<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.71.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://hd-zang.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"search":{"algoliaAppID":"X5YKLHNDL4","algoliaIndex":"hdsbook.github.io","algoliaSearchKey":"99cf20d2ad0fd1adab76bab604593196","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

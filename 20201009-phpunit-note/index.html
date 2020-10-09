@@ -5,8 +5,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
-        <title>PHPUnit 入門 - Zang</title><meta name="Description" content="About LoveIt Theme"><meta property="og:title" content="PHPUnit 入門" />
-<meta property="og:description" content="" />
+        <title>PHPUnit 入門 - Zang</title><meta name="Description" content="我的第一支 php 測試程式"><meta property="og:title" content="PHPUnit 入門" />
+<meta property="og:description" content="我的第一支 php 測試程式" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://hdsbook.github.io/20201009-phpunit-note/" />
 <meta property="og:image" content="https://hdsbook.github.io/logo.png"/>
@@ -16,7 +16,7 @@
 <meta name="twitter:image" content="https://hdsbook.github.io/logo.png"/>
 
 <meta name="twitter:title" content="PHPUnit 入門"/>
-<meta name="twitter:description" content=""/>
+<meta name="twitter:description" content="我的第一支 php 測試程式"/>
 <meta name="application-name" content="LoveIt">
 <meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
@@ -34,7 +34,7 @@
                             "url": "https:\/\/hdsbook.github.io\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","wordcount":  111 ,
+                        }],"genre": "posts","keywords": "phpunit, php","wordcount":  428 ,
         "url": "https:\/\/hdsbook.github.io\/20201009-phpunit-note\/","datePublished": "2020-10-09T15:54:18+08:00","dateModified": "2020-10-09T15:54:18+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -45,7 +45,7 @@
                 }},"author": {
                 "@type": "Person",
                 "name": "Zang"
-            },"description": ""
+            },"description": "我的第一支 php 測試程式"
     }
     </script></head>
     <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
@@ -114,9 +114,9 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single post"><h1 class="single-title animated flipInX">PHPUnit 入門</h1><div class="post-meta">
-            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-09">2020-10-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;111 words&nbsp;
+        </div><article class="page single post"><h1 class="single-title animated flipInX">PHPUnit 入門</h1><h2 class="single-subtitle">我的第一支 php 測試程式</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/tdd/"><i class="far fa-folder fa-fw"></i>TDD</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-09">2020-10-09</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;428 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;One minute&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -125,42 +125,191 @@
         data-srcset="/20201009-phpunit-note/phpunit-logo.svg, phpunit-logo.svg 1.5x, /20201009-phpunit-note/phpunit-logo.svg 2x"
         data-sizes="auto"
         alt="/20201009-phpunit-note/phpunit-logo.svg"
-        title="/20201009-phpunit-note/phpunit-logo.svg" /></div><div class="details toc" id="toc-static"  kept="">
+        title="我的第一支 php 測試程式" /></div><div class="details toc" id="toc-static"  kept="">
                 <div class="details-summary toc-title">
                     <span>Contents</span>
                     <span><i class="details-icon fas fa-angle-right"></i></span>
                 </div>
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
-    <li><a href="#建立測試專案">建立測試專案</a></li>
+    <li><a href="#1-建立測試專案">1. 建立測試專案</a></li>
+    <li><a href="#2-建立我的第一支測試程式">2. 建立我的第一支測試程式</a></li>
+    <li><a href="#3-執行測試">3. 執行測試</a></li>
+    <li><a href="#參考資料">參考資料</a></li>
   </ul>
 </nav></div>
             </div><div class="content" id="content"><blockquote>
-<p>PHPUnit 是 PHP編程語言的單元測試框架。</p>
+<p><a href="https://phpunit.de/index.html" target="_blank" rel="noopener noreffer">PHPUnit</a> 是 PHP編程語言的單元測試框架。</p>
+<p>本文從最簡單的範例，說明 PHPUnit 的使用方法</p>
 </blockquote>
-<p>要開始入門測試驅動開發(TDD，Test-driven development)前，</p>
-<p>先來熟悉一下測試工具</p>
-<p>此篇文章從最簡單的例子，紀錄 PHPUnit 的使用方法</p>
-<h2 id="建立測試專案">建立測試專案</h2>
-<div class="details admonition tip open">
+<div class="details admonition info open">
         <div class="details-summary admonition-title">
-            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+            <i class="icon fas fa-info-circle fa-fw"></i>我的電腦環境<i class="details-icon fas fa-angle-right fa-fw"></i>
         </div>
         <div class="details-content">
-            <div class="admonition-content">環境：macbook</div>
+            <div class="admonition-content"><p>OS: macOS 10.15.7</p>
+<p>php: 7.3.22</p>
+<p>composer: 1.9.2</p>
+</div>
         </div>
     </div>
+<h2 id="1-建立測試專案">1. 建立測試專案</h2>
+<ol>
+<li>
+<p>建立專案資料夾並安裝最新版的 phpunit</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-shell" data-lang="shell">  take phpunit-demo
-  git init
+<pre class="chroma"><code class="language-shell" data-lang="shell">take php-tdd-demo
+composer require phpunit/phpunit
 </code></pre></td></tr></table>
 </div>
-</div></div><div class="post-footer" id="post-footer">
+</div><p>也可以指定要安裝的版本，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">composer require phpunit/phpunit ^9
+</code></pre></td></tr></table>
+</div>
+</div><p>這裡我們並不是全域安裝 phpunit，而是在這個專案下可以透過 <code>./vendor/bin/phpunit</code> 來執行 phpunit</p>
+<p>例如執行以下指令查看 phpunit 版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">./vendor/bin/phpunit --version
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>建立 src, tests 資料夾</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">mkdir src tests
+</code></pre></td></tr></table>
+</div>
+</div><p>此時我們的資料夾結構就如下：</p>
+<ul>
+<li>📂 <strong>src</strong>
+<ul>
+<li><code>我們的來源php程式碼(要被測試的程式)放在這裡</code></li>
+</ul>
+</li>
+<li>📂 <strong>tests</strong>
+<ul>
+<li><code>測試程式將被放到這裡來</code></li>
+</ul>
+</li>
+<li>📂 <strong>vendor</strong></li>
+<li>composer.json</li>
+<li>composer.lock</li>
+</ul>
+</li>
+</ol>
+<h2 id="2-建立我的第一支測試程式">2. 建立我的第一支測試程式</h2>
+<ol>
+<li>
+<p>在 <code>tests/</code> 資料夾新增一個檔案 <code>myFirstTest.php</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">touch tests/myFirstTest.php
+</code></pre></td></tr></table>
+</div>
+</div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">注意！所有可被執行的測試程式檔案必須取名為 <code>xxxTest.php</code> (以Test為結尾)</div>
+        </div>
+    </div>
+</li>
+<li>
+<p>在 <code>tests/myFirstTest.php</code> 寫入：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">PHPUnit\Framework\TestCase</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">myFirstTest</span> <span class="k">extends</span> <span class="nx">TestCase</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">testEquals</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">assertEquals</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>Tip<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">測試函式名稱取為 <code>testXxxx</code> (以test為開頭，<a href="https://zh.wikipedia.org/wiki/%E9%A7%9D%E5%B3%B0%E5%BC%8F%E5%A4%A7%E5%B0%8F%E5%AF%AB" target="_blank" rel="noopener noreffer">小駝峰式命名(lower camel case)</a>)</div>
+        </div>
+    </div>
+</li>
+</ol>
+<h2 id="3-執行測試">3. 執行測試</h2>
+<p>執行以下指令會執行 <code>tests/</code> 資料夾底下符合測試命名規則的所有測試</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">./vendor/bin/phpunit tests
+</code></pre></td></tr></table>
+</div>
+</div><p>可以加入 <code>--testdox</code> 來顯示測試名稱</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-shell" data-lang="shell">./vendor/bin/phpunit tests --testdox
+</code></pre></td></tr></table>
+</div>
+</div><p>結果：</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="test-result.png"
+        data-srcset="/20201009-phpunit-note/test-result.png, test-result.png 1.5x, /20201009-phpunit-note/test-result.png 2x"
+        data-sizes="auto"
+        alt="/20201009-phpunit-note/test-result.png"
+        title="/20201009-phpunit-note/test-result.png" /></p>
+<h2 id="參考資料">參考資料</h2>
+<ul>
+<li><a href="https://ithelp.ithome.com.tw/articles/10218552" target="_blank" rel="noopener noreffer">TDD 範例三：用 PHPUnit 改寫範例二</a></li>
+<li><a href="https://phpunit.de/index.html" target="_blank" rel="noopener noreffer">PHPUnit 官方網站</a></li>
+</ul>
+<p>程式碼詳見： <a href="https://github.com/hdsbook/php-tdd-demo">https://github.com/hdsbook/php-tdd-demo</a></p></div><div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -173,13 +322,13 @@
                             <a class="link-to-markdown" href="/20201009-phpunit-note/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://hdsbook.github.io/20201009-phpunit-note/" data-title="PHPUnit 入門"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://hdsbook.github.io/20201009-phpunit-note/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://hdsbook.github.io/20201009-phpunit-note/" data-title="PHPUnit 入門"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://hdsbook.github.io/20201009-phpunit-note/" data-title="PHPUnit 入門"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://hdsbook.github.io/20201009-phpunit-note/" data-title="PHPUnit 入門" data-image="phpunit-logo.svg"><i class="fab fa-weibo fa-fw"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://hdsbook.github.io/20201009-phpunit-note/" data-title="PHPUnit 入門" data-hashtags="phpunit,php"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://hdsbook.github.io/20201009-phpunit-note/" data-hashtag="phpunit"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://hdsbook.github.io/20201009-phpunit-note/" data-title="PHPUnit 入門"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://hdsbook.github.io/20201009-phpunit-note/" data-title="PHPUnit 入門"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://hdsbook.github.io/20201009-phpunit-note/" data-title="PHPUnit 入門" data-image="phpunit-logo.svg"><i class="fab fa-weibo fa-fw"></i></a></span>
             </div>
         </div>
     </div>
 
     <div class="post-info-more">
-        <section class="post-tags"></section>
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/phpunit/">phpunit</a>,&nbsp;<a href="/tags/php/">php</a></section>
         <section>
             <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
         </section>
