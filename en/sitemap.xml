@@ -2,6 +2,8 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://hdsbook.github.io/20201009-phpunit-note/</loc><lastmod>2020-10-09T15:54:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hdsbook.github.io/posts/</loc><lastmod>2020-10-09T15:54:18&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://hdsbook.github.io/categories/</loc><lastmod>2020-10-08T10:10:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="fr"
@@ -13,7 +15,6 @@
                     /></url><url>
             <loc>https://hdsbook.github.io/tags/laravel/</loc><lastmod>2020-10-07T15:56:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://hdsbook.github.io/20201007-laravel-mix-note/</loc><lastmod>2020-10-07T15:56:50&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hdsbook.github.io/posts/</loc><lastmod>2020-10-08T10:10:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://hdsbook.github.io/tags/</loc><lastmod>2020-10-08T10:10:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="fr"
