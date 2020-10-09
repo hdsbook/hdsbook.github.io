@@ -1,9 +1,9 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>TDD - Category - Zang</title>
+        <title>TDD 測試驅動開發 - Category - Zang</title>
         <link>https://hdsbook.github.io/categories/tdd/</link>
-        <description>TDD - Category - Zang</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 09 Oct 2020 15:54:18 &#43;0800</lastBuildDate><atom:link href="https://hdsbook.github.io/categories/tdd/" rel="self" type="application/rss+xml" /><item>
+        <description>TDD 測試驅動開發 - Category - Zang</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><atom:link href="https://hdsbook.github.io/categories/tdd/" rel="self" type="application/rss+xml" /><item>
     <title>PHPUnit 入門</title>
     <link>https://hdsbook.github.io/20201009-phpunit-note/</link>
     <pubDate>Fri, 09 Oct 2020 15:54:18 &#43;0800</pubDate>
