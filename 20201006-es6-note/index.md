@@ -107,7 +107,7 @@ const Double = a => a * 2;
 
 箭頭函式中沒有this，this會往上一層找
 
-若要取得動元素實體本身，則要透過 e.target 取得
+若要取得dom元素實體本身，則要透過 e.target 取得
 
 ```javascript
 document.getElementById("aLink1").addEventListener("click", function () {
@@ -117,7 +117,7 @@ document.getElementById("aLink2").addEventListener("click", (e) => {
   // 箭頭函式中沒有this，this會往上一層找
   console.log(this); // 指向 window
 
-  // 若要取得動元素實體本身，則要透過 e.target 取得
+  // 若要取得dom元素實體本身，則要透過 e.target 取得
   console.log(e.target); // 指向 #aLink2
 });
 ```
