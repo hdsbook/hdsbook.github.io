@@ -24,12 +24,12 @@ es6 features
 
   - 大括孤，中間有程式碼，稱為 block
 
-- const 是不能被更改(reassign) 的變數
+- const 是不能被更改(reassign) 的變數 (可以換家具，不可以搬家)
 
   - 常用來宣告**元素實體**。**物件、陣列、函式**也常以 const 宣告
   - 只有在 object、array 的情況下可以塞東西，但不可以改變型別，所以在嚴謹的情況下會使用 const 來宣告物件或陣列
   - const 可視為不能 reassign 的 let
-
+- var 與 function 有 hoisting 的特性，let 與 const 沒有
 - let 與 const 可以完全取代 var
 
 ```javascript
@@ -64,9 +64,46 @@ b.push(1);
 console.log(b);
 ```
 
-## 變數解構
+## 解構賦值
 
 ------
+
+### 陳列解構
+
+考慮一陣列： `const arr = [1, 2, 3];`
+
+```javascript
+// first = 1, second = 2
+const [first, second] = arr;
+```
+
+```javascript
+// first = 1, second = 2, third=3, fourth=4(取預設值)
+const [first, second, third, fourth=4] = arr;
+```
+
+```javascript
+// second = 2
+const [, second] = arr;
+// third = 3
+const [,, third] = arr;
+```
+
+利用陣列解構達到變數交換
+
+```javascript
+[a, b] = [b, a];
+```
+
+取得剩餘陣列值
+
+```javascript
+const nums = [1, 2, 3, 4];
+const [first, ...others] = nums;
+// first === 1, nums => [2, 3, 4]
+```
+
+### 物件解構
 
 ```javascript
 const user = {
@@ -74,8 +111,9 @@ const user = {
   age: 12,
   address: "Taiwan",
 };
-const { name, age, address } = user;
-console.log(name, age, address);
+// 可以重新命名(age => userAge)，可以指定預設值(sex='male')
+const { name, age:userAge, address, sex='male' } = user;
+console.log(name, userAge, address, sex);
 
 // 直接將物件放到物件中，物件會在物件中自動進行解構(以變數名稱為其key值)
 const userData = {
@@ -83,6 +121,80 @@ const userData = {
 };
 console.log(userData);
 ```
+
+### 解構函式參數
+
+```javascript
+  function distance(point) {
+    const {x, y} = point;
+    return Math.sqrt(x*x + y*y);
+  }
+```
+
+可以直接在參數解構，並亦可給予預設值
+
+```javascript
+  function distance({x, y=0}) {
+    return Math.sqrt(x*x + y*y);
+  }
+```
+
+## 物件縮寫 (Object shorthand)
+
+### 屬性縮寫
+
+```javascript
+  let x = y = 0;
+  const point = {
+    x: x,
+    y: y
+  }
+```
+可以縮寫成
+```javascript
+  const point = {x, y}
+```
+
+### 計算屬性
+
+```javascript
+  let key = 'price';
+  const blog = {
+
+  };
+  blog[key] = 100;
+```
+
+可用`[]`包住變數代入key值，`[]`中可放入計算式
+
+```javascript
+  let key = 'price';
+  const blog = {
+    [key]: 100,
+    ['discount_' + key]: 80
+  }
+```
+
+### 函式縮寫
+
+```javascript
+  const options = {
+    mounted: function () {
+
+    },
+  }
+```
+消去冒號與function關鍵字，可縮寫成：
+```javascript
+  const options = {
+    mounted() {
+
+    },
+  }
+```
+
+
+------
 
 ## 箭頭函式運算式
 
@@ -101,7 +213,7 @@ const Add = (a, b) => {
 // 當回傳只有一行時，可進一步簡化成：
 const Add = (a, b) => a + b;
 
-// 當函數參數只有一個的時候，可以省略小括孤
+// 當函數參數只有一個的時候，可以省略參數的小括孤
 const Double = a => a * 2;
 ```
 
@@ -132,20 +244,25 @@ const ArrayToStr = (arr = [1, 1, 1, 1]) => {
 
 ## 函數的 this 指向誰，取決於如何執行函式
 
+{{< admonition tip "this的定義？" >}}
+this是函式的context(情境)，就是指函式執行的情境、函式被呼叫的方法
+{{< /admonition >}}
+
+
 ```javascript
 function jump() {
     console.log(this);
 }
 
-// 1. 直接執行      (this 為 gloabal 或 window)
+// 1. 直接執行             (this 為 gloabal 或 window)
 jump(); // this 指向 window
 
-// 2. 放到物件中執行 (this 為 該物件)
+// 2. 作為物件的成員函式執行 (this 為 該物件)
 var a = {};
 a.jump = jump;
 a.jump(); // this 指向 a
 
-// 3. 綁定 dom 事件 (this 為 發出事件的DOM)
+// 3. 綁定 dom 事件        (this 為 發出事件的DOM)
 btn.addEventListener('click', jump); // this 指向 #btn dom 物件
 
 // 當用箭頭函式宣告，則不管怎麼執行，this都是上層的this (箭頭函數沒有自己的 this)

@@ -11,7 +11,7 @@
 <meta property="og:url" content="https://hdsbook.github.io/20201006-es6-note/" />
 <meta property="og:image" content="https://hdsbook.github.io/20201006-es6-note/es6-logo.jpg"/>
 <meta property="article:published_time" content="2020-10-06T16:15:53+08:00" />
-<meta property="article:modified_time" content="2020-10-12T20:35:40+08:00" />
+<meta property="article:modified_time" content="2020-10-12T23:14:37+08:00" />
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://hdsbook.github.io/20201006-es6-note/es6-logo.jpg"/>
 <meta name="twitter:title" content="ES6 語法學習筆記"/>
@@ -33,8 +33,8 @@
                             "url": "https:\/\/hdsbook.github.io\/20201006-es6-note\/es6-logo.jpg",
                             "width":  1280 ,
                             "height":  720 
-                        }],"genre": "posts","keywords": "javascript, es6","wordcount":  1368 ,
-        "url": "https:\/\/hdsbook.github.io\/20201006-es6-note\/","datePublished": "2020-10-06T16:15:53+08:00","dateModified": "2020-10-12T20:35:40+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+                        }],"genre": "posts","keywords": "javascript, es6","wordcount":  1851 ,
+        "url": "https:\/\/hdsbook.github.io\/20201006-es6-note\/","datePublished": "2020-10-06T16:15:53+08:00","dateModified": "2020-10-12T23:14:37+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
                     "@type": "ImageObject",
@@ -115,8 +115,8 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single post"><h1 class="single-title animated flipInX">ES6 語法學習筆記</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/modernweb/"><i class="far fa-folder fa-fw"></i>現代前端開發</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-06">2020-10-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1368 words&nbsp;
-                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-10-06">2020-10-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1851 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
         src="/svg/loading.min.svg"
@@ -132,7 +132,20 @@
                 <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
   <ul>
     <li><a href="#let-與-const">let 與 const</a></li>
-    <li><a href="#變數解構">變數解構</a></li>
+    <li><a href="#解構賦值">解構賦值</a>
+      <ul>
+        <li><a href="#陳列解構">陳列解構</a></li>
+        <li><a href="#物件解構">物件解構</a></li>
+        <li><a href="#解構函式參數">解構函式參數</a></li>
+      </ul>
+    </li>
+    <li><a href="#物件縮寫-object-shorthand">物件縮寫 (Object shorthand)</a>
+      <ul>
+        <li><a href="#屬性縮寫">屬性縮寫</a></li>
+        <li><a href="#計算屬性">計算屬性</a></li>
+        <li><a href="#函式縮寫">函式縮寫</a></li>
+      </ul>
+    </li>
     <li><a href="#箭頭函式運算式">箭頭函式運算式</a></li>
     <li><a href="#函數的-this-指向誰取決於如何執行函式">函數的 this 指向誰，取決於如何執行函式</a></li>
     <li><a href="#字串模版">字串模版</a></li>
@@ -160,12 +173,15 @@
 </ul>
 </li>
 <li>
-<p>const 是不能被更改(reassign) 的變數</p>
+<p>const 是不能被更改(reassign) 的變數 (可以換家具，不可以搬家)</p>
 <ul>
 <li>常用來宣告<strong>元素實體</strong>。<strong>物件、陣列、函式</strong>也常以 const 宣告</li>
 <li>只有在 object、array 的情況下可以塞東西，但不可以改變型別，所以在嚴謹的情況下會使用 const 來宣告物件或陣列</li>
 <li>const 可視為不能 reassign 的 let</li>
 </ul>
+</li>
+<li>
+<p>var 與 function 有 hoisting 的特性，let 與 const 沒有</p>
 </li>
 <li>
 <p>let 與 const 可以完全取代 var</p>
@@ -235,8 +251,67 @@
 </span><span class="c1"></span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">b</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="變數解構">變數解構</h2>
+</div><h2 id="解構賦值">解構賦值</h2>
 <hr>
+<h3 id="陳列解構">陳列解構</h3>
+<p>考慮一陣列： <code>const arr = [1, 2, 3];</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// first = 1, second = 2
+</span><span class="c1"></span><span class="kr">const</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// first = 1, second = 2, third=3, fourth=4(取預設值)
+</span><span class="c1"></span><span class="kr">const</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="nx">second</span><span class="p">,</span> <span class="nx">third</span><span class="p">,</span> <span class="nx">fourth</span><span class="o">=</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// second = 2
+</span><span class="c1"></span><span class="kr">const</span> <span class="p">[,</span> <span class="nx">second</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">;</span>
+<span class="c1">// third = 3
+</span><span class="c1"></span><span class="kr">const</span> <span class="p">[,,</span> <span class="nx">third</span><span class="p">]</span> <span class="o">=</span> <span class="nx">arr</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>利用陣列解構達到變數交換</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">[</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="nx">b</span><span class="p">,</span> <span class="nx">a</span><span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>取得剩餘陣列值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">nums</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">];</span>
+<span class="kr">const</span> <span class="p">[</span><span class="nx">first</span><span class="p">,</span> <span class="p">...</span><span class="nx">others</span><span class="p">]</span> <span class="o">=</span> <span class="nx">nums</span><span class="p">;</span>
+<span class="c1">// first === 1, nums =&gt; [2, 3, 4]
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="物件解構">物件解構</h3>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -252,6 +327,7 @@
 </span><span class="lnt">11
 </span><span class="lnt">12
 </span><span class="lnt">13
+</span><span class="lnt">14
 </span></code></pre></td>
 <td class="lntd">
 <pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kr">const</span> <span class="nx">user</span> <span class="o">=</span> <span class="p">{</span>
@@ -259,8 +335,9 @@
   <span class="nx">age</span><span class="o">:</span> <span class="mi">12</span><span class="p">,</span>
   <span class="nx">address</span><span class="o">:</span> <span class="s2">&#34;Taiwan&#34;</span><span class="p">,</span>
 <span class="p">};</span>
-<span class="kr">const</span> <span class="p">{</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">address</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">user</span><span class="p">;</span>
-<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="p">,</span> <span class="nx">address</span><span class="p">);</span>
+<span class="c1">// 可以重新命名(age =&gt; userAge)，可以指定預設值(sex=&#39;male&#39;)
+</span><span class="c1"></span><span class="kr">const</span> <span class="p">{</span> <span class="nx">name</span><span class="p">,</span> <span class="nx">age</span><span class="o">:</span><span class="nx">userAge</span><span class="p">,</span> <span class="nx">address</span><span class="p">,</span> <span class="nx">sex</span><span class="o">=</span><span class="s1">&#39;male&#39;</span> <span class="p">}</span> <span class="o">=</span> <span class="nx">user</span><span class="p">;</span>
+<span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">name</span><span class="p">,</span> <span class="nx">userAge</span><span class="p">,</span> <span class="nx">address</span><span class="p">,</span> <span class="nx">sex</span><span class="p">);</span>
 
 <span class="c1">// 直接將物件放到物件中，物件會在物件中自動進行解構(以變數名稱為其key值)
 </span><span class="c1"></span><span class="kr">const</span> <span class="nx">userData</span> <span class="o">=</span> <span class="p">{</span>
@@ -269,7 +346,131 @@
 <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">userData</span><span class="p">);</span>
 </code></pre></td></tr></table>
 </div>
-</div><h2 id="箭頭函式運算式">箭頭函式運算式</h2>
+</div><h3 id="解構函式參數">解構函式參數</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="kd">function</span> <span class="nx">distance</span><span class="p">(</span><span class="nx">point</span><span class="p">)</span> <span class="p">{</span>
+    <span class="kr">const</span> <span class="p">{</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">}</span> <span class="o">=</span> <span class="nx">point</span><span class="p">;</span>
+    <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="o">*</span><span class="nx">y</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以直接在參數解構，並亦可給予預設值</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="kd">function</span> <span class="nx">distance</span><span class="p">({</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="o">=</span><span class="mi">0</span><span class="p">})</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">sqrt</span><span class="p">(</span><span class="nx">x</span><span class="o">*</span><span class="nx">x</span> <span class="o">+</span> <span class="nx">y</span><span class="o">*</span><span class="nx">y</span><span class="p">);</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="物件縮寫-object-shorthand">物件縮寫 (Object shorthand)</h2>
+<h3 id="屬性縮寫">屬性縮寫</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="kd">let</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">y</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">point</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">x</span><span class="o">:</span> <span class="nx">x</span><span class="p">,</span>
+    <span class="nx">y</span><span class="o">:</span> <span class="nx">y</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可以縮寫成</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="kr">const</span> <span class="nx">point</span> <span class="o">=</span> <span class="p">{</span><span class="nx">x</span><span class="p">,</span> <span class="nx">y</span><span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="計算屬性">計算屬性</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="kd">let</span> <span class="nx">key</span> <span class="o">=</span> <span class="s1">&#39;price&#39;</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">blog</span> <span class="o">=</span> <span class="p">{</span>
+
+  <span class="p">};</span>
+  <span class="nx">blog</span><span class="p">[</span><span class="nx">key</span><span class="p">]</span> <span class="o">=</span> <span class="mi">100</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>可用<code>[]</code>包住變數代入key值，<code>[]</code>中可放入計算式</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="kd">let</span> <span class="nx">key</span> <span class="o">=</span> <span class="s1">&#39;price&#39;</span><span class="p">;</span>
+  <span class="kr">const</span> <span class="nx">blog</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nx">key</span><span class="p">]</span><span class="o">:</span> <span class="mi">100</span><span class="p">,</span>
+    <span class="p">[</span><span class="s1">&#39;discount_&#39;</span> <span class="o">+</span> <span class="nx">key</span><span class="p">]</span><span class="o">:</span> <span class="mi">80</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="函式縮寫">函式縮寫</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="kr">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">mounted</span><span class="o">:</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">},</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>消去冒號與function關鍵字，可縮寫成：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript">  <span class="kr">const</span> <span class="nx">options</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">mounted</span><span class="p">()</span> <span class="p">{</span>
+
+    <span class="p">},</span>
+  <span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="箭頭函式運算式">箭頭函式運算式</h2>
 <hr>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
@@ -301,7 +502,7 @@
 <span class="c1">// 當回傳只有一行時，可進一步簡化成：
 </span><span class="c1"></span><span class="kr">const</span> <span class="nx">Add</span> <span class="o">=</span> <span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">+</span> <span class="nx">b</span><span class="p">;</span>
 
-<span class="c1">// 當函數參數只有一個的時候，可以省略小括孤
+<span class="c1">// 當函數參數只有一個的時候，可以省略參數的小括孤
 </span><span class="c1"></span><span class="kr">const</span> <span class="nx">Double</span> <span class="o">=</span> <span class="nx">a</span> <span class="p">=&gt;</span> <span class="nx">a</span> <span class="o">*</span> <span class="mi">2</span><span class="p">;</span>
 </code></pre></td></tr></table>
 </div>
@@ -347,6 +548,14 @@
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="函數的-this-指向誰取決於如何執行函式">函數的 this 指向誰，取決於如何執行函式</h2>
+<div class="details admonition tip open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-lightbulb fa-fw"></i>this的定義？<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content">this是函式的context(情境)，就是指函式執行的情境、函式被呼叫的方法</div>
+        </div>
+    </div>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt"> 1
@@ -374,15 +583,15 @@
     <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="k">this</span><span class="p">);</span>
 <span class="p">}</span>
 
-<span class="c1">// 1. 直接執行      (this 為 gloabal 或 window)
+<span class="c1">// 1. 直接執行             (this 為 gloabal 或 window)
 </span><span class="c1"></span><span class="nx">jump</span><span class="p">();</span> <span class="c1">// this 指向 window
 </span><span class="c1"></span>
-<span class="c1">// 2. 放到物件中執行 (this 為 該物件)
+<span class="c1">// 2. 作為物件的成員函式執行 (this 為 該物件)
 </span><span class="c1"></span><span class="kd">var</span> <span class="nx">a</span> <span class="o">=</span> <span class="p">{};</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">jump</span> <span class="o">=</span> <span class="nx">jump</span><span class="p">;</span>
 <span class="nx">a</span><span class="p">.</span><span class="nx">jump</span><span class="p">();</span> <span class="c1">// this 指向 a
 </span><span class="c1"></span>
-<span class="c1">// 3. 綁定 dom 事件 (this 為 發出事件的DOM)
+<span class="c1">// 3. 綁定 dom 事件        (this 為 發出事件的DOM)
 </span><span class="c1"></span><span class="nx">btn</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">&#39;click&#39;</span><span class="p">,</span> <span class="nx">jump</span><span class="p">);</span> <span class="c1">// this 指向 #btn dom 物件
 </span><span class="c1"></span>
 <span class="c1">// 當用箭頭函式宣告，則不管怎麼執行，this都是上層的this (箭頭函數沒有自己的 this)
@@ -525,8 +734,8 @@
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
-                <span>Updated on 2020-10-12&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/401440ea65edd5c997eb853870254e59c752d936" target="_blank" title="commit by zang(myginnygo@gmail.com) 401440ea65edd5c997eb853870254e59c752d936: 啟用 google analytics">
-                                    <i class="fas fa-hashtag fa-fw"></i>401440e</a></span>
+                <span>Updated on 2020-10-12&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/9c50a777b50ac818f2f5bc560b62addcdcc084d2" target="_blank" title="commit by zang(myginnygo@gmail.com) 9c50a777b50ac818f2f5bc560b62addcdcc084d2: modify es6 note">
+                                    <i class="fas fa-hashtag fa-fw"></i>9c50a77</a></span>
             </div>
             <div class="post-info-license"></div>
         </div>
