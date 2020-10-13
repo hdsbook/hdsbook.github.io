@@ -3,7 +3,16 @@
         <title>All Posts - Zang</title>
         <link>https://hdsbook.github.io/posts/</link>
         <description>All Posts | Zang</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 09 Oct 2020 15:54:18 &#43;0800</lastBuildDate><atom:link href="https://hdsbook.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Tue, 13 Oct 2020 23:11:05 &#43;0800</lastBuildDate><atom:link href="https://hdsbook.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Vue 組件命名學</title>
+    <link>https://hdsbook.github.io/20201013-vue-component-naming-rule/</link>
+    <pubDate>Tue, 13 Oct 2020 23:11:05 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20201013-vue-component-naming-rule/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/vue-logo.svg" referrerpolicy="no-referrer">
+            </div>Vue component name-casing]]></description>
+</item><item>
     <title>PHPUnit 入門</title>
     <link>https://hdsbook.github.io/20201009-phpunit-note/</link>
     <pubDate>Fri, 09 Oct 2020 15:54:18 &#43;0800</pubDate>
