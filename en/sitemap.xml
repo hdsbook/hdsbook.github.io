@@ -2,9 +2,20 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
+            <loc>https://hdsbook.github.io/categories/</loc><lastmod>2020-10-28T16:06:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="fr"
+                        href="https://hdsbook.github.io/fr/categories/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://hdsbook.github.io/categories/"
+                    /></url><url>
+            <loc>https://hdsbook.github.io/tags/laravel/</loc><lastmod>2020-10-28T16:06:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://hdsbook.github.io/20201028-jetstream/</loc><lastmod>2020-10-28T16:06:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hdsbook.github.io/categories/laravelplugins/</loc><lastmod>2020-10-28T16:06:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://hdsbook.github.io/posts/</loc><lastmod>2020-10-28T16:06:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hdsbook.github.io/tags/</loc><lastmod>2020-10-13T23:42:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
+            <loc>https://hdsbook.github.io/tags/</loc><lastmod>2020-10-28T16:06:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="fr"
                         href="https://hdsbook.github.io/fr/tags/"
@@ -15,19 +26,9 @@
                     /></url><url>
             <loc>https://hdsbook.github.io/tags/vue/</loc><lastmod>2020-10-13T23:42:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://hdsbook.github.io/20201013-vue-component-naming-rule/</loc><lastmod>2020-10-13T23:42:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://hdsbook.github.io/categories/</loc><lastmod>2020-10-13T23:42:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="fr"
-                        href="https://hdsbook.github.io/fr/categories/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://hdsbook.github.io/categories/"
-                    /></url><url>
             <loc>https://hdsbook.github.io/tags/php/</loc><lastmod>2020-10-09T19:44:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://hdsbook.github.io/tags/phpunit/</loc><lastmod>2020-10-09T19:44:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://hdsbook.github.io/20201009-phpunit-note/</loc><lastmod>2020-10-09T19:44:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
-            <loc>https://hdsbook.github.io/tags/laravel/</loc><lastmod>2020-10-09T19:44:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://hdsbook.github.io/20201007-laravel-mix-note/</loc><lastmod>2020-10-09T19:44:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://hdsbook.github.io/tags/webpack/</loc><lastmod>2020-10-10T07:24:31&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://hdsbook.github.io/tags/javascript/</loc><lastmod>2020-10-13T23:42:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
