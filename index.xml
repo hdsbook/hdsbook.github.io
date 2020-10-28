@@ -11,7 +11,9 @@
     <pubDate>Wed, 28 Oct 2020 16:06:22 &#43;0800</pubDate>
     <author>Author</author>
     <guid>https://hdsbook.github.io/20201028-jetstream/</guid>
-    <description><![CDATA[New authentication scaffolding for laravel 8]]></description>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/jetstream-logo.svg" referrerpolicy="no-referrer">
+            </div>New authentication scaffolding for laravel 8]]></description>
 </item><item>
     <title>Vue 組件命名學</title>
     <link>https://hdsbook.github.io/20201013-vue-component-naming-rule/</link>
