@@ -33,7 +33,7 @@
                             "url": "https:\/\/hdsbook.github.io\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","keywords": "laravel","wordcount":  1085 ,
+                        }],"genre": "posts","keywords": "laravel","wordcount":  1070 ,
         "url": "https:\/\/hdsbook.github.io\/20201102-laravel-model-naming-convention\/","datePublished": "2020-11-02T16:36:44+08:00","dateModified": "2020-11-03T18:20:07+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -115,7 +115,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single post"><h1 class="single-title animated flipInX">Laravel Model 命名慣例</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-02">2020-11-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1085 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-02">2020-11-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1070 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -141,7 +141,7 @@
   </ul>
 </nav></div>
             </div><div class="content" id="content"><p>命名常常是令人最頭痛的環節，一個專案中沒有統一的命名規則，可能會造成開發上的疑惑，</p>
-<p>此篇參考官方文件與各項目開發規範的文章，簡單整理了在 Laravel 中幾個命名慣例的規則</p>
+<p>此篇參考官方文件，簡單整理了在 Laravel 中幾個命名慣例的規則</p>
 <hr>
 <h2 id="命名的方式">命名的方式</h2>
 <ul>
@@ -196,28 +196,24 @@
 <tr>
 <th align="center">Model</th>
 <th align="center">table</th>
-<th align="center">Seeder</th>
-<th align="center">Factory</th>
+<th align="center">Seeder、Factory</th>
 </tr>
 </thead>
 <tbody>
 <tr>
 <td align="center"><code>PascalCase</code>、<code>單數</code></td>
 <td align="center"><code>snake_case</code>、<code>複數</code></td>
-<td align="center"><code>PascalCase</code>、<code>單數</code>、<code>'Seeder'為結尾</code></td>
-<td align="center"><code>PascalCase</code>、<code>單數</code>、<code>'Factory'為結尾</code></td>
+<td align="center"><code>PascalCase</code>、<code>單數</code>、<code>'Seeder/Factory'為結尾</code></td>
 </tr>
 <tr>
 <td align="center">Post</td>
 <td align="center">posts</td>
-<td align="center">PostTableSeeder</td>
-<td align="center">PostTableFactory</td>
+<td align="center">PostSeeder / PostFactory</td>
 </tr>
 <tr>
 <td align="center">Mybook</td>
 <td align="center">my_books</td>
-<td align="center">MybookSeeder</td>
-<td align="center">MybookFactory</td>
+<td align="center">MybookSeeder / MybookFactory</td>
 </tr>
 </tbody>
 </table>

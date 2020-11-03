@@ -7,7 +7,7 @@
 
 命名常常是令人最頭痛的環節，一個專案中沒有統一的命名規則，可能會造成開發上的疑惑，
 
-此篇參考官方文件與各項目開發規範的文章，簡單整理了在 Laravel 中幾個命名慣例的規則
+此篇參考官方文件，簡單整理了在 Laravel 中幾個命名慣例的規則
 
 ---
 ## 命名的方式
@@ -50,11 +50,11 @@ class Sale extends Model
 
 下表第一列是命名對象，第二列紅字列代表命名規則，再往下則是範例
 
- |        Model         |        table         |                 Seeder                 |                 Factory                 |
- | :------------------: | :------------------: | :------------------------------------: | :-------------------------------------: |
- | `PascalCase`、`單數` | `snake_case`、`複數` | `PascalCase`、`單數`、`'Seeder'為結尾` | `PascalCase`、`單數`、`'Factory'為結尾` |
- |         Post         |        posts         |            PostTableSeeder             |            PostTableFactory             |
- |        Mybook        |       my_books       |              MybookSeeder              |              MybookFactory              |
+ |        Model         |        table         |                Seeder、Factory                 |
+ | :------------------: | :------------------: | :--------------------------------------------: |
+ | `PascalCase`、`單數` | `snake_case`、`複數` | `PascalCase`、`單數`、`'Seeder/Factory'為結尾` |
+ |         Post         |        posts         |            PostSeeder / PostFactory            |
+ |        Mybook        |       my_books       |          MybookSeeder / MybookFactory          |
 
 Laravel 底層取得默認 $table 值的邏輯可在 `Illuminate\Database\Eloquent\Model` 的 `getTable()` 找到
 
