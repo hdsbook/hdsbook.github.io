@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Laravel Model 命名慣例 - Zang</title><meta name="Description" content="慣例優於設定 Convention over configuration"><meta property="og:title" content="Laravel Model 命名慣例" />
+<meta property="og:description" content="慣例優於設定 Convention over configuration" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hdsbook.github.io/20201102-laravel-model-naming-convention/" />
+<meta property="og:image" content="https://hdsbook.github.io/20201102-laravel-model-naming-convention/feature-o1.svg"/>
+<meta property="article:published_time" content="2020-11-02T16:36:44+08:00" />
+<meta property="article:modified_time" content="2020-11-03T16:52:57+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hdsbook.github.io/20201102-laravel-model-naming-convention/feature-o1.svg"/>
+<meta name="twitter:title" content="Laravel Model 命名慣例"/>
+<meta name="twitter:description" content="慣例優於設定 Convention over configuration"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hdsbook.github.io/20201102-laravel-model-naming-convention/" /><link rel="prev" href="https://hdsbook.github.io/20201028-jetstream/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="ZOjd0g9xq-jmtsyELpljn780B81RB5m53yEBI1Jcj78" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Laravel Model 命名慣例",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hdsbook.github.io\/20201102-laravel-model-naming-convention\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hdsbook.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "laravel","wordcount":  1061 ,
+        "url": "https:\/\/hdsbook.github.io\/20201102-laravel-model-naming-convention\/","datePublished": "2020-11-02T16:36:44+08:00","dateModified": "2020-11-03T16:52:57+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hdsbook.github.io\/images\/author.jpg",
+                    "width":  335 ,
+                    "height":  335 
+                }},"author": {
+                "@type": "Person",
+                "name": "Zang"
+            },"description": "慣例優於設定 Convention over configuration"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single post"><h1 class="single-title animated flipInX">Laravel Model 命名慣例</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-02">2020-11-02</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1061 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="feature.svg"
+        data-srcset="/20201102-laravel-model-naming-convention/feature.svg, feature.svg 1.5x, /20201102-laravel-model-naming-convention/feature.svg 2x"
+        data-sizes="auto"
+        alt="/20201102-laravel-model-naming-convention/feature.svg"
+        title="慣例優於設定 Convention over configuration" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#命名的方式">命名的方式</a></li>
+    <li><a href="#約定優於配置convention-over-configuration">約定優於配置(Convention over configuration)</a></li>
+    <li><a href="#laravel-mdel--table--seeder-命名慣例">Laravel Mdel / table / Seeder 命名慣例</a></li>
+    <li><a href="#pivot-table-的命名">Pivot table 的命名</a></li>
+    <li><a href="#primaryforeign-key">Primary/Foreign Key</a></li>
+    <li><a href="#結論">結論：</a></li>
+    <li><a href="#參考資料">參考資料：</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>命名常常是令人最頭痛的環節，一個專案中沒有統一的命名規則，可能會造成開發上的疑惑，</p>
+<p>此篇參考官方文件與各項目開發規範的文章，簡單整理了在 Laravel 中幾個命名慣例的規則</p>
+<hr>
+<h2 id="命名的方式">命名的方式</h2>
+<ul>
+<li><code>camelCase</code> 小駝鋒式命名</li>
+<li><code>snake_case</code> 蛇行命名</li>
+<li><code>PascalCase</code> (pascal 是一門程式語言) 或稱 <code>大駝鋒式命名</code></li>
+</ul>
+<hr>
+<h2 id="約定優於配置convention-over-configuration">約定優於配置(Convention over configuration)</h2>
+<div class="details admonition info open">
+        <div class="details-summary admonition-title">
+            <i class="icon fas fa-info-circle fa-fw"></i>定義<i class="details-icon fas fa-angle-right fa-fw"></i>
+        </div>
+        <div class="details-content">
+            <div class="admonition-content"><p>約定優於配置(CoC)，或稱「慣例優於設定」</p>
+<p>是一種軟體設計範式，旨在減少軟體開發人員需做決定的數量，獲得簡單的好處，而又不失靈活性</p>
+<p>開發者只需設定偏離約定的項目</p>
+</div>
+        </div>
+    </div>
+<p>例如，當 Ｍodel 名為 <code>Sale</code> 時，則對應的資料表默認(約定)為 <code>sales</code></p>
+<p>也就是 <code>Model 的 $table 屬性</code>預設為 <code>sales</code></p>
+<p>只有在偏離這一約定時，例如將資料表命名為 &ldquo;products_sold&rdquo;，才需覆寫 Model 的 $table 屬性 為 &ldquo;products_sold&rdquo;</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="c1">// Sale Model
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">Sale</span> <span class="k">extends</span> <span class="nx">Model</span>
+<span class="p">{</span>
+    <span class="c1">// 預設值為 sales，覆寫為 products_sold
+</span><span class="c1"></span>    <span class="k">protected</span> <span class="nv">$table</span><span class="o">=</span><span class="s2">&#34;products_sold&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>而這樣只需對偏離約定的項目進行設定的概念就是所謂的 <code>約定優於配置</code></p>
+<hr>
+<h2 id="laravel-mdel--table--seeder-命名慣例">Laravel Mdel / table / Seeder 命名慣例</h2>
+<p>下表第一列是命名對象，第二列紅字列代表命名規則，再往下則是範例</p>
+<table>
+<thead>
+<tr>
+<th align="center">Model</th>
+<th align="center">table</th>
+<th align="center">Seeder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center"><code>PascalCase</code>、<code>單數</code></td>
+<td align="center"><code>snake_case</code>、<code>複數</code></td>
+<td align="center"><code>PascalCase</code>、<code>複數</code>、<code>'TableSeeder'為結尾</code></td>
+</tr>
+<tr>
+<td align="center">Post</td>
+<td align="center">posts</td>
+<td align="center">PostsTableSeeder</td>
+</tr>
+<tr>
+<td align="center">Mybook</td>
+<td align="center">my_books</td>
+<td align="center">MybooksSeeder</td>
+</tr>
+</tbody>
+</table>
+<p>Laravel 底層取得默認 $table 值的邏輯可在 <code>Illuminate\Database\Eloquent\Model</code> 的 <code>getTable()</code> 找到</p>
+<p>若沒有設定 $table 屬性，它會利用 <code>Illuminate\Support\Pluralizer</code> 來取得複數的名詞</p>
+<p>這個 <code>Pluralizer</code> 可能比我們預想的都要來的強大，包含以 y 結尾的單字、常見的不可數名詞都能順利轉換</p>
+<p>如：Person =&gt; people, Category =&gt; categories, Series =&gt; series, Information =&gt; information&hellip;</p>
+<p>當然如果為了保守起見，還是可以設定一下 $table 屬性</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="c1">// Category Model
+</span><span class="c1"></span><span class="k">class</span> <span class="nc">Category</span> <span class="k">extends</span> <span class="nx">Model</span>
+<span class="p">{</span>
+    <span class="c1">// 設定 Model 的 $table 屬性
+</span><span class="c1"></span>    <span class="k">protected</span> <span class="nv">$table</span><span class="o">=</span><span class="s2">&#34;categories&#34;</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="pivot-table-的命名">Pivot table 的命名</h2>
+<p>設兩資料表 <code>products</code> 與 <code>features</code> 是透過一個 pivot (中介資料表) 來進行多對多的關聯</p>
+<p>則該 pivot 的默認名稱為 <code>feature_product</code>，命名的規則是：<code>依字母排序的單數名詞、snake_case</code></p>
+<p>若希望命名 pivot 為 product_feature_maps，則需在兩個對應的 Model 中設定如下 (加入第二個參數，pivot name)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="c1">// in Product model
+</span><span class="c1"></span><span class="k">public</span> <span class="k">function</span> <span class="nf">features</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">belongsToMany</span><span class="p">(</span><span class="s1">&#39;App\Feature&#39;</span><span class="p">,</span> <span class="s1">&#39;product_feature_maps&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+
+<span class="c1">// in Feature model
+</span><span class="c1"></span><span class="k">public</span> <span class="k">function</span> <span class="nf">products</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">belongsToMany</span><span class="p">(</span><span class="s1">&#39;App\Product&#39;</span><span class="p">,</span> <span class="s1">&#39;product_feature_maps&#39;</span><span class="p">);</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>個人覺得 <code>product_feature_maps</code> 這樣的命名可以讓語意更加明顯</p>
+<p>不過官方預設命名為 <code>feature_product</code> 也不是沒有道理</p>
+<p>因為當大部份資料表都依慣例被取名為複數的時候，單數命名的資料表應該就是 pivot table 了</p>
+<hr>
+<h2 id="primaryforeign-key">Primary/Foreign Key</h2>
+<table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">命名方式</th>
+<th align="center">範例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Primary key</td>
+<td align="center">一律命名為 <code>id</code></td>
+<td align="center"><code>id</code></td>
+</tr>
+<tr>
+<td align="center">Foreign key</td>
+<td align="center">來源資料表單數名詞 + <code>_id</code></td>
+<td align="center"><code>post_id</code></td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2 id="結論">結論：</h2>
+<p>保守為避免出錯可以都設定一下 Model 的 $table 屬性、belongsToMany 的第二參數</p>
+<p>當然命名規則最好能盡量符合官方文件的慣例，至少要統一一個規範</p>
+<hr>
+<h2 id="參考資料">參考資料：</h2>
+<ul>
+<li><a href="https://zh.wikipedia.org/wiki/%E7%BA%A6%E5%AE%9A%E4%BC%98%E4%BA%8E%E9%85%8D%E7%BD%AE" target="_blank" rel="noopener noreffer">維基百科-約定優於配置(CoC)</a></li>
+<li><a href="https://learnku.com/docs/laravel-specification/7.x/data-model/7600#a3d104" target="_blank" rel="noopener noreffer">Laravel 项目开发规范</a></li>
+<li><a href="https://codertw.com/%E7%A8%8B%E5%BC%8F%E8%AA%9E%E8%A8%80/104733/#outline__13" target="_blank" rel="noopener noreffer">Laravel 的十八個最佳實踐</a></li>
+<li><a href="https://www.youtube.com/watch?v=zrsbPqcDFZo&amp;list=PLBd8JGCAcUAFtnWuuqd0tzMwYsVAN4es_&amp;index=12" target="_blank" rel="noopener noreffer">為你自己學 Laravel - Day 12 Model 與資料表</a></li>
+<li><a href="https://laravel.com/docs/8.x/eloquent#table-names" target="_blank" rel="noopener noreffer">Laravel 官方文件 - eloquent-model-conventions</a></li>
+<li><a href="https://stackoverflow.com/questions/34897444/naming-tables-in-many-to-many-relationships-laravel" target="_blank" rel="noopener noreffer">stackoverflow-Pivot table 的命名</a></li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-11-03&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/1eb6ef5c557d16980d666a9635e21286e50d8f41" target="_blank" title="commit by zang(myginnygo@gmail.com) 1eb6ef5c557d16980d666a9635e21286e50d8f41: add blog laravel model naming convention">
+                                    <i class="fas fa-hashtag fa-fw"></i>1eb6ef5</a></span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/20201102-laravel-model-naming-convention/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://hdsbook.github.io/20201102-laravel-model-naming-convention/" data-title="Laravel Model 命名慣例" data-hashtags="laravel"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://hdsbook.github.io/20201102-laravel-model-naming-convention/" data-hashtag="laravel"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://hdsbook.github.io/20201102-laravel-model-naming-convention/" data-title="Laravel Model 命名慣例"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://hdsbook.github.io/20201102-laravel-model-naming-convention/" data-title="Laravel Model 命名慣例"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://hdsbook.github.io/20201102-laravel-model-naming-convention/" data-title="Laravel Model 命名慣例" data-image="feature.svg"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/laravel/">laravel</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/20201028-jetstream/" class="prev" rel="prev" title="Laravel Jetstream"><i class="fas fa-angle-left fa-fw"></i>Laravel Jetstream</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.71.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://hd-zang.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"search":{"algoliaAppID":"X5YKLHNDL4","algoliaIndex":"hdsbook.github.io","algoliaSearchKey":"99cf20d2ad0fd1adab76bab604593196","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-169190961-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-169190961-1" async></script></body>
+</html>
