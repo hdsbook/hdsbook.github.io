@@ -50,11 +50,11 @@ class Sale extends Model
 
 下表第一列是命名對象，第二列紅字列代表命名規則，再往下則是範例
 
- |        Model         |        table         |                   Seeder                    |
- | :------------------: | :------------------: | :-----------------------------------------: |
- | `PascalCase`、`單數` | `snake_case`、`複數` | `PascalCase`、`複數`、`'TableSeeder'為結尾` |
- |         Post         |        posts         |              PostsTableSeeder               |
- |        Mybook        |       my_books       |                MybooksSeeder                |
+ |        Model         |        table         |                 Seeder                 |                 Factory                 |
+ | :------------------: | :------------------: | :------------------------------------: | :-------------------------------------: |
+ | `PascalCase`、`單數` | `snake_case`、`複數` | `PascalCase`、`單數`、`'Seeder'為結尾` | `PascalCase`、`單數`、`'Factory'為結尾` |
+ |         Post         |        posts         |            PostTableSeeder             |            PostTableFactory             |
+ |        Mybook        |       my_books       |              MybookSeeder              |              MybookFactory              |
 
 Laravel 底層取得默認 $table 值的邏輯可在 `Illuminate\Database\Eloquent\Model` 的 `getTable()` 找到
 
