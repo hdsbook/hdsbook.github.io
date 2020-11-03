@@ -7,7 +7,7 @@
 
 命名常常是令人最頭痛的環節，一個專案中沒有統一的命名規則，可能會造成開發上的疑惑，
 
-此篇參考官方文件，簡單整理了在 Laravel 中幾個命名慣例的規則
+本文參考官方文件，簡單整理了在 Laravel 中幾個命名慣例的規則
 
 ---
 ## 命名的方式
@@ -64,7 +64,7 @@ Laravel 底層取得默認 $table 值的邏輯可在 `Illuminate\Database\Eloque
 
 如：Person => people, Category => categories, Series => series, Information => information...
 
-當然如果為了保守起見，還是可以設定一下 $table 屬性
+不管如何，為保守起見，還是可以設定一下 $table 屬性
 
 ```php
 <?php
@@ -72,7 +72,7 @@ Laravel 底層取得默認 $table 值的邏輯可在 `Illuminate\Database\Eloque
 // Category Model
 class Category extends Model
 {
-    // 設定 Model 的 $table 屬性
+    // 雖然預設應該就會是 categories，但還是可以習慣設定一下
     protected $table="categories"
 }
 ```
@@ -84,7 +84,7 @@ class Category extends Model
 
 則該 pivot 的默認名稱為 `feature_product`，命名的規則是：`依字母排序的單數名詞、snake_case`
 
-若希望命名 pivot 為 product_feature_maps，則需在兩個對應的 Model 中設定如下 (加入第二個參數，pivot name)
+若希望 pivot 命名為 product_feature_maps，則需在兩個對應的 Model 中設定如下 (加入第二個參數，pivot name)
 
 ```php
 <?php

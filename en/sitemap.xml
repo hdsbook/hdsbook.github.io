@@ -2,10 +2,10 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://hdsbook.github.io/tags/laravel/</loc><lastmod>2020-11-03T18:20:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hdsbook.github.io/20201102-laravel-model-naming-convention/</loc><lastmod>2020-11-03T18:20:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hdsbook.github.io/posts/</loc><lastmod>2020-11-03T18:20:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hdsbook.github.io/tags/</loc><lastmod>2020-11-03T18:20:07&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://hdsbook.github.io/tags/laravel/</loc><lastmod>2020-11-03T21:40:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hdsbook.github.io/20201102-laravel-model-naming-convention/</loc><lastmod>2020-11-03T21:40:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hdsbook.github.io/posts/</loc><lastmod>2020-11-03T21:40:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hdsbook.github.io/tags/</loc><lastmod>2020-11-03T21:40:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="fr"
                         href="https://hdsbook.github.io/fr/tags/"
@@ -14,7 +14,7 @@
                     hreflang="en"
                     href="https://hdsbook.github.io/tags/"
                     /></url><url>
-            <loc>https://hdsbook.github.io/categories/</loc><lastmod>2020-11-02T16:35:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://hdsbook.github.io/categories/</loc><lastmod>2020-11-03T21:40:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="fr"
                         href="https://hdsbook.github.io/fr/categories/"
@@ -23,7 +23,7 @@
                     hreflang="en"
                     href="https://hdsbook.github.io/categories/"
                     /></url><url>
-            <loc>https://hdsbook.github.io/20201028-jetstream/</loc><lastmod>2020-11-02T16:35:49&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hdsbook.github.io/20201028-jetstream/</loc><lastmod>2020-11-03T21:40:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://hdsbook.github.io/tags/vue/</loc><lastmod>2020-10-13T23:42:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://hdsbook.github.io/20201013-vue-component-naming-rule/</loc><lastmod>2020-10-13T23:42:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url><url>
             <loc>https://hdsbook.github.io/tags/php/</loc><lastmod>2020-10-09T19:44:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
@@ -71,5 +71,5 @@
             <loc>https://hdsbook.github.io/categories/tdd/</loc><lastmod>2020-10-09T19:44:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
             <loc>https://hdsbook.github.io/tags/content/_index.zh-cn/</loc><lastmod>2020-04-23T01:22:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/tags/installation/_index.zh-cn/</loc><lastmod>2020-04-23T01:22:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hdsbook.github.io/categories/modernweb/</loc><lastmod>2020-10-06T18:31:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://hdsbook.github.io/categories/modernweb/</loc><lastmod>2020-10-06T18:31:38&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.6</priority></url><url>
             <loc>https://hdsbook.github.io/tags/configuration/_index.zh-cn/</loc><lastmod>2020-04-23T01:22:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url></urlset>
