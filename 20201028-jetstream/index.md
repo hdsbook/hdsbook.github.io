@@ -10,8 +10,6 @@
 
 它提供了登入、註冊、信箱驗證、雙重驗證、Session管理等功能
 
-在使用者認證功能上取代了 laravel 5 的 make:auth 與 laravel 6/7 的 laravel/ui
-
 可以快速為新專案提供一個好的開始
 
 本篇簡述安裝 Jetstream 的過程

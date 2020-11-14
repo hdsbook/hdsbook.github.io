@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Laravel api authentication - Zang</title><meta name="Description" content="解決 api routes authentication 問題"><meta property="og:title" content="Laravel api authentication" />
+<meta property="og:description" content="解決 api routes authentication 問題" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hdsbook.github.io/20201114-laravel-api-authentication/" />
+<meta property="og:image" content="https://hdsbook.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-11-14T13:20:04+08:00" />
+<meta property="article:modified_time" content="2020-11-14T18:35:08+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hdsbook.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Laravel api authentication"/>
+<meta name="twitter:description" content="解決 api routes authentication 問題"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hdsbook.github.io/20201114-laravel-api-authentication/" /><link rel="prev" href="https://hdsbook.github.io/20201102-laravel-model-naming-convention/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="ZOjd0g9xq-jmtsyELpljn780B81RB5m53yEBI1Jcj78" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Laravel api authentication",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hdsbook.github.io\/20201114-laravel-api-authentication\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hdsbook.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "laravel","wordcount":  1956 ,
+        "url": "https:\/\/hdsbook.github.io\/20201114-laravel-api-authentication\/","datePublished": "2020-11-14T13:20:04+08:00","dateModified": "2020-11-14T18:35:08+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hdsbook.github.io\/images\/author.jpg",
+                    "width":  335 ,
+                    "height":  335 
+                }},"author": {
+                "@type": "Person",
+                "name": "Zang"
+            },"description": "解決 api routes authentication 問題"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single post"><h1 class="single-title animated flipInX">Laravel api authentication</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-11-14">2020-11-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1956 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;4 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="laravel-authentication.svg"
+        data-srcset="/20201114-laravel-api-authentication/laravel-authentication.svg, laravel-authentication.svg 1.5x, /20201114-laravel-api-authentication/laravel-authentication.svg 2x"
+        data-sizes="auto"
+        alt="/20201114-laravel-api-authentication/laravel-authentication.svg"
+        title="解決 api routes authentication 問題" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#了解-middleware-groups">了解 Middleware groups</a></li>
+    <li><a href="#了解-authenticate-guards">了解 Authenticate guards</a></li>
+    <li><a href="#分析為何無法在-api-routes-驗證使用者">分析為何無法在 api routes 驗證使用者</a>
+      <ul>
+        <li>
+          <ul>
+            <li><a href="#session-問題--不能使用-web-guard">session 問題 =&gt; 不能使用 web guard</a></li>
+            <li><a href="#token-設定問題--需額外設定">token 設定問題 =&gt; 需額外設定</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li><a href="#配置-token-authentication">配置 token authentication</a>
+      <ul>
+        <li><a href="#核心邏輯">核心邏輯</a></li>
+        <li><a href="#步驟-0-確認預設設定">步驟 0： 確認預設設定</a></li>
+        <li><a href="#步驟-1-新增-api_token-欄位">步驟 1： 新增 api_token 欄位</a></li>
+        <li><a href="#步驟-2於登入時產生-api-token">步驟 2：於登入時產生 api token</a></li>
+        <li><a href="#步驟-3使-axios-預設帶入-token">步驟 3：使 axios 預設帶入 token</a></li>
+        <li><a href="#步驟-4完成">步驟 4：完成</a></li>
+      </ul>
+    </li>
+    <li><a href="#結語">結語</a></li>
+    <li><a href="#參考資料">參考資料</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>之前一直有遇到一個問題是經由 routes/api.php 的路由怎麼樣也無法取得 Auth::user() 的資料</p>
+<p>也無法做出正確的使用者驗證，此篇針對此問題紀錄解決方案與問題原因</p>
+<hr>
+<h2 id="了解-middleware-groups">了解 Middleware groups</h2>
+<p>middleware 中介層，為 HTTP request 進入 Controller 之前的中間過濾/處理器</p>
+<p>middleware groups 也就是一組中介層，套用該 middleware groups 的路由需依序進行各中介層的檢查</p>
+<p>Laravel 的 middleware groups 預設有兩組，<code>web</code> 與 <code>api</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="c1">// app/Http/Kernel.php
+</span><span class="c1"></span>
+<span class="k">protected</span> <span class="nv">$middlewareGroups</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1">// web middleware group
+</span><span class="c1"></span>    <span class="s1">&#39;web&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="c1">// ...
+</span><span class="c1"></span>        <span class="nx">\Illuminate\Session\Middleware\StartSession</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="c1">// ...
+</span><span class="c1"></span>        <span class="nx">\App\Http\Middleware\VerifyCsrfToken</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="nx">\Illuminate\Routing\Middleware\SubstituteBindings</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+    <span class="p">],</span>
+
+    <span class="c1">// api middleware group
+</span><span class="c1"></span>    <span class="s1">&#39;api&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;throttle:api&#39;</span><span class="p">,</span>  <span class="c1">// 對照下面的 $routeMiddleware 可知為執行 ThrottleRequests 並以 api 為參數
+</span><span class="c1"></span>        <span class="nx">\Illuminate\Routing\Middleware\SubstituteBindings</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">];</span>
+
+<span class="k">protected</span> <span class="nv">$routeMiddleware</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="c1">// ...
+</span><span class="c1"></span>    <span class="s1">&#39;throttle&#39;</span> <span class="o">=&gt;</span> <span class="nx">\Illuminate\Routing\Middleware\ThrottleRequests</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+<span class="p">];</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>套用 <code>web</code> 的 route 會依序執行：<code>StartSession</code>, <code>VerifyCsrfToken</code>, <code>SubstituteBindings</code> 等 middleware</p>
+<p>套用 <code>api</code> 的 route 會依序執行:<code>ThrottleRequests</code>(以 &lsquo;api&rsquo; 為參數) 和 <code>SubstituteBindings</code> 兩個 middleware</p>
+<hr>
+<p>並且由 <code>RouteServiceProvider</code> 可知：</p>
+<p><code>routes/api.php</code> 預設使用 <code>api middleware group</code></p>
+<p><code>routes/web.php</code> 預設使用 <code>web middleware group</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="c1">// app/Providers/RouteServiceProvider.php
+</span><span class="c1"></span>
+<span class="sd">/**
+</span><span class="sd"> * Define your route model bindings, pattern filters, etc.
+</span><span class="sd"> *
+</span><span class="sd"> * @return void
+</span><span class="sd"> */</span>
+<span class="k">public</span> <span class="k">function</span> <span class="nf">boot</span><span class="p">()</span>
+<span class="p">{</span>
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">configureRateLimiting</span><span class="p">();</span>
+
+    <span class="nv">$this</span><span class="o">-&gt;</span><span class="na">routes</span><span class="p">(</span><span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+        <span class="nx">Route</span><span class="o">::</span><span class="na">prefix</span><span class="p">(</span><span class="s1">&#39;api&#39;</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;api&#39;</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="na">namespace</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">namespace</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="na">group</span><span class="p">(</span><span class="nx">base_path</span><span class="p">(</span><span class="s1">&#39;routes/api.php&#39;</span><span class="p">));</span>
+
+        <span class="nx">Route</span><span class="o">::</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;web&#39;</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="na">namespace</span><span class="p">(</span><span class="nv">$this</span><span class="o">-&gt;</span><span class="na">namespace</span><span class="p">)</span>
+            <span class="o">-&gt;</span><span class="na">group</span><span class="p">(</span><span class="nx">base_path</span><span class="p">(</span><span class="s1">&#39;routes/web.php&#39;</span><span class="p">));</span>
+    <span class="p">});</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="了解-authenticate-guards">了解 Authenticate guards</h2>
+<p>Laravel 預設的 authenticate guards 也有兩組，用來決定以什麼樣的方式進行使用者驗證</p>
+<p>取了同樣的名稱，一個是 <code>web</code>，一個是 <code>api</code></p>
+<p>為了必免與 middleware group 混淆，以下稱為 <code>web guard</code>、<code>api guard</code></p>
+<p><code>web guard</code> 的 driver 是 session， <code>api guard</code> 的 driver 是 token</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="c1">// config/auth.php
+</span><span class="c1"></span>
+<span class="s1">&#39;guards&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="c1">// web guard
+</span><span class="c1"></span>    <span class="s1">&#39;web&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;driver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;session&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;provider&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+
+    <span class="c1">// api guard
+</span><span class="c1"></span>    <span class="s1">&#39;api&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;driver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;token&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;provider&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;hash&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">],</span>
+</code></pre></td></tr></table>
+</div>
+</div><hr>
+<h2 id="分析為何無法在-api-routes-驗證使用者">分析為何無法在 api routes 驗證使用者</h2>
+<p>在 <code>routes/api.php</code> 預設的內容如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;auth:api&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/user&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">return</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>嘗試 fetch 這個 api，或是改成 <code>Route::middleware('auth:web')</code>，卻都返回 <code>{message: 'Unauthenticated'}</code></p>
+<p>有兩層原因，一個是 session 問題，一個是 token 設定問題</p>
+<hr>
+<p>如果要通過使用者認證，一定要通過任一個 authenticate guard</p>
+<p><code>web guard</code> 是透過 session 認證，<code>api guard</code> 是透過 token 驗證</p>
+<hr>
+<h4 id="session-問題--不能使用-web-guard">session 問題 =&gt; 不能使用 web guard</h4>
+<p>無法使用<code>web guard</code>，意即不能採取<code>Route::middleware('auth:web')</code>的方式</p>
+<p>原因是 <code>routes/api.php</code> 預設使用 <code>api middleware group</code>，其中的中介層中沒有經過 <code>StartSession</code></p>
+<p>所以就算選擇使用 web guard，也會因為沒有 session 可以取得而認證失敗</p>
+<p>事實上 laravel 官方也不建議讓 api 路由再藉由 session 的方式做使用者認證，應該採取較嚴謹的 token 做法</p>
+<p>所以在 <code>routes/api.php</code> 的預設程式碼才會看到預設傳給 auth middleware 的認證護衛是 <code>api guard</code></p>
+<h4 id="token-設定問題--需額外設定">token 設定問題 =&gt; 需額外設定</h4>
+<p>但如果使用 <code>api guard</code>，就必須做好 token 相對應的設定</p>
+<p>而 token 驗證的方式太多元，laravel 並沒有預先配置好任一種方式</p>
+<p>而很多開發者，可能都把 api routes 寫到 web.php，走 <code>web middleware</code>、<code>web guard</code>，一樣以 session 做認證</p>
+<p>所以官方就將這部份作為一個進階彈性的設定選項，沒有預設載入這部分的配置</p>
+<hr>
+<p>簡言之，官方預設：</p>
+<p><code>routes/web.php</code> 走 <code>web middleware group</code>，有經過 <code>StartSession</code>，可以使用 <code>web guard</code> 以 session 驗證</p>
+<p><code>routes/api.php</code> 走 <code>api middleware group</code>，沒經過 <code>StartSession</code>，只能使用 <code>api guard</code> 以 token 驗證</p>
+<p>但是 token 驗證的方式請自行搞定</p>
+<hr>
+<h2 id="配置-token-authentication">配置 token authentication</h2>
+<h3 id="核心邏輯">核心邏輯</h3>
+<p>其實 token 驗證的核心邏輯很簡單，就是給 users 資料表加上一個 <code>api_token</code> 的欄位，</p>
+<p>並且在 request 的時候，也要傳入該 token 的值</p>
+<p>比方說，現在已登入的使用者，其紀錄在資料表中對應的 <code>api_token</code> 是 <code>a9lkjw7eoruosdvlaskjerioudoj...</code></p>
+<p>那發出的 api request 就要傳入一樣的 token</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;api/...&#39;</span><span class="p">,</span> <span class="p">{</span>
+  <span class="nx">params</span><span class="o">:</span> <span class="p">{</span>
+    <span class="nx">api_token</span><span class="o">:</span> <span class="s1">&#39;a9lkjw7eoruosdvlaskjerioudoj...&#39;</span>
+  <span class="p">}</span>
+<span class="p">})</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>至於為什麼是要加上 <code>api_token</code> 這個欄位，是參考自官方文件的說明 (<a href="https://laravel.com/docs/5.8/api-authentication#introduction">https://laravel.com/docs/5.8/api-authentication#introduction</a>)</p>
+<h3 id="步驟-0-確認預設設定">步驟 0： 確認預設設定</h3>
+<p>確認 api guard 使用 token driver</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="c1">// config/auth.php
+</span><span class="c1"></span><span class="s1">&#39;guards&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+    <span class="s1">&#39;web&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;driver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;session&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;provider&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
+    <span class="p">],</span>
+
+    <span class="s1">&#39;api&#39;</span> <span class="o">=&gt;</span> <span class="p">[</span>
+        <span class="s1">&#39;driver&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;token&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;provider&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;users&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;hash&#39;</span> <span class="o">=&gt;</span> <span class="k">false</span><span class="p">,</span>
+    <span class="p">],</span>
+<span class="p">],</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="步驟-1-新增-api_token-欄位">步驟 1： 新增 api_token 欄位</h3>
+<p><code>php artisan make:migration add_api_token_to_users</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Database\Migrations\Migration</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Database\Schema\Blueprint</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Schema</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">AddApiTokenToUsers</span> <span class="k">extends</span> <span class="nx">Migration</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">up</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">Schema</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">string</span><span class="p">(</span><span class="s1">&#39;api_token&#39;</span><span class="p">,</span> <span class="mi">60</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="na">unique</span><span class="p">()</span>
+                <span class="o">-&gt;</span><span class="na">nullable</span><span class="p">()</span>
+                <span class="o">-&gt;</span><span class="na">default</span><span class="p">(</span><span class="k">null</span><span class="p">)</span>
+                <span class="o">-&gt;</span><span class="na">after</span><span class="p">(</span><span class="s1">&#39;password&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">down</span><span class="p">()</span>
+    <span class="p">{</span>
+        <span class="nx">Schema</span><span class="o">::</span><span class="na">table</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Blueprint</span> <span class="nv">$table</span><span class="p">)</span> <span class="p">{</span>
+            <span class="nv">$table</span><span class="o">-&gt;</span><span class="na">dropColumn</span><span class="p">(</span><span class="s1">&#39;api_token&#39;</span><span class="p">);</span>
+        <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p><code>php artisan migrate</code></p>
+<h3 id="步驟-2於登入時產生-api-token">步驟 2：於登入時產生 api token</h3>
+<p>註冊 login listener</p>
+<p><code>php artisan make:listener SuccessLogin</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="c1">// app/Listeners/SuccessLogin.php
+</span><span class="c1"></span>
+<span class="k">namespace</span> <span class="nx">App\Listeners</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Contracts\Queue\ShouldQueue</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Queue\InteractsWithQueue</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Facades\Auth</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Support\Str</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">SuccessLogin</span>
+<span class="p">{</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">handle</span><span class="p">(</span><span class="nv">$event</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$user</span> <span class="o">=</span> <span class="nx">Auth</span><span class="o">::</span><span class="na">user</span><span class="p">();</span>
+        <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">api_token</span> <span class="o">=</span> <span class="nx">Str</span><span class="o">::</span><span class="na">random</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+        <span class="nv">$user</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>於 <code>EventServiceProvider</code> 加入 listener</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="c1">// app/Providers/EventServiceProvider.php
+</span><span class="c1"></span>
+<span class="k">namespace</span> <span class="nx">App\Providers</span><span class="p">;</span>
+
+<span class="c1">// ...
+</span><span class="c1"></span><span class="k">use</span> <span class="nx">App\Listeners\SuccessLogin</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Auth\Events\Login</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">EventServiceProvider</span> <span class="k">extends</span> <span class="nx">ServiceProvider</span>
+<span class="p">{</span>
+    <span class="k">protected</span> <span class="nv">$listen</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="c1">// ...
+</span><span class="c1"></span>        <span class="nx">Login</span><span class="o">::</span><span class="na">class</span> <span class="o">=&gt;</span> <span class="p">[</span>
+            <span class="nx">SuccessLogin</span><span class="o">::</span><span class="na">class</span><span class="p">,</span>
+        <span class="p">]</span>
+    <span class="p">];</span>
+<span class="p">}</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="步驟-3使-axios-預設帶入-token">步驟 3：使 axios 預設帶入 token</h3>
+<p>將 api token 與 csrf token 放到 meta tag 上</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;csrf-token&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;{{ csrf_token() }}&#34;</span><span class="p">&gt;</span>
+@auth
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;api-token&#34;</span> <span class="na">content</span><span class="o">=</span><span class="s">&#34;{{ Auth::user()-&gt;api_token }}&#34;</span><span class="p">&gt;</span>
+@endauth
+</code></pre></td></tr></table>
+</div>
+</div><p>將 api token 與 csrf token 設定到 axios 的 header</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// bootstrap.js
+</span><span class="c1"></span>
+<span class="nb">window</span><span class="p">.</span><span class="nx">axios</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;axios&#39;</span><span class="p">);</span>
+
+<span class="nb">window</span><span class="p">.</span><span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">common</span><span class="p">[</span><span class="s1">&#39;X-Requested-With&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;XMLHttpRequest&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">csrfMetaTag</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;meta[name=&#34;csrf-token&#34;]&#39;</span><span class="p">);</span>
+<span class="nx">csrfMetaTag</span>
+  <span class="o">?</span> <span class="nb">window</span><span class="p">.</span><span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">common</span><span class="p">[</span><span class="s1">&#39;X-CSRF-TOKEN&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nx">csrfMetaTag</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">)</span>
+  <span class="o">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;csrf token not found&#39;</span><span class="p">);</span>
+
+<span class="kr">const</span> <span class="nx">apiMetaTag</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">querySelector</span><span class="p">(</span><span class="s1">&#39;meta[name=&#34;api-token&#34;]&#39;</span><span class="p">);</span>
+<span class="nx">apiMetaTag</span>
+  <span class="o">?</span> <span class="nb">window</span><span class="p">.</span><span class="nx">axios</span><span class="p">.</span><span class="nx">defaults</span><span class="p">.</span><span class="nx">headers</span><span class="p">.</span><span class="nx">common</span><span class="p">[</span><span class="s1">&#39;Authorization&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&#34;Bearer &#34;</span> <span class="o">+</span> <span class="nx">apiMetaTag</span><span class="p">.</span><span class="nx">getAttribute</span><span class="p">(</span><span class="s1">&#39;content&#39;</span><span class="p">)</span>
+  <span class="o">:</span> <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;api token not found&#39;</span><span class="p">);</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="步驟-4完成">步驟 4：完成</h3>
+<p>確認 routes/api.php 預設內容</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span> <span class="c1">// routes/api.php
+</span><span class="c1"></span><span class="nx">Route</span><span class="o">::</span><span class="na">middleware</span><span class="p">(</span><span class="s1">&#39;auth:api&#39;</span><span class="p">)</span><span class="o">-&gt;</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;/user&#39;</span><span class="p">,</span> <span class="k">function</span> <span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">();</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>進行測試：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// app.js
+</span><span class="c1"></span><span class="nx">axios</span><span class="p">.</span><span class="nx">get</span><span class="p">(</span><span class="s1">&#39;http://127.0.0.1:8000/api/user&#39;</span><span class="p">).</span><span class="nx">then</span><span class="p">(</span><span class="nx">res</span> <span class="p">=&gt;</span> <span class="p">{</span>
+  <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">res</span><span class="p">);</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>重新登入應該就可以看到 log 出 axios 回傳的 user data 了解</p>
+<hr>
+<h2 id="結語">結語</h2>
+<p>上述的步驟 2 和 3 的方式是參考自 <a href="https://caloskao.org/laravel-api-token-usage/" target="_blank" rel="noopener noreffer">這篇文章</a> 的做法</p>
+<p>雖然這樣的做法還是將 api token 放到 meta tag 上了，但每次登入都會進行 token 的代換</p>
+<p>已經可以算是最簡單的方式</p>
+<p>如果要再更嚴謹的話，應該是要建立一個 controller 更新 token</p>
+<p>再將 token 傳回給前端的 js 所用，如：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+
+<span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">Illuminate\Support\Str</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">Illuminate\Http\Request</span><span class="p">;</span>
+
+<span class="k">class</span> <span class="nc">ApiTokenController</span> <span class="k">extends</span> <span class="nx">Controller</span>
+<span class="p">{</span>
+    <span class="sd">/**
+</span><span class="sd">     * Update the authenticated user&#39;s API token.
+</span><span class="sd">     *
+</span><span class="sd">     * @param  \Illuminate\Http\Request  $request
+</span><span class="sd">     * @return array
+</span><span class="sd">     */</span>
+    <span class="k">public</span> <span class="k">function</span> <span class="nf">update</span><span class="p">(</span><span class="nx">Request</span> <span class="nv">$request</span><span class="p">)</span>
+    <span class="p">{</span>
+        <span class="nv">$token</span> <span class="o">=</span> <span class="nx">Str</span><span class="o">::</span><span class="na">random</span><span class="p">(</span><span class="mi">60</span><span class="p">);</span>
+
+        <span class="nv">$request</span><span class="o">-&gt;</span><span class="na">user</span><span class="p">()</span><span class="o">-&gt;</span><span class="na">forceFill</span><span class="p">([</span>
+            <span class="s1">&#39;api_token&#39;</span> <span class="o">=&gt;</span> <span class="nx">hash</span><span class="p">(</span><span class="s1">&#39;sha256&#39;</span><span class="p">,</span> <span class="nv">$token</span><span class="p">),</span> <span class="c1">// 這邊用 hash 的話，config/auth.php 的 hash 設定就要改成 true
+</span><span class="c1"></span>        <span class="p">])</span><span class="o">-&gt;</span><span class="na">save</span><span class="p">();</span>
+
+        <span class="k">return</span> <span class="p">[</span><span class="s1">&#39;token&#39;</span> <span class="o">=&gt;</span> <span class="nv">$token</span><span class="p">];</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>但就如前面所說，token驗證的方式實在有很多種方式，</p>
+<p>只要了解其核心邏輯，開發者其實可以自行決定要怎麼做，</p>
+<p>希望這篇文章有幫助到和我遇到一樣問題的人</p>
+<hr>
+<h2 id="參考資料">參考資料</h2>
+<ul>
+<li>
+<p><a href="https://learnku.com/articles/11006/detailed-explanation-of-laravels-own-api-guard-drive-token">https://learnku.com/articles/11006/detailed-explanation-of-laravels-own-api-guard-drive-token</a></p>
+</li>
+<li>
+<p><a href="https://learnku.com/docs/laravel/5.8/api-authentication/3952">https://learnku.com/docs/laravel/5.8/api-authentication/3952</a></p>
+</li>
+<li>
+<p><a href="https://laravel.com/docs/5.8/api-authentication#introduction">https://laravel.com/docs/5.8/api-authentication#introduction</a></p>
+</li>
+<li>
+<p><a href="https://caloskao.org/laravel-api-token-usage/">https://caloskao.org/laravel-api-token-usage/</a></p>
+</li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-11-14&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/6af959976601476480ab2cb3c820b1bd7e16bb1f" target="_blank" title="commit by zang(myginnygo@gmail.com) 6af959976601476480ab2cb3c820b1bd7e16bb1f: add blog laravel api authentication">
+                                    <i class="fas fa-hashtag fa-fw"></i>6af9599</a></span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/20201114-laravel-api-authentication/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://hdsbook.github.io/20201114-laravel-api-authentication/" data-title="Laravel api authentication" data-hashtags="laravel"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://hdsbook.github.io/20201114-laravel-api-authentication/" data-hashtag="laravel"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://hdsbook.github.io/20201114-laravel-api-authentication/" data-title="Laravel api authentication"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://hdsbook.github.io/20201114-laravel-api-authentication/" data-title="Laravel api authentication"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://hdsbook.github.io/20201114-laravel-api-authentication/" data-title="Laravel api authentication" data-image="laravel-authentication.svg"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/laravel/">laravel</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/20201102-laravel-model-naming-convention/" class="prev" rel="prev" title="Laravel Model 命名慣例"><i class="fas fa-angle-left fa-fw"></i>Laravel Model 命名慣例</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.71.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://hd-zang.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"search":{"algoliaAppID":"X5YKLHNDL4","algoliaIndex":"hdsbook.github.io","algoliaSearchKey":"99cf20d2ad0fd1adab76bab604593196","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-169190961-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-169190961-1" async></script></body>
+</html>
