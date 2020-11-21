@@ -357,7 +357,7 @@ axios.get('http://127.0.0.1:8000/api/user').then(res => {
 
 如果要再更嚴謹的話，應該是要建立一個 controller 更新 token
 
-再將 token 傳回給前端的 js 所用，如：
+再將 token 傳回給前端框架使用，或是存到 window.localStorage
 
 ```php
 <?php
