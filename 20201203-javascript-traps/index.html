@@ -33,7 +33,7 @@
                             "url": "https:\/\/hdsbook.github.io\/images\/Apple-Devices-Preview.png",
                             "width":  3200 ,
                             "height":  2048 
-                        }],"genre": "posts","wordcount":  664 ,
+                        }],"genre": "posts","wordcount":  838 ,
         "url": "https:\/\/hdsbook.github.io\/20201203-javascript-traps\/","datePublished": "2020-12-03T20:31:21+08:00","dateModified": "2020-12-03T20:31:21+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
             "@type": "Organization",
             "name": "xxxx","logo": {
@@ -115,7 +115,7 @@
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single post"><h1 class="single-title animated flipInX">Javascript 的陷阱</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-03">2020-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;664 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-03">2020-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;838 words&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
         </div><div class="featured-image"><img
         class="lazyload"
@@ -135,11 +135,12 @@
     <li><a href="#parseint">parseInt</a>
       <ul>
         <li><a href="#parseint函式說明">parseInt：函式說明</a></li>
-        <li><a href="#parseint問題1-傳入0為基底">parseInt：問題1: 傳入0為基底</a></li>
+        <li><a href="#parseint問題1-傳入0為基數">parseInt：問題1: 傳入0為基數</a></li>
         <li><a href="#parseint問題2-不合法的表示法會回傳-nan">parseInt：問題2: 不合法的表示法會回傳 NAN</a></li>
-        <li><a href="#parseint問題3-基底的上限">parseInt：問題3: 基底的上限</a></li>
+        <li><a href="#parseint問題3-基數的上下限">parseInt：問題3: 基數的上下限</a></li>
       </ul>
     </li>
+    <li><a href="#parseint-延伸問題">parseInt 延伸問題</a></li>
     <li><a href="#mathmin--mathmax">Math.min() &gt; Math.max()</a></li>
     <li><a href="#參考資料">參考資料：</a></li>
   </ul>
@@ -180,26 +181,55 @@
 </span></code></pre></td></tr></table>
 </div>
 </div><h3 id="parseint函式說明">parseInt：函式說明</h3>
-<p>parseInt 的運作方式是先將第一個參數轉為字串</p>
-<p>然後以第二個參數為基底解析第一個參數</p>
-<p>回傳第一個參數十進位的值，如：</p>
+<p>parseInt 的第一個參數為數字或字串，第二個參數為 radix 基數</p>
+<p>其運作方式是先將第一個參數轉為字串</p>
+<p>然後以第二個參數為基數解析第一個參數</p>
+<p>回傳第一個參數的十進位的值，如：</p>
 <p>parseInt(101, 2) = parseInt(&ldquo;101&rdquo;, 2) = 1 * 2^2 + 0 * 2^1 + 1 * 2^0 = 4 + 0 + 1 = 5</p>
 <p>parseInt(&lsquo;2F&rsquo;, 16) = 2 * 16^1 + 15 * 16^0 = 32 + 15 = 47</p>
-<h3 id="parseint問題1-傳入0為基底">parseInt：問題1: 傳入0為基底</h3>
-<p>如果第二個參數給的是 0，則其效果同傳入預設值 10</p>
+<h3 id="parseint問題1-傳入0為基數">parseInt：問題1: 傳入0為基數</h3>
+<p>如果 第二個參數(radix) 給的是 0，則其效果同傳入預設值 10</p>
 <p>所以 parseInt(3, 0) 會等於 parseInt(3, 10) ，結果自然就是 3 了</p>
-<p>但不管這個函式的預設值為何，使用這個函式建議還是加上第二個參數為 10</p>
+<p>然而 radix 的預設值可能會因為執行的情況而有不是10的情況</p>
+<p>所以使用這個函式時建議還是明確加上第二個參數</p>
 <h3 id="parseint問題2-不合法的表示法會回傳-nan">parseInt：問題2: 不合法的表示法會回傳 NAN</h3>
 <p>parseInt(3, 2) 是 NAN 的原因是，在 2 進制表示法中，只會有 0 和 1 才對</p>
 <p>如：1011010，意即，2進制的表示法中，不可能出現大於等於2的數字</p>
 <p>所以 parseInt(3, 2) 因為出現了3，所以結果就是 NAN 了</p>
 <p>同理 parseInt(5, 5) 也會是 NAN，</p>
 <p>因為 5進制的表示法應該是如：402314，會出現的最大數字是4</p>
-<h3 id="parseint問題3-基底的上限">parseInt：問題3: 基底的上限</h3>
-<p>第二個參數基底是有上限的，就是不能大於36</p>
-<p>所以不管第一個參數是什麼，只要第二個參數大於等於37</p>
-<p>那回傳值一定是 NAN</p>
-<h2 id="mathmin--mathmax">Math.min() &gt; Math.max()</h2>
+<h3 id="parseint問題3-基數的上下限">parseInt：問題3: 基數的上下限</h3>
+<p>第二個參數radix是有上限的，就是不能大於36，也不能小於 2 (0除外)</p>
+<p>當傳入基數大於等於37，或小於2時，回傳NaN</p>
+<h2 id="parseint-延伸問題">parseInt 延伸問題</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">].</span><span class="nx">map</span><span class="p">(</span><span class="nb">parseInt</span><span class="p">);</span> <span class="c1">// [1, NaN, NaN]
+</span></code></pre></td></tr></table>
+</div>
+</div><p>先了解一下 array.map 的參數：</p>
+<p><code>array.map(callback(currentValue, index, array), this)</code></p>
+<ul>
+<li>currentValue: 各陣列 item 值，以上例來說，依序會是 1, 2, 3</li>
+<li>index: 各陣列 item 索引，以上例來說，依序會是 0, 1, 2</li>
+</ul>
+<p>故該程式碼的執行就會是如下：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nb">parseInt</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span> <span class="c1">// 同 parseInt(1, 10) == 1
+</span><span class="c1"></span><span class="nb">parseInt</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span> <span class="c1">// radix &lt; 2 =&gt; NaN
+</span><span class="c1"></span><span class="nb">parseInt</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span> <span class="c1">// 2 進制的表示法不會有大於等於2的數字 =&gt; NaN
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id="mathmin--mathmax">Math.min() &gt; Math.max()</h2>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre class="chroma"><code><span class="lnt">1
