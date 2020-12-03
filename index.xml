@@ -6,6 +6,15 @@
         <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 02 Aug 2019 11:04:49 &#43;0800</lastBuildDate>
             <atom:link href="https://hdsbook.github.io/index.xml" rel="self" type="application/rss+xml" />
         <item>
+    <title>Javascript 的陷阱</title>
+    <link>https://hdsbook.github.io/20201203-javascript-traps/</link>
+    <pubDate>Thu, 03 Dec 2020 20:31:21 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20201203-javascript-traps/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/feature.svg" referrerpolicy="no-referrer">
+            </div>魔鬼藏在細節中]]></description>
+</item><item>
     <title>Laravel api authentication</title>
     <link>https://hdsbook.github.io/20201114-laravel-api-authentication/</link>
     <pubDate>Sat, 14 Nov 2020 13:20:04 &#43;0800</pubDate>
@@ -82,14 +91,5 @@
     <author>Author</author>
     <guid>https://hdsbook.github.io/20200715-markdown-editor-by-ace-and-showdown/</guid>
     <description><![CDATA[<p>ace-code-editor, showdown, github-markdown-css</p>]]></description>
-</item><item>
-    <title>Hugo LoveIt admonition</title>
-    <link>https://hdsbook.github.io/0-loveit-admonition-note/</link>
-    <pubDate>Wed, 01 Jul 2020 18:00:01 &#43;0800</pubDate>
-    <author>Author</author>
-    <guid>https://hdsbook.github.io/0-loveit-admonition-note/</guid>
-    <description><![CDATA[<div class="featured-image">
-                <img src="/shortcode.jpg" referrerpolicy="no-referrer">
-            </div>好用的提示框 shortcode]]></description>
 </item></channel>
 </rss>

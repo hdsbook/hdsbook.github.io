@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Javascript 的陷阱 - Zang</title><meta name="Description" content="魔鬼藏在細節中"><meta property="og:title" content="Javascript 的陷阱" />
+<meta property="og:description" content="魔鬼藏在細節中" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hdsbook.github.io/20201203-javascript-traps/" />
+<meta property="og:image" content="https://hdsbook.github.io/20201203-javascript-traps/feature.svg"/>
+<meta property="article:published_time" content="2020-12-03T20:31:21+08:00" />
+<meta property="article:modified_time" content="2020-12-03T20:31:21+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hdsbook.github.io/20201203-javascript-traps/feature.svg"/>
+<meta name="twitter:title" content="Javascript 的陷阱"/>
+<meta name="twitter:description" content="魔鬼藏在細節中"/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hdsbook.github.io/20201203-javascript-traps/" /><link rel="prev" href="https://hdsbook.github.io/20201114-laravel-api-authentication/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="ZOjd0g9xq-jmtsyELpljn780B81RB5m53yEBI1Jcj78" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Javascript 的陷阱",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hdsbook.github.io\/20201203-javascript-traps\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hdsbook.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","wordcount":  664 ,
+        "url": "https:\/\/hdsbook.github.io\/20201203-javascript-traps\/","datePublished": "2020-12-03T20:31:21+08:00","dateModified": "2020-12-03T20:31:21+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hdsbook.github.io\/images\/author.jpg",
+                    "width":  335 ,
+                    "height":  335 
+                }},"author": {
+                "@type": "Person",
+                "name": "Zang"
+            },"description": "魔鬼藏在細節中"
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single post"><h1 class="single-title animated flipInX">Javascript 的陷阱</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-12-03">2020-12-03</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;664 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="feature.svg"
+        data-srcset="/20201203-javascript-traps/feature.svg, feature.svg 1.5x, /20201203-javascript-traps/feature.svg 2x"
+        data-sizes="auto"
+        alt="/20201203-javascript-traps/feature.svg"
+        title="魔鬼藏在細節中" /></div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#01--02--03">0.1 + 0.2 != 0.3</a></li>
+    <li><a href="#parseint">parseInt</a>
+      <ul>
+        <li><a href="#parseint函式說明">parseInt：函式說明</a></li>
+        <li><a href="#parseint問題1-傳入0為基底">parseInt：問題1: 傳入0為基底</a></li>
+        <li><a href="#parseint問題2-不合法的表示法會回傳-nan">parseInt：問題2: 不合法的表示法會回傳 NAN</a></li>
+        <li><a href="#parseint問題3-基底的上限">parseInt：問題3: 基底的上限</a></li>
+      </ul>
+    </li>
+    <li><a href="#mathmin--mathmax">Math.min() &gt; Math.max()</a></li>
+    <li><a href="#參考資料">參考資料：</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>最近面試了幾間公司，才發現自己在 javascript 一些細節的基礎知識實在不夠扎實，實在汗顏</p>
+<p>所以此篇文章應該會陸續加入自己看過或遇到過的 javascript 坑，並大至簡單的說明其原因</p>
+<h2 id="01--02--03">0.1 + 0.2 != 0.3</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="mf">0.1</span> <span class="o">+</span> <span class="mf">0.2</span><span class="p">);</span> <span class="c1">// 0.30000000000000004
+</span></code></pre></td></tr></table>
+</div>
+</div><p>javascript 進行計算前需要先把浮點數轉化為二進位數</p>
+<p>但當 0.1 轉為二進制時，為 0.0001 1001 1001&hellip; 的無限循環小數</p>
+<p>而 javascript 浮點數計算最多支持到第52位小數</p>
+<p>捨去52位後的小數然後計算，計算結果再轉為10進位小數</p>
+<p>就得到了最後這個有誤差的結果了</p>
+<h2 id="parseint">parseInt</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nb">parseInt</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">10</span><span class="p">);</span> <span class="c1">// 3
+</span><span class="c1"></span><span class="nb">parseInt</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>  <span class="c1">// 3
+</span><span class="c1"></span><span class="nb">parseInt</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">8</span><span class="p">);</span>  <span class="c1">// 3
+</span><span class="c1"></span>
+<span class="nb">parseInt</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">);</span>  <span class="c1">// NAN
+</span><span class="c1"></span><span class="nb">parseInt</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">37</span><span class="p">);</span> <span class="c1">// NAN
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id="parseint函式說明">parseInt：函式說明</h3>
+<p>parseInt 的運作方式是先將第一個參數轉為字串</p>
+<p>然後以第二個參數為基底解析第一個參數</p>
+<p>回傳第一個參數十進位的值，如：</p>
+<p>parseInt(101, 2) = parseInt(&ldquo;101&rdquo;, 2) = 1 * 2^2 + 0 * 2^1 + 1 * 2^0 = 4 + 0 + 1 = 5</p>
+<p>parseInt(&lsquo;2F&rsquo;, 16) = 2 * 16^1 + 15 * 16^0 = 32 + 15 = 47</p>
+<h3 id="parseint問題1-傳入0為基底">parseInt：問題1: 傳入0為基底</h3>
+<p>如果第二個參數給的是 0，則其效果同傳入預設值 10</p>
+<p>所以 parseInt(3, 0) 會等於 parseInt(3, 10) ，結果自然就是 3 了</p>
+<p>但不管這個函式的預設值為何，使用這個函式建議還是加上第二個參數為 10</p>
+<h3 id="parseint問題2-不合法的表示法會回傳-nan">parseInt：問題2: 不合法的表示法會回傳 NAN</h3>
+<p>parseInt(3, 2) 是 NAN 的原因是，在 2 進制表示法中，只會有 0 和 1 才對</p>
+<p>如：1011010，意即，2進制的表示法中，不可能出現大於等於2的數字</p>
+<p>所以 parseInt(3, 2) 因為出現了3，所以結果就是 NAN 了</p>
+<p>同理 parseInt(5, 5) 也會是 NAN，</p>
+<p>因為 5進制的表示法應該是如：402314，會出現的最大數字是4</p>
+<h3 id="parseint問題3-基底的上限">parseInt：問題3: 基底的上限</h3>
+<p>第二個參數基底是有上限的，就是不能大於36</p>
+<p>所以不管第一個參數是什麼，只要第二個參數大於等於37</p>
+<p>那回傳值一定是 NAN</p>
+<h2 id="mathmin--mathmax">Math.min() &gt; Math.max()</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">()</span> <span class="o">&lt;</span> <span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">()</span> <span class="c1">// false
+</span><span class="c1"></span><span class="nb">Math</span><span class="p">.</span><span class="nx">min</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span>  <span class="c1">// true
+</span><span class="c1"></span><span class="nb">Math</span><span class="p">.</span><span class="nx">max</span><span class="p">()</span> <span class="o">&gt;</span> <span class="mi">0</span>  <span class="c1">// false
+</span></code></pre></td></tr></table>
+</div>
+</div><p>Math.max() 回傳 -Infinity</p>
+<p>Math.min() 回傳 Infinity</p>
+<h2 id="參考資料">參考資料：</h2>
+<ul>
+<li><a href="https://juejin.cn/post/6847902225872879630">https://juejin.cn/post/6847902225872879630</a></li>
+</ul></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-12-03</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/20201203-javascript-traps/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://hdsbook.github.io/20201203-javascript-traps/" data-title="Javascript 的陷阱"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://hdsbook.github.io/20201203-javascript-traps/"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://hdsbook.github.io/20201203-javascript-traps/" data-title="Javascript 的陷阱"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://hdsbook.github.io/20201203-javascript-traps/" data-title="Javascript 的陷阱"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://hdsbook.github.io/20201203-javascript-traps/" data-title="Javascript 的陷阱" data-image="feature.svg"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/20201114-laravel-api-authentication/" class="prev" rel="prev" title="Laravel api authentication"><i class="fas fa-angle-left fa-fw"></i>Laravel api authentication</a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.71.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2020</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://hd-zang.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"search":{"algoliaAppID":"X5YKLHNDL4","algoliaIndex":"hdsbook.github.io","algoliaSearchKey":"99cf20d2ad0fd1adab76bab604593196","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-169190961-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-169190961-1" async></script></body>
+</html>
