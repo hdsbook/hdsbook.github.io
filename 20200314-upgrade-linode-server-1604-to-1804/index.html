@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Upgrade Linode server from 16.04 LTS to 18.04 LTS - Zang</title><meta name="Description" content="About LoveIt Theme"><meta property="og:title" content="Upgrade Linode server from 16.04 LTS to 18.04 LTS" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hdsbook.github.io/20200314-upgrade-linode-server-1604-to-1804/" />
+<meta property="og:image" content="https://hdsbook.github.io/logo.png"/>
+<meta property="article:published_time" content="2020-03-14T10:29:34+08:00" />
+<meta property="article:modified_time" content="2020-03-14T10:29:34+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hdsbook.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Upgrade Linode server from 16.04 LTS to 18.04 LTS"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hdsbook.github.io/20200314-upgrade-linode-server-1604-to-1804/" /><link rel="prev" href="https://hdsbook.github.io/20200228-laravel-mews-captcha/" /><link rel="next" href="https://hdsbook.github.io/20200314-docker-get-started/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="ZOjd0g9xq-jmtsyELpljn780B81RB5m53yEBI1Jcj78" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Upgrade Linode server from 16.04 LTS to 18.04 LTS",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hdsbook.github.io\/20200314-upgrade-linode-server-1604-to-1804\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hdsbook.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "linux","wordcount":  1271 ,
+        "url": "https:\/\/hdsbook.github.io\/20200314-upgrade-linode-server-1604-to-1804\/","datePublished": "2020-03-14T10:29:34+08:00","dateModified": "2020-03-14T10:29:34+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hdsbook.github.io\/images\/author.jpg",
+                    "width":  335 ,
+                    "height":  335 
+                }},"author": {
+                "@type": "Person",
+                "name": "Zang"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single post"><h1 class="single-title animated flipInX">Upgrade Linode server from 16.04 LTS to 18.04 LTS</h1><h2 class="single-subtitle">Ubuntu 18.04 (Bionic Beaver)</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2020-03-14">2020-03-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1271 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#step1-備分重要資料"><strong>Step1: 備分重要資料</strong></a>
+      <ul>
+        <li><a href="#備份mysql資料庫"><strong>備份mysql資料庫</strong></a></li>
+        <li><a href="#備份重要設定檔資料夾"><strong>備份重要設定檔資料夾</strong></a></li>
+      </ul>
+    </li>
+    <li><a href="#step2-備份你的遠端主機"><strong>Step2: 備份你的遠端主機</strong></a></li>
+    <li><a href="#step3-安裝-update-manager-core"><strong>Step3: 安裝 update-manager-core</strong></a></li>
+    <li><a href="#step4-編輯etcupdate-managerrelease-upgrades"><strong>Step4: 編輯 /etc/update-manager/release-upgrades</strong></a></li>
+    <li><a href="#step5-開始更新"><strong>Step5: 開始更新</strong></a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>本篇紀錄如何更新linode主機的版本</p>
+<p>小弟在幾年前向 <a href="https://www.linode.com/" target="_blank" rel="noopener noreffer">linode</a> 租了一台主機，作業系統為 Ubuntu 16.04 (Xenial Xerus)</p>
+<p>經過這些年，Ubuntu已經更新到 Ubuntu 18.04 (Bionic Beaver)</p>
+<p>16.04 LTS 的版本支援到 2021年4月</p>
+<p>18.04 LTS 支援到 2023年4月</p>
+<p>LTS 就是 <strong>Long-term support</strong> 代表長期支援</p>
+<p>今年是2020年，再一年就到2021了，所以想說就來升級一下</p>
+<h2 id="step1-備分重要資料"><strong>Step1: 備分重要資料</strong></h2>
+<p>先將你重要的資料庫、檔案備份到本機端，以下提供可能會用到的指令</p>
+<h3 id="備份mysql資料庫"><strong>備份mysql資料庫</strong></h3>
+<p>連線到你的主機，dump mysql 資料庫</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">ssh root@你的.IP.位址
+mysqldump -u root -p 資料庫名稱 &gt; /var/www/mysql_backups/資料庫名稱_bak.sql
+</code></pre></td></tr></table>
+</div>
+</div><p>dump 出資料庫後，備份到本機</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">scp root@你的.IP.位址:/var/www/mysql_backups/資料庫名稱_bak.sql /Users/你的本機路逕/資料庫名稱_bak.sql
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="備份重要設定檔資料夾"><strong>備份重要設定檔資料夾</strong></h3>
+<p>一些你怕更新後可能設定會跑掉的設定檔，也先拉到本機來</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">scp -r root@你的.IP.位址:/etc/你要備份的重要資料夾位置 /Users/你的本機路逕
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="step2-備份你的遠端主機"><strong>Step2: 備份你的遠端主機</strong></h2>
+<p><a href="https://www.linode.com/docs/platform/linode-backup-service#take-a-manual-snapshot" target="_blank" rel="noopener noreffer">take a manual snapshot</a></p>
+<p>這個步驟需要啟用Linode的backup，需要每個月多繳一點錢，大概是你的月租費的四分之一</p>
+<p>但是備份的好處就是，弄壞了就restore，可以在很短的時間內回到你的上一次備份狀態</p>
+<h2 id="step3-安裝-update-manager-core"><strong>Step3: 安裝 update-manager-core</strong></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">apt install update-manager-core
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="step4-編輯etcupdate-managerrelease-upgrades"><strong>Step4: 編輯 /etc/update-manager/release-upgrades</strong></h2>
+<p>確認此檔案中的Prompt有被設定為lts，等一下的更新就會自動去找最新的LTS版本</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">Prompt=lts
+</code></pre></td></tr></table>
+</div>
+</div><h2 id="step5-開始更新"><strong>Step5: 開始更新</strong></h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">do-release-upgrade
+</code></pre></td></tr></table>
+</div>
+</div><p>中斷點1：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">No valid mirror found
+
+While scanning your repository information no mirror entry for the
+upgrade was found. This can happen if you run an internal mirror or
+if the mirror information is out of date.
+
+Do you want to rewrite your &#39;sources.list&#39; file anyway? If you choose
+&#39;Yes&#39; here it will update all &#39;xenial&#39; to &#39;bionic&#39; entries.
+If you select &#39;No&#39; the upgrade will cancel.
+
+Continue [yN] y
+</code></pre></td></tr></table>
+</div>
+</div><p>輸入：y</p>
+<p>中斷點2：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">3 installed packages are no longer supported by Canonical. You can
+still get support from the community.
+
+3 packages are going to be removed. 113 new packages are going to be
+installed. 448 packages are going to be upgraded.
+
+You have to download a total of 1,150 M. This download will take
+about 3 minutes with your connection.
+
+Installing the upgrade can take several hours. Once the download has
+finished, the process cannot be canceled.
+
+ Continue [yN]  Details [d]y
+</code></pre></td></tr></table>
+</div>
+</div><p>輸入：y</p>
+<p>中斷點3：<strong>Configuring openssh-server</strong></p>
+<p>直接ENTER 選擇預設的 keep the local version currently installed</p>
+<p>中斷點N：詢問你要不要重新配置apache、mysql…如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-go" data-lang="go"><span class="nx">Configuration</span> <span class="nx">file</span> <span class="err">&#39;</span><span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">apache2</span><span class="o">/</span><span class="nx">apache2</span><span class="p">.</span><span class="nx">conf</span><span class="err">&#39;</span>
+ <span class="o">==</span><span class="p">&gt;</span> <span class="nf">Modified</span> <span class="p">(</span><span class="nx">by</span> <span class="nx">you</span> <span class="nx">or</span> <span class="nx">by</span> <span class="nx">a</span> <span class="nx">script</span><span class="p">)</span> <span class="nx">since</span> <span class="nx">installation</span><span class="p">.</span>
+ <span class="o">==</span><span class="p">&gt;</span> <span class="nx">Package</span> <span class="nx">distributor</span> <span class="nx">has</span> <span class="nx">shipped</span> <span class="nx">an</span> <span class="nx">updated</span> <span class="nx">version</span><span class="p">.</span>
+   <span class="nx">What</span> <span class="nx">would</span> <span class="nx">you</span> <span class="nx">like</span> <span class="nx">to</span> <span class="nx">do</span> <span class="nx">about</span> <span class="nx">it</span> <span class="err">?</span>  <span class="nx">Your</span> <span class="nx">options</span> <span class="nx">are</span><span class="p">:</span>
+    <span class="nx">Y</span> <span class="nx">or</span> <span class="nx">I</span>  <span class="p">:</span> <span class="nx">install</span> <span class="nx">the</span> <span class="kn">package</span> <span class="nx">maintainer</span><span class="err">&#39;</span><span class="nx">s</span> <span class="nx">version</span>
+    <span class="nx">N</span> <span class="nx">or</span> <span class="nx">O</span>  <span class="p">:</span> <span class="nx">keep</span> <span class="nx">your</span> <span class="nx">currently</span><span class="o">-</span><span class="nx">installed</span> <span class="nx">version</span>
+      <span class="nx">D</span>     <span class="p">:</span> <span class="nx">show</span> <span class="nx">the</span> <span class="nx">differences</span> <span class="nx">between</span> <span class="nx">the</span> <span class="nx">versions</span>
+      <span class="nx">Z</span>     <span class="p">:</span> <span class="nx">start</span> <span class="nx">a</span> <span class="nx">shell</span> <span class="nx">to</span> <span class="nx">examine</span> <span class="nx">the</span> <span class="nx">situation</span>
+ <span class="nx">The</span> <span class="k">default</span> <span class="nx">action</span> <span class="nx">is</span> <span class="nx">to</span> <span class="nx">keep</span> <span class="nx">your</span> <span class="nx">current</span> <span class="nx">version</span><span class="p">.</span>
+<span class="o">***</span> <span class="nx">apache2</span><span class="p">.</span><span class="nf">conf</span> <span class="p">(</span><span class="nx">Y</span><span class="o">/</span><span class="nx">I</span><span class="o">/</span><span class="nx">N</span><span class="o">/</span><span class="nx">O</span><span class="o">/</span><span class="nx">D</span><span class="o">/</span><span class="nx">Z</span><span class="p">)</span> <span class="p">[</span><span class="k">default</span><span class="p">=</span><span class="nx">N</span><span class="p">]</span> <span class="err">?</span> <span class="nx">n</span>
+
+<span class="o">...</span>
+
+<span class="nx">Configuration</span> <span class="nx">file</span> <span class="err">&#39;</span><span class="o">/</span><span class="nx">etc</span><span class="o">/</span><span class="nx">mysql</span><span class="o">/</span><span class="nx">mysql</span><span class="p">.</span><span class="nx">conf</span><span class="p">.</span><span class="nx">d</span><span class="o">/</span><span class="nx">mysqld</span><span class="p">.</span><span class="nx">cnf</span><span class="err">&#39;</span>
+ <span class="o">==</span><span class="p">&gt;</span> <span class="nf">Modified</span> <span class="p">(</span><span class="nx">by</span> <span class="nx">you</span> <span class="nx">or</span> <span class="nx">by</span> <span class="nx">a</span> <span class="nx">script</span><span class="p">)</span> <span class="nx">since</span> <span class="nx">installation</span><span class="p">.</span>
+ <span class="o">==</span><span class="p">&gt;</span> <span class="nx">Package</span> <span class="nx">distributor</span> <span class="nx">has</span> <span class="nx">shipped</span> <span class="nx">an</span> <span class="nx">updated</span> <span class="nx">version</span><span class="p">.</span>
+   <span class="nx">What</span> <span class="nx">would</span> <span class="nx">you</span> <span class="nx">like</span> <span class="nx">to</span> <span class="nx">do</span> <span class="nx">about</span> <span class="nx">it</span> <span class="err">?</span>  <span class="nx">Your</span> <span class="nx">options</span> <span class="nx">are</span><span class="p">:</span>
+    <span class="nx">Y</span> <span class="nx">or</span> <span class="nx">I</span>  <span class="p">:</span> <span class="nx">install</span> <span class="nx">the</span> <span class="kn">package</span> <span class="nx">maintainer</span><span class="err">&#39;</span><span class="nx">s</span> <span class="nx">version</span>
+    <span class="nx">N</span> <span class="nx">or</span> <span class="nx">O</span>  <span class="p">:</span> <span class="nx">keep</span> <span class="nx">your</span> <span class="nx">currently</span><span class="o">-</span><span class="nx">installed</span> <span class="nx">version</span>
+      <span class="nx">D</span>     <span class="p">:</span> <span class="nx">show</span> <span class="nx">the</span> <span class="nx">differences</span> <span class="nx">between</span> <span class="nx">the</span> <span class="nx">versions</span>
+      <span class="nx">Z</span>     <span class="p">:</span> <span class="nx">start</span> <span class="nx">a</span> <span class="nx">shell</span> <span class="nx">to</span> <span class="nx">examine</span> <span class="nx">the</span> <span class="nx">situation</span>
+ <span class="nx">The</span> <span class="k">default</span> <span class="nx">action</span> <span class="nx">is</span> <span class="nx">to</span> <span class="nx">keep</span> <span class="nx">your</span> <span class="nx">current</span> <span class="nx">version</span><span class="p">.</span>
+<span class="o">***</span> <span class="nx">mysqld</span><span class="p">.</span><span class="nf">cnf</span> <span class="p">(</span><span class="nx">Y</span><span class="o">/</span><span class="nx">I</span><span class="o">/</span><span class="nx">N</span><span class="o">/</span><span class="nx">O</span><span class="o">/</span><span class="nx">D</span><span class="o">/</span><span class="nx">Z</span><span class="p">)</span> <span class="p">[</span><span class="k">default</span><span class="p">=</span><span class="nx">N</span><span class="p">]</span> <span class="err">?</span> <span class="nx">n</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>諸如此類的問題一律選擇 N (預設)，才不會更新完後你的apache, mysql都要重新配置</p>
+<p>最後的中斷點：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">System upgrade is complete.
+
+Restart required
+
+To finish the upgrade, a restart is required.
+If you select &#39;y&#39; the system will be restarted.
+
+Continue [yN]
+
+</code></pre></td></tr></table>
+</div>
+</div><p>輸入：y</p>
+<p>server會自動重啟，重啟後再度ssh連線，輸入以下指令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">lsb_release -a
+
+</code></pre></td></tr></table>
+</div>
+</div><p>看到</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">No LSB modules are available.
+Distributor ID:	Ubuntu
+Description:	Ubuntu 18.04.4 LTS
+Release:	18.04
+Codename:	bionic
+</code></pre></td></tr></table>
+</div>
+</div><p>成功！重啟 apache 就完成啦！</p>
+<p>參考資料：<a href="https://www.linode.com/docs/security/upgrading/upgrade-to-ubuntu-18-04/" target="_blank" rel="noopener noreffer">https://www.linode.com/docs/security/upgrading/upgrade-to-ubuntu-18-04/</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-03-14</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/20200314-upgrade-linode-server-1604-to-1804/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://hdsbook.github.io/20200314-upgrade-linode-server-1604-to-1804/" data-title="Upgrade Linode server from 16.04 LTS to 18.04 LTS" data-hashtags="linux"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://hdsbook.github.io/20200314-upgrade-linode-server-1604-to-1804/" data-hashtag="linux"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://hdsbook.github.io/20200314-upgrade-linode-server-1604-to-1804/" data-title="Upgrade Linode server from 16.04 LTS to 18.04 LTS"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://hdsbook.github.io/20200314-upgrade-linode-server-1604-to-1804/" data-title="Upgrade Linode server from 16.04 LTS to 18.04 LTS"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://hdsbook.github.io/20200314-upgrade-linode-server-1604-to-1804/" data-title="Upgrade Linode server from 16.04 LTS to 18.04 LTS"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/linux/">linux</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/20200228-laravel-mews-captcha/" class="prev" rel="prev" title="Laravel 驗證碼套件"><i class="fas fa-angle-left fa-fw"></i>Laravel 驗證碼套件</a>
+            <a href="/20200314-docker-get-started/" class="next" rel="next" title="Docker get started">Docker get started<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.71.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://hd-zang.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"search":{"algoliaAppID":"X5YKLHNDL4","algoliaIndex":"hdsbook.github.io","algoliaSearchKey":"99cf20d2ad0fd1adab76bab604593196","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-169190961-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-169190961-1" async></script></body>
+</html>
