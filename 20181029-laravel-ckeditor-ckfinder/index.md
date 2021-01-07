@@ -3,7 +3,7 @@
 
 <!--more-->
 
-繼上一篇 [CKeditor部署](http://hdsbook.com/blog/7)
+繼上一篇 [CKeditor部署](https://hdsbook.github.io/20180918-laravel56-ckeditor/)
 
 我花了好一些時間研究CKeditor要如何上傳圖片到我的server
 

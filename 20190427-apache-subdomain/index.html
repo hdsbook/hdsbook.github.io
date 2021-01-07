@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>設定子網域 - Zang</title><meta name="Description" content="About LoveIt Theme"><meta property="og:title" content="設定子網域" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hdsbook.github.io/20190427-apache-subdomain/" />
+<meta property="og:image" content="https://hdsbook.github.io/logo.png"/>
+<meta property="article:published_time" content="2019-04-27T14:10:31+08:00" />
+<meta property="article:modified_time" content="2019-04-27T14:10:31+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hdsbook.github.io/logo.png"/>
+
+<meta name="twitter:title" content="設定子網域"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hdsbook.github.io/20190427-apache-subdomain/" /><link rel="prev" href="https://hdsbook.github.io/20190409-php-xdebug-vscode-mac/" /><link rel="next" href="https://hdsbook.github.io/0-loveit-admonition-note/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="ZOjd0g9xq-jmtsyELpljn780B81RB5m53yEBI1Jcj78" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "設定子網域",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hdsbook.github.io\/20190427-apache-subdomain\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hdsbook.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "apache","wordcount":  1030 ,
+        "url": "https:\/\/hdsbook.github.io\/20190427-apache-subdomain\/","datePublished": "2019-04-27T14:10:31+08:00","dateModified": "2019-04-27T14:10:31+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hdsbook.github.io\/images\/author.jpg",
+                    "width":  335 ,
+                    "height":  335 
+                }},"author": {
+                "@type": "Person",
+                "name": "Zang"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single post"><h1 class="single-title animated flipInX">設定子網域</h1><h2 class="single-subtitle">A record, CNAME record</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2019-04-27">2019-04-27</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;1030 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#什麼是子網域">什麼是子網域</a></li>
+        <li><a href="#如何設定子網域">如何設定子網域</a>
+          <ul>
+            <li><a href="#step-1-放上你的網站">Step 1. 放上你的網站</a></li>
+            <li><a href="#step-2-apache2conf">Step 2. apache2.conf</a></li>
+            <li><a href="#step-3-virtual-host">Step 3. virtual host</a></li>
+            <li><a href="#step-4-linode-托管設定">Step 4 Linode 托管設定</a></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>我的 server 是在 <a href="https://www.linode.com/" target="_blank" rel="noopener noreffer">Linode</a> 上租的</p>
+<p>網域名稱則是在 <a href="https://tw.godaddy.com/" target="_blank" rel="noopener noreffer">Goddady</a> 上註冊的</p>
+<p>雖然可以在 Goddady 上面做 domain name 對應 ip 的托管</p>
+<p>我選擇在 Linode 上托管我的網域名稱</p>
+<p>此篇文章分享的是在 Linode上設定子網域</p>
+<hr>
+<h3 id="什麼是子網域">什麼是子網域</h3>
+<p>什麼是子網域(subdomain)呢</p>
+<p>以小弟的網站來說，www.hdsbook.com</p>
+<p>.com 為第一層級網域名稱 Top Level Domain (TLD)</p>
+<p>hdsbook 為第二層級網域名稱 Second Level Domain (SLD)</p>
+<p>通常我們跟域名註冊商 (如Goddady) 註冊的就是這兩層 domain name</p>
+<p>而最前面的 www 就是 subdomain, 中文可以稱其為 (主/子網域)</p>
+<p>我們最常見的 <a href="http://www.google.com">www.google.com</a> (估狗首頁)，mail.google.com(信箱)，drive.google.com(雲端硬碟)…</p>
+<p>其實就是子網域的應用啦</p>
+<p>一個域名其實可以擁有很多個子網域(www, mail, drive&hellip;)，通常以 www 做為主網站</p>
+<hr>
+<p>所以呢，如果你有多個網站在經營，而這些網站可能都只是同一間公司的不同事業體</p>
+<p>則你可以選擇設定不同的子網域名稱，就不用多花錢註冊那麼多的網域名稱啦</p>
+<hr>
+<h3 id="如何設定子網域">如何設定子網域</h3>
+<p>那麼怎麼設定呢, 假設你的域名稱為 xxxx.com</p>
+<p>首先，在你的 server 上故好三件事</p>
+<h4 id="step-1-放上你的網站">Step 1. 放上你的網站</h4>
+<p>ex:</p>
+<p>/var/www/www.xxxx.com</p>
+<p>/var/www/test.xxxx.com</p>
+<h4 id="step-2-apache2conf">Step 2. apache2.conf</h4>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">&lt;Directory /var/www/www.xxxx.com/&gt;
+        AllowOverride AllRequire all granted
+&lt;/Directory&gt;
+
+&lt;Directory /var/www/test.xxxx.com/&gt;
+        AllowOverride AllRequire all granted
+&lt;/Directory&gt;
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="step-3-virtual-host">Step 3. virtual host</h4>
+<p>新增 <a href="http://www.xxxx.com.conf">www.xxxx.com.conf</a> 和 test.xxxx.com.conf, 內容格式如下</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># www.xxxx.com.conf
+&lt;VirtualHost *:80&gt;
+    DocumentRoot /var/www/www.xxxx.com/
+    ServerName www.xxxx.com
+&lt;/VirtualHost&gt;
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback"># test.xxxx.com.conf
+&lt;VirtualHost *:80&gt;
+    DocumentRoot /var/www/test.xxxx.com/
+    ServerName www.xxxx.com
+&lt;/VirtualHost&gt;
+</code></pre></td></tr></table>
+</div>
+</div><p>執行以下指令：</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">a2ensite www.xxxx.com.conf
+a2ensite test.xxxx.com.conf
+sudo service apache2 restart
+</code></pre></td></tr></table>
+</div>
+</div><h4 id="step-4-linode-托管設定">Step 4 Linode 托管設定</h4>
+<p>最後來到你的 Linode 做最後的 dns 托管設定：(登入後進入你租的server然後點選domains)</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="1.jpg"
+        data-srcset="/20190427-apache-subdomain/1.jpg, 1.jpg 1.5x, /20190427-apache-subdomain/1.jpg 2x"
+        data-sizes="auto"
+        alt="/20190427-apache-subdomain/1.jpg"
+        title="/20190427-apache-subdomain/1.jpg" /></p>
+<p>把 <a href="http://www.xxxx.com">www.xxxx.com</a> 和 test.xxxx.com 都加到 A record</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="2.jpg"
+        data-srcset="/20190427-apache-subdomain/2.jpg, 2.jpg 1.5x, /20190427-apache-subdomain/2.jpg 2x"
+        data-sizes="auto"
+        alt="/20190427-apache-subdomain/2.jpg"
+        title="/20190427-apache-subdomain/2.jpg" /></p>
+<p>然後你會看到你的子網域都被加到 a record</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="3.jpg"
+        data-srcset="/20190427-apache-subdomain/3.jpg, 3.jpg 1.5x, /20190427-apache-subdomain/3.jpg 2x"
+        data-sizes="auto"
+        alt="/20190427-apache-subdomain/3.jpg"
+        title="/20190427-apache-subdomain/3.jpg" /></p>
+<p>其實有些網站會教你非主網域 加 CNAME record</p>
+<p>不過其實是差不多的意思，只是 A record 是直接對應到 IP</p>
+<p>CNAME 則是先對應到其它dns，再對應到其對應的IP</p>
+<p>詳細差別可以看這篇文章：<a href="https://support.dnsimple.com/articles/differences-between-a-cname-alias-url/" target="_blank" rel="noopener noreffer">https://support.dnsimple.com/articles/differences-between-a-cname-alias-url/</a></p>
+<p>小弟兩個都嘗試過，其實都是有用的</p>
+<p>若你是要加 CNAME record，www.xxxx.com還是要先加到 A record，然後</p>
+<p>加 CNAME record 時 ，alias to 要填寫www.xxxx.com</p>
+<p><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="4.jpg"
+        data-srcset="/20190427-apache-subdomain/4.jpg, 4.jpg 1.5x, /20190427-apache-subdomain/4.jpg 2x"
+        data-sizes="auto"
+        alt="/20190427-apache-subdomain/4.jpg"
+        title="/20190427-apache-subdomain/4.jpg" /></p>
+<p>做完已上設定，最多大概等一小時，就可以用這兩個網址連到你的網站啦</p>
+<hr>
+<p>p.s. 其實 Goddady 就可以做子網域設定</p>
+<p>但是每次我在Linode做完子網域設定，等5分鍾就有了</p>
+<p>超有效率，不知道是不是跟 server 位置和他們的托管 server 距離有關係</p>
+<p>總之在 Goddady 設定完要等一到兩天，這種不安全感是滿討厭的</p>
+<p>所以自此我都是讓Linode托管我的 dns</p>
+<p>如果讀者也想租Linode server，可以選在日本或新加坡的主機</p>
+<p>感覺和台灣比較近連線速度也有差？(還是心裡作用)</p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2019-04-27</span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/20190427-apache-subdomain/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://hdsbook.github.io/20190427-apache-subdomain/" data-title="設定子網域" data-hashtags="apache"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://hdsbook.github.io/20190427-apache-subdomain/" data-hashtag="apache"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://hdsbook.github.io/20190427-apache-subdomain/" data-title="設定子網域"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://hdsbook.github.io/20190427-apache-subdomain/" data-title="設定子網域"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://hdsbook.github.io/20190427-apache-subdomain/" data-title="設定子網域"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/apache/">apache</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/20190409-php-xdebug-vscode-mac/" class="prev" rel="prev" title="Xdebug &#43; PHP &#43; Vscode on Mac"><i class="fas fa-angle-left fa-fw"></i>Xdebug &#43; PHP &#43; Vscode on Mac</a>
+            <a href="/0-loveit-admonition-note/" class="next" rel="next" title="Hugo LoveIt admonition">Hugo LoveIt admonition<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.71.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://hd-zang.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"search":{"algoliaAppID":"X5YKLHNDL4","algoliaIndex":"hdsbook.github.io","algoliaSearchKey":"99cf20d2ad0fd1adab76bab604593196","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-169190961-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-169190961-1" async></script></body>
+</html>

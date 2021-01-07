@@ -59,6 +59,11 @@
                     hreflang="en"
                     href="https://hdsbook.github.io/"
                     /></url><url>
+            <loc>https://hdsbook.github.io/tags/apache/</loc><lastmod>2019-04-27T14:10:31&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/20190427-apache-subdomain/</loc><lastmod>2019-04-27T14:10:31&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/20190409-php-xdebug-vscode-mac/</loc><lastmod>2019-04-09T22:29:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/20190316-psr2-coding-style-phpcs/</loc><lastmod>2019-03-16T21:10:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/20181030-facebook-like/</loc><lastmod>2018-10-30T23:22:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/tags/ckeditor/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://hdsbook.github.io/tags/ckfinder/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
             <loc>https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
