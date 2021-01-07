@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Laravel 5.6 CKeditor 部署 - Zang</title><meta name="Description" content="About LoveIt Theme"><meta property="og:title" content="Laravel 5.6 CKeditor 部署" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hdsbook.github.io/20180918-laravel56-ckeditor/" />
+<meta property="og:image" content="https://hdsbook.github.io/logo.png"/>
+<meta property="article:published_time" content="2018-09-18T23:03:59+08:00" />
+<meta property="article:modified_time" content="2021-01-06T20:48:00+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hdsbook.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Laravel 5.6 CKeditor 部署"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hdsbook.github.io/20180918-laravel56-ckeditor/" /><link rel="next" href="https://hdsbook.github.io/20180929-badges-in-selectpicker/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="ZOjd0g9xq-jmtsyELpljn780B81RB5m53yEBI1Jcj78" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Laravel 5.6 CKeditor 部署",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hdsbook.github.io\/20180918-laravel56-ckeditor\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hdsbook.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "javascript, ckeditor","wordcount":  769 ,
+        "url": "https:\/\/hdsbook.github.io\/20180918-laravel56-ckeditor\/","datePublished": "2018-09-18T23:03:59+08:00","dateModified": "2021-01-06T20:48:00+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hdsbook.github.io\/images\/author.jpg",
+                    "width":  335 ,
+                    "height":  335 
+                }},"author": {
+                "@type": "Person",
+                "name": "Zang"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single post"><h1 class="single-title animated flipInX">Laravel 5.6 CKeditor 部署</h1><h2 class="single-subtitle">codesnippet, markdown</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/laravelplugins/"><i class="far fa-folder fa-fw"></i>Laravel 套件</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2018-09-18">2018-09-18</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;769 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#step1-download-ckeditor"><strong>Step1: Download CKeditor</strong></a></li>
+        <li><a href="#step2-put-to-asset-folder"><strong>Step2: Put to asset folder</strong></a></li>
+        <li><a href="#step3-codesnippet-markdown"><strong>Step3: codesnippet, markdown</strong></a></li>
+        <li><a href="#step4-edit-config-file-as-follow"><strong>Step4: Edit config file as follow</strong></a></li>
+        <li><a href="#step5-link-css-js-to-layouts"><strong>Step5: Link css js to layouts</strong></a></li>
+        <li><a href="#step6-應用"><strong>Step6: 應用</strong></a></li>
+        <li><a href="#step-7-apply-codesnippet-css-style-to-front-page"><strong>Step 7: Apply codesnippet css style to front page</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>我在Laravel 5.6 部署 CKeditor，此篇僅做最基本快速部署的筆記</p>
+<h3 id="step1-download-ckeditor"><strong>Step1: Download CKeditor</strong></h3>
+<p>到 <a href="https://ckeditor.com/ckeditor-4/download/" target="_blank" rel="noopener noreffer">官方網站</a> 下載 Fullpage 的 CKeditor (with easy Image)</p>
+<hr>
+<p>20181029 更新:</p>
+<p>後來我發現easy Image是付費的功能，不付費會有時間和上傳圖片數量的限制</p>
+<p>所以建議還是一開始就不要勾選那個easy Image</p>
+<p>之後會有介紹透過CKFinder讓CKEditor有上傳圖片的功能</p>
+<hr>
+<h3 id="step2-put-to-asset-folder"><strong>Step2: Put to asset folder</strong></h3>
+<p>放到 laravel project 的 public 資料夾下 ( ex: public/plugins/ckeditor )</p>
+<h3 id="step3-codesnippet-markdown"><strong>Step3: codesnippet, markdown</strong></h3>
+<p>感覺未來我會希望我的 CKeditor 能有程式碼片段及支援 markdown 的功能</p>
+<p>於是我到官網另外下載了兩個plugins</p>
+<ol>
+<li>For codesnippet ( <a href="https://ckeditor.com/cke4/addon/codesnippet" target="_blank" rel="noopener noreffer">連結</a> )</li>
+<li>For markdown ( <a href="https://ckeditor.com/cke4/addon/markdown" target="_blank" rel="noopener noreffer">連結</a> )</li>
+</ol>
+<p>這兩個plugins下載完放到原 ckeditor 底下的 plugins 資料夾底下即可</p>
+<p>( i.e. public/plugins/ckeditor/plugins/ )</p>
+<h3 id="step4-edit-config-file-as-follow"><strong>Step4: Edit config file as follow</strong></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">CKEDITOR</span><span class="p">.</span><span class="nx">editorConfig</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">config</span> <span class="p">)</span> <span class="p">{</span>
+    <span class="nx">config</span><span class="p">.</span><span class="nx">tabSpaces</span> <span class="o">=</span> <span class="mi">4</span><span class="p">;</span>
+    <span class="nx">config</span><span class="p">.</span><span class="nx">extraPlugins</span><span class="o">=</span> <span class="s1">&#39;easyimage,codesnippet,markdown&#39;</span><span class="p">;</span>
+    <span class="nx">config</span><span class="p">.</span><span class="nx">codeSnippet_theme</span> <span class="o">=</span> <span class="s2">&#34;monokai&#34;</span><span class="p">;</span>
+<span class="p">};</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>第一行是使 CKeditor 可以吃 tab spaces，並且指定為四個空格，才不會想寫一些程式碼片段時按下 tab時，cursor focus 到下一個欄位或是button</p>
+<p>第二行是使 CKeditor 載入一些我們額外下載的套件: codesnippet, markdown</p>
+<p>最後第三行只是要設定我的 css style of codesnippet 為 monokai</p>
+<h3 id="step5-link-css-js-to-layouts"><strong>Step5: Link css js to layouts</strong></h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ asset(&#39;plugins/ckeditor/ckeditor.js&#39;) }}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ asset(&#39;plugins/ckeditor/config.js&#39;) }}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ asset(&#39;plugins/ckeditor/adapters/jquery.js&#39;) }}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span> {{-- ckeditor jquery adapter  --}}
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ asset(&#39;plugins/ckeditor/plugins/codesnippet/lib/highlight/highlight.pack.js&#39;) }}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+
+{{-- CKeditor codesnippet monokai css --}}
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&#34;stylesheet&#34;</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;{{ asset(&#39;plugins/ckeditor/plugins/codesnippet/lib/highlight/styles/monokai.css&#39;) }}&#34;</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="step6-應用"><strong>Step6: 應用</strong></h3>
+<p>把 input 變成 ckeditor 的方法大概有以下兩種</p>
+<ol>
+<li>
+<p>基本款: 此方法的參數只能為 id</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">CKEDITOR</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;editor_id&#39;</span><span class="p">);</span>
+<span class="c1">// 對應的input需要設定對應的 id &lt;input id=&#34;editor_id&#34; /&gt;
+</span><span class="c1"></span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>CKeditor jquery adapter: 若想用jquery的方式抓取特定input，那麼上一步驟須確實引入 ckeditor jquery adapter</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;.editor_class&#39;</span><span class="p">).</span><span class="nx">ckeditor</span><span class="p">();</span>
+<span class="c1">// &lt;input class=&#39;editor_class&#39; /&gt;
+</span><span class="c1"></span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<p>然後欲存取ckeditor的value，用 jquery 的 .val() 即可</p>
+<p>至少我這樣取好像還沒有出過問題，不像另一款editor tinymce 還要用getContent()</p>
+<h3 id="step-7-apply-codesnippet-css-style-to-front-page"><strong>Step 7: Apply codesnippet css style to front page</strong></h3>
+<p>這最後也是我卡了一陣子的問題</p>
+<p>就是當我把存在DB的內容顯示到前端時</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">// laravel 顯示HTML內容要用 {!! !!}
+{!! $blog-&gt;content !!}
+
+</code></pre></td></tr></table>
+</div>
+</div><p>我的程式碼片段並沒有monokai的黑底style，但是我的css明明也都link進來了呀</p>
+<p>後來才找到這個解決方法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// CKeditor css apply to front page
+</span><span class="c1"></span><span class="nx">hljs</span><span class="p">.</span><span class="nx">initHighlightingOnLoad</span><span class="p">();</span>
+
+<span class="c1">// Or you can write in page ready function as follow
+</span><span class="c1"></span><span class="nx">$</span><span class="p">(</span><span class="kd">function</span><span class="p">(){</span>
+    <span class="nx">$</span><span class="p">(</span><span class="s1">&#39;pre code&#39;</span><span class="p">).</span><span class="nx">each</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">i</span><span class="p">,</span> <span class="nx">block</span><span class="p">)</span> <span class="p">{</span>
+      <span class="nx">hljs</span><span class="p">.</span><span class="nx">highlightBlock</span><span class="p">(</span><span class="nx">block</span><span class="p">);</span>
+    <span class="p">});</span>
+<span class="p">});</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>參考來源 : <a href="https://stackoverflow.com/questions/51325778/hljs-inithighlightingonload-does-not-render-the-page-directly" target="_blank" rel="noopener noreffer">https://stackoverflow.com/questions/51325778/hljs-inithighlightingonload-does-not-render-the-page-directly</a></p></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-01-06&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/936bfba0c4db86291d4cb2d237030bac5a59fd6e" target="_blank" title="commit by zang(myginnygo@gmail.com) 936bfba0c4db86291d4cb2d237030bac5a59fd6e: 文章搬家：20180918-laravel56-ckeditor">
+                                    <i class="fas fa-hashtag fa-fw"></i>936bfba</a></span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/20180918-laravel56-ckeditor/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://hdsbook.github.io/20180918-laravel56-ckeditor/" data-title="Laravel 5.6 CKeditor 部署" data-hashtags="javascript,ckeditor"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://hdsbook.github.io/20180918-laravel56-ckeditor/" data-hashtag="javascript"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://hdsbook.github.io/20180918-laravel56-ckeditor/" data-title="Laravel 5.6 CKeditor 部署"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://hdsbook.github.io/20180918-laravel56-ckeditor/" data-title="Laravel 5.6 CKeditor 部署"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://hdsbook.github.io/20180918-laravel56-ckeditor/" data-title="Laravel 5.6 CKeditor 部署"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/javascript/">javascript</a>,&nbsp;<a href="/tags/ckeditor/">ckeditor</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/20180929-badges-in-selectpicker/" class="next" rel="next" title="Show badges in Selectpicker">Show badges in Selectpicker<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.71.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://hd-zang.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"search":{"algoliaAppID":"X5YKLHNDL4","algoliaIndex":"hdsbook.github.io","algoliaSearchKey":"99cf20d2ad0fd1adab76bab604593196","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-169190961-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-169190961-1" async></script></body>
+</html>

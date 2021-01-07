@@ -12,5 +12,19 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/jetstream-logo.svg" referrerpolicy="no-referrer">
             </div>New authentication scaffolding for laravel 8]]></description>
+</item><item>
+    <title>Laravel CKEditor &#43; CKFinder</title>
+    <link>https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/</link>
+    <pubDate>Mon, 29 Oct 2018 22:18:07 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Laravel 5.6 CKeditor 部署</title>
+    <link>https://hdsbook.github.io/20180918-laravel56-ckeditor/</link>
+    <pubDate>Tue, 18 Sep 2018 23:03:59 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20180918-laravel56-ckeditor/</guid>
+    <description><![CDATA[]]></description>
 </item></channel>
 </rss>

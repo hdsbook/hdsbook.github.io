@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+        <title>Laravel CKEditor &#43; CKFinder - Zang</title><meta name="Description" content="About LoveIt Theme"><meta property="og:title" content="Laravel CKEditor &#43; CKFinder" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/" />
+<meta property="og:image" content="https://hdsbook.github.io/logo.png"/>
+<meta property="article:published_time" content="2018-10-29T22:18:07+08:00" />
+<meta property="article:modified_time" content="2021-01-07T10:09:30+08:00" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://hdsbook.github.io/logo.png"/>
+
+<meta name="twitter:title" content="Laravel CKEditor &#43; CKFinder"/>
+<meta name="twitter:description" content=""/>
+<meta name="application-name" content="LoveIt">
+<meta name="apple-mobile-web-app-title" content="LoveIt"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/" /><link rel="prev" href="https://hdsbook.github.io/20181010-ajax-post-file/" /><link rel="next" href="https://hdsbook.github.io/0-loveit-admonition-note/" /><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.13.0/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/animate.css@3.7.2/animate.min.css"><meta name="google-site-verification" content="ZOjd0g9xq-jmtsyELpljn780B81RB5m53yEBI1Jcj78" /><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Laravel CKEditor + CKFinder",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/hdsbook.github.io\/20181029-laravel-ckeditor-ckfinder\/"
+        },"image": [{
+                            "@type": "ImageObject",
+                            "url": "https:\/\/hdsbook.github.io\/images\/Apple-Devices-Preview.png",
+                            "width":  3200 ,
+                            "height":  2048 
+                        }],"genre": "posts","keywords": "ckeditor, ckfinder, laravel","wordcount":  984 ,
+        "url": "https:\/\/hdsbook.github.io\/20181029-laravel-ckeditor-ckfinder\/","datePublished": "2018-10-29T22:18:07+08:00","dateModified": "2021-01-07T10:09:30+08:00","license": "This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.","publisher": {
+            "@type": "Organization",
+            "name": "xxxx","logo": {
+                    "@type": "ImageObject",
+                    "url": "https:\/\/hdsbook.github.io\/images\/author.jpg",
+                    "width":  335 ,
+                    "height":  335 
+                }},"author": {
+                "@type": "Person",
+                "name": "Zang"
+            },"description": ""
+    }
+    </script></head>
+    <body header-desktop="fixed" header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('light' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'light' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><a class="menu-item" href="/about/"> About </a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i>  </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Zang"><span class="header-title-pre"><i class='fas fa-signature'></i></span>Zang</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a class="menu-item" href="/about/" title="">About</a><a class="menu-item" href="https://github.com/hdsbook" title="GitHub" rel="noopener noreffer" target="_blank"><i class='fab fa-github fa-fw'></i></a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single post"><h1 class="single-title animated flipInX">Laravel CKEditor &#43; CKFinder</h1><h2 class="single-subtitle">ckeditor image upload with ckfinder</h2><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel=" author" class="author"><i class="fas fa-user-circle fa-fw"></i>Zang</a></span>&nbsp;<span class="post-category">included in <a href="/categories/laravelplugins/"><i class="far fa-folder fa-fw"></i>Laravel 套件</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2018-10-29">2018-10-29</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;984 words&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;2 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#step1-require-ckfinder-with-composer"><strong>Step1 Require ckfinder with composer</strong></a></li>
+        <li><a href="#step2publish-ckfinder-assets">Step2 Publish ckfinder assets</a></li>
+        <li><a href="#step3make-directory-userfiles">Step3 Make directory userfiles</a></li>
+        <li><a href="#step4set-authentication">Step4 Set authentication</a></li>
+        <li><a href="#step5set-route-browse-request">Step5 Set Route (browse, request)</a></li>
+        <li><a href="#step6controller-view">Step6 Controller, View</a></li>
+        <li><a href="#step7disable-csrf-verify-on-connector-route">Step7 Disable csrf verify on connector route</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><p>繼上一篇 <a href="http://hdsbook.com/blog/7" target="_blank" rel="noopener noreffer">CKeditor部署</a></p>
+<p>我花了好一些時間研究CKeditor要如何上傳圖片到我的server</p>
+<p>此篇是來分享 laravel 5.6 部署 CKEditor + CKFinder 的方式</p>
+<p>網路上有很多教學直接從官網下載 [原生 php版本] 的ckfinder下來配置</p>
+<p>但是其實配置的過程中會遇到滿多問題的</p>
+<p>其實已經有熱心的Contributor發布了laravel專用的ckfinder套件</p>
+<p>改寫了原本ckfinder的結構，讓ckfinder更容易在laravel上配置</p>
+<p>事實上官方網站的說明文件也有提供這個套件的連結</p>
+<p>網址: <a href="https://github.com/ckfinder/ckfinder-laravel-package" target="_blank" rel="noopener noreffer">https://github.com/ckfinder/ckfinder-laravel-package</a></p>
+<h3 id="step1-require-ckfinder-with-composer"><strong>Step1 Require ckfinder with composer</strong></h3>
+<p>打開終端機，來到專案資料夾底下，下以下指令</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">composer require ckfinder/ckfinder-laravel-package
+php artisan ckfinder:download
+</code></pre></td></tr></table>
+</div>
+</div><p>這兩個指令會把ckfinder的套件載到vendor資料夾下</p>
+<h3 id="step2publish-ckfinder-assets">Step2 Publish ckfinder assets</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">php artisan vendor:publish --tag=ckfinder
+</code></pre></td></tr></table>
+</div>
+</div><p>這個指令會將 ckfinder 的 plugin assets 發布到 public/js/ckfinder 底下，</p>
+<p>config.php 則會發佈為 config/ckfinder.php</p>
+<h3 id="step3make-directory-userfiles">Step3 Make directory userfiles</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">mkdir -m 777 public/userfiles
+</code></pre></td></tr></table>
+</div>
+</div><p>建立userfiles資料夾並且賦予777權限</p>
+<p>這個資料夾為ckfinder預設上傳檔案的位置</p>
+<h3 id="step4set-authentication">Step4 Set authentication</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
+</span><span class="lnt">9
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">// config/ckfinder.php
+</span><span class="c1"></span>
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;authentication&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">function</span> <span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="k">true</span><span class="p">;</span>
+    <span class="c1">// return Auth::check();
+</span><span class="c1"></span><span class="p">};</span>
+
+<span class="nv">$config</span><span class="p">[</span><span class="s1">&#39;csrfProtection&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="k">false</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>編輯config/ckfinder.php，暫時將認證的部分改成直接回傳true</p>
+<p>但若你的專案已經有會員認證功能，希望只允許登入會員上傳檔案</p>
+<p>這邊直接寫 return Auth::check(); 就可以摟 ~</p>
+<p>並將 csrfProtection 設為 false</p>
+<h3 id="step5set-route-browse-request">Step5 Set Route (browse, request)</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">// routes\web.php
+</span><span class="c1"></span>
+<span class="nx">Route</span><span class="o">::</span><span class="na">any</span><span class="p">(</span><span class="s1">&#39;/ckfinder/examples/{example?}&#39;</span><span class="p">,</span> <span class="s1">&#39;CKFinderController@examplesaction&#39;</span><span class="p">)</span>
+   <span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;ckfinder_examples&#39;</span><span class="p">);</span>
+
+<span class="nx">Route</span><span class="o">::</span><span class="na">any</span><span class="p">(</span><span class="s1">&#39;/ckfinder/connector&#39;</span><span class="p">,</span> <span class="s1">&#39;CKFinderController@requestAction&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;ckfinder_connector&#39;</span><span class="p">);</span>
+
+<span class="nx">Route</span><span class="o">::</span><span class="na">any</span><span class="p">(</span><span class="s1">&#39;/ckfinder/browser&#39;</span><span class="p">,</span> <span class="s1">&#39;CKFinderController@browserAction&#39;</span><span class="p">)</span>
+    <span class="o">-&gt;</span><span class="na">name</span><span class="p">(</span><span class="s1">&#39;ckfinder_browser&#39;</span><span class="p">);</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>以上路由都是從GitHub範例copy過來稍微改寫的，</p>
+<p>配合接下來的 Step6可以把一些範例demo放到自己的網站上</p>
+<p>第一個路由是用來瀏覽範例的路由，第二個主要是上傳檔案用，第三個則是打開ckfinder瀏覽器的路由</p>
+<h3 id="step6controller-view">Step6 Controller, View</h3>
+<p>從 <a href="https://github.com/ckfinder/ckfinder-laravel-package" target="_blank" rel="noopener noreffer">https://github.com/ckfinder/ckfinder-laravel-package</a> 下載上面的範例，裡面有Controller 和 View</p>
+<p>可以將Controller和View如下放到你的專案中</p>
+<p>Controller  =&gt;  app\Http\Controllers\CKFinderController.php</p>
+<p>resources/views</p>
+<p>└- ckfinder</p>
+<p>└- samples/&hellip;</p>
+<p>└- browser.php</p>
+<p>└- setup.php</p>
+<p>若如上配置，記得要改掉 CKFinderController 的 namespace</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="k">namespace</span> <span class="nx">App\Http\Controllers</span><span class="p">;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id="step7disable-csrf-verify-on-connector-route">Step7 Disable csrf verify on connector route</h3>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<span class="c1">// app\Http\Middleware\VerifyCsrfToken.php
+</span><span class="c1"></span>
+<span class="k">protected</span> <span class="nv">$except</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="s1">&#39;ckfinder/*&#39;</span>
+<span class="p">];</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>這個設定是為了讓檔案上傳的POST可以不用經過csrf的認證</p>
+<p>做到這邊，你應該可以透過 [your site url]/ckfinder/examples/ckeditor 來看到許多範例已經配置到你的網站</p>
+<p>如本站的 <a href="http://hdsbook.com/ckfinder/examples/ckeditor" target="_blank" rel="noopener noreffer">http://hdsbook.com/ckfinder/examples/ckeditor</a></p>
+<p>並且範例上的ckeditor上傳圖片的功能會正常運作</p>
+<p>(上列本站的ckfinder範例網址的上傳功能有加入會員權限認證所以可能會無法正常瀏覽或上傳檔案)</p>
+<p>剩下的就是你可以到 views/ckfinder/samples 底下去參考各範例的js是怎麼寫的</p>
+<p>這邊也簡單提供把CKeditor與CKfinder結合的寫法</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="c1">// &lt;textarea id=&#39;editor&#39;&gt;&lt;/textarea&gt;
+</span><span class="c1"></span>
+<span class="kd">var</span> <span class="nx">editor</span> <span class="o">=</span> <span class="nx">CKEDITOR</span><span class="p">.</span><span class="nx">replace</span><span class="p">(</span><span class="s1">&#39;editor&#39;</span><span class="p">);</span>
+<span class="nx">CKFinder</span><span class="p">.</span><span class="nx">setupCKEditor</span><span class="p">(</span><span class="nx">editor</span><span class="p">);</span>
+
+</code></pre></td></tr></table>
+</div>
+</div><p>別忘了，在你的master layout中要引入 ckfinder.js 喔</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;{{ asset(&#39;js/ckfinder/ckfinder.js&#39;) }}&#34;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2021-01-07&nbsp;<a class="git-hash" href="https://github.com/dillonzq/LoveIt/commit/423ebb025909e33639d762d9bfa4a5b3b850bd28" target="_blank" title="commit by zang(myginnygo@gmail.com) 423ebb025909e33639d762d9bfa4a5b3b850bd28: 文章搬家">
+                                    <i class="fas fa-hashtag fa-fw"></i>423ebb0</a></span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/20181029-laravel-ckeditor-ckfinder/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/" data-title="Laravel CKEditor &#43; CKFinder" data-hashtags="ckeditor,ckfinder,laravel"><i class="fab fa-twitter fa-fw"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/" data-hashtag="ckeditor"><i class="fab fa-facebook-square fa-fw"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/" data-title="Laravel CKEditor &#43; CKFinder"><i class="fab fa-hacker-news fa-fw"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/" data-title="Laravel CKEditor &#43; CKFinder"><i data-svg-src="https://cdn.jsdelivr.net/npm/simple-icons@2.14.0/icons/line.svg"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/" data-title="Laravel CKEditor &#43; CKFinder"><i class="fab fa-weibo fa-fw"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/ckeditor/">ckeditor</a>,&nbsp;<a href="/tags/ckfinder/">ckfinder</a>,&nbsp;<a href="/tags/laravel/">laravel</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/20181010-ajax-post-file/" class="prev" rel="prev" title="Ajax Post file"><i class="fas fa-angle-left fa-fw"></i>Ajax Post file</a>
+            <a href="/0-loveit-admonition-note/" class="next" rel="next" title="Hugo LoveIt admonition">Hugo LoveIt admonition<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<div id="comments"><div id="disqus_thread" class="comment"></div><noscript>
+                Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
+            </noscript></div></article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.71.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw"></i>
+            </a>
+        </div><script type="text/javascript" src="https://hd-zang.disqus.com/embed.js" defer></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/smooth-scroll@16.1.3/dist/smooth-scroll.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/autocomplete.js@0.37.1/dist/autocomplete.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/algoliasearch@4.2.0/dist/algoliasearch-lite.umd.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lazysizes@5.2.2/lazysizes.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/sharer.js@0.4.0/sharer.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":30},"comment":{},"search":{"algoliaAppID":"X5YKLHNDL4","algoliaIndex":"hdsbook.github.io","algoliaSearchKey":"99cf20d2ad0fd1adab76bab604593196","highlightTag":"em","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"algolia"}};</script><script type="text/javascript" src="/js/theme.min.js"></script><script type="text/javascript">
+            window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js', new Date());
+            gtag('config', 'UA-169190961-1', { 'anonymize_ip': true });
+        </script><script type="text/javascript" src="https://www.googletagmanager.com/gtag/js?id=UA-169190961-1" async></script></body>
+</html>

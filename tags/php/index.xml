@@ -12,5 +12,19 @@
     <description><![CDATA[<div class="featured-image">
                 <img src="/phpunit-logo.svg" referrerpolicy="no-referrer">
             </div>走進測試的大門]]></description>
+</item><item>
+    <title>Ajax Post file</title>
+    <link>https://hdsbook.github.io/20181010-ajax-post-file/</link>
+    <pubDate>Wed, 10 Oct 2018 17:54:24 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20181010-ajax-post-file/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>PHP pluck array</title>
+    <link>https://hdsbook.github.io/20181009-php-pluck-array/</link>
+    <pubDate>Tue, 09 Oct 2018 10:54:59 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20181009-php-pluck-array/</guid>
+    <description><![CDATA[]]></description>
 </item></channel>
 </rss>
