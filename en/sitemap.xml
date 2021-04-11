@@ -2,11 +2,11 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://hdsbook.github.io/20201203-javascript-traps/</loc><lastmod>2020-12-15T17:15:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://hdsbook.github.io/posts/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hdsbook.github.io/tags/laravel/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hdsbook.github.io/20201203-javascript-traps/</loc><lastmod>2020-12-15T17:15:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/posts/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/tags/laravel/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/20201114-laravel-api-authentication/</loc><lastmod>2020-11-21T22:54:40&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hdsbook.github.io/tags/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://hdsbook.github.io/tags/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="fr"
                         href="https://hdsbook.github.io/fr/tags/"
@@ -16,7 +16,7 @@
                     href="https://hdsbook.github.io/tags/"
                     /></url><url>
             <loc>https://hdsbook.github.io/20201102-laravel-model-naming-convention/</loc><lastmod>2020-11-03T21:40:23&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hdsbook.github.io/categories/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+            <loc>https://hdsbook.github.io/categories/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="fr"
                         href="https://hdsbook.github.io/fr/categories/"
@@ -28,12 +28,12 @@
             <loc>https://hdsbook.github.io/20201028-jetstream/</loc><lastmod>2020-11-14T18:35:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/tags/vue/</loc><lastmod>2020-10-13T23:42:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/20201013-vue-component-naming-rule/</loc><lastmod>2020-10-13T23:42:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hdsbook.github.io/tags/php/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hdsbook.github.io/tags/phpunit/</loc><lastmod>2020-12-15T17:15:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
-            <loc>https://hdsbook.github.io/20201009-phpunit-note/</loc><lastmod>2020-12-15T17:15:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url><url>
+            <loc>https://hdsbook.github.io/tags/php/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/tags/phpunit/</loc><lastmod>2020-12-15T17:15:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/20201009-phpunit-note/</loc><lastmod>2020-12-15T17:15:54&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/20201007-laravel-mix-note/</loc><lastmod>2020-10-09T19:44:37&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/tags/webpack/</loc><lastmod>2020-10-10T07:24:31&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hdsbook.github.io/tags/javascript/</loc><lastmod>2021-01-06T21:38:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hdsbook.github.io/tags/javascript/</loc><lastmod>2021-01-06T21:38:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/20201007-webpack-note/</loc><lastmod>2020-10-10T07:24:31&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/tags/es6/</loc><lastmod>2020-10-13T23:42:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/20201006-es6-note/</loc><lastmod>2020-10-13T23:42:15&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
@@ -74,13 +74,13 @@
             <loc>https://hdsbook.github.io/20190409-php-xdebug-vscode-mac/</loc><lastmod>2019-04-09T22:29:53&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/20190316-psr2-coding-style-phpcs/</loc><lastmod>2019-03-16T21:10:08&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/20181030-facebook-like/</loc><lastmod>2018-10-30T23:22:22&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
-            <loc>https://hdsbook.github.io/tags/ckeditor/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hdsbook.github.io/tags/ckfinder/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hdsbook.github.io/20181010-ajax-post-file/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hdsbook.github.io/20181009-php-pluck-array/</loc><lastmod>2021-01-07T09:06:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hdsbook.github.io/20180929-badges-in-selectpicker/</loc><lastmod>2021-01-06T21:38:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
-            <loc>https://hdsbook.github.io/20180918-laravel56-ckeditor/</loc><lastmod>2021-01-06T20:48:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority></url><url>
+            <loc>https://hdsbook.github.io/tags/ckeditor/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/tags/ckfinder/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/20181010-ajax-post-file/</loc><lastmod>2021-01-07T10:09:30&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/20181009-php-pluck-array/</loc><lastmod>2021-01-07T09:06:47&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/20180929-badges-in-selectpicker/</loc><lastmod>2021-01-06T21:38:05&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
+            <loc>https://hdsbook.github.io/20180918-laravel56-ckeditor/</loc><lastmod>2021-01-06T20:48:00&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority></url><url>
             <loc>https://hdsbook.github.io/categories/documentation/</loc><lastmod>2020-04-23T01:22:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="fr"
