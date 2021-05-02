@@ -1,6 +1,7 @@
 # Show badges in Selectpicker
 
 
+
 <!--more-->
 
 這篇文章是來分享如何在 selectpicker 中顯示 bootstrap 的標籤
@@ -29,3 +30,4 @@
     </option>
 </select>
 ```
+

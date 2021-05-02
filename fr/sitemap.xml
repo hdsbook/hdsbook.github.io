@@ -2,15 +2,6 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://hdsbook.github.io/fr/</loc><lastmod>2020-10-06T17:32:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
-                        rel="alternate"
-                        hreflang="en"
-                        href="https://hdsbook.github.io/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="fr"
-                    href="https://hdsbook.github.io/fr/"
-                    /></url><url>
             <loc>https://hdsbook.github.io/fr/about/</loc><lastmod>2020-10-06T17:32:28&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
                         rel="alternate"
                         hreflang="en"
@@ -47,4 +38,13 @@
                     rel="alternate"
                     hreflang="fr"
                     href="https://hdsbook.github.io/fr/tags/"
+                    /></url><url>
+            <loc>https://hdsbook.github.io/fr/</loc><lastmod>2020-04-23T01:22:29&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="en"
+                        href="https://hdsbook.github.io/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="fr"
+                    href="https://hdsbook.github.io/fr/"
                     /></url></urlset>

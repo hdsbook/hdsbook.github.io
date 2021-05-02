@@ -8,10 +8,10 @@
         <title>php 實作匯出 .ics 檔並解決時區問題 - Zang</title><meta name="Description" content="About LoveIt Theme"><meta property="og:title" content="php 實作匯出 .ics 檔並解決時區問題" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hdsbook.github.io/20200630-php-export-ics/" />
-<meta property="og:image" content="https://hdsbook.github.io/logo.png"/>
-<meta property="article:published_time" content="2020-06-30T23:10:47+08:00" />
-<meta property="article:modified_time" content="2020-06-30T23:10:47+08:00" />
+<meta property="og:url" content="https://hdsbook.github.io/20200630-php-export-ics/" /><meta property="og:image" content="https://hdsbook.github.io/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-30T23:10:47&#43;08:00" />
+<meta property="article:modified_time" content="2020-06-30T23:10:47&#43;08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://hdsbook.github.io/logo.png"/>
 
@@ -247,7 +247,7 @@
 </span><span class="lnt">111
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="k">namespace</span> <span class="nx">Hdsbook\ICS</span><span class="p">;</span>                  <span class="c1">// 這裡請替換掉你自己要用的 namespace
 </span><span class="c1"></span>
@@ -380,7 +380,7 @@
 </span><span class="lnt">15
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
 <span class="k">use</span> <span class="nx">Hdsbook\ICS\ICS</span><span class="p">;</span>
 <span class="c1">// ...
 </span><span class="c1"></span><span class="nv">$ics</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">ICS</span><span class="p">();</span>
@@ -413,18 +413,18 @@
 </span><span class="lnt">11
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php">// 10080 分鐘前提醒 (一周前提醒)
-BEGIN:VALARM
-TRIGGER:-PT10080M
-ACTION:DISPLAY
-DESCRIPTION:Reminder
-END:VALARM
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="c1">// 10080 分鐘前提醒 (一周前提醒)
+</span><span class="c1"></span><span class="nx">BEGIN</span><span class="o">:</span><span class="nx">VALARM</span>
+<span class="nx">TRIGGER</span><span class="o">:-</span><span class="nx">PT10080M</span>
+<span class="nx">ACTION</span><span class="o">:</span><span class="nx">DISPLAY</span>
+<span class="nx">DESCRIPTION</span><span class="o">:</span><span class="nx">Reminder</span>
+<span class="nx">END</span><span class="o">:</span><span class="nx">VALARM</span>
 
-// 一天前提醒
-TRIGGER:-PT1D
+<span class="c1">// 一天前提醒
+</span><span class="c1"></span><span class="nx">TRIGGER</span><span class="o">:-</span><span class="nx">PT1D</span>
 
-// 若拿掉這幾行(BEGIN:VALARM ~ END:VALARM)，則匯入時會預先抓取google帳號所設定的預設提醒時
-</code></pre></td></tr></table>
+<span class="c1">// 若拿掉這幾行(BEGIN:VALARM ~ END:VALARM)，則匯入時會預先抓取google帳號所設定的預設提醒時
+</span></code></pre></td></tr></table>
 </div>
 </div><h2 id="疑難排解"><strong>疑難排解</strong></h2>
 <p>解決匯入後時間往後延了八小時的問題 (原因與台灣時區有關係)</p>
@@ -439,13 +439,13 @@ TRIGGER:-PT1D
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php">// 一般教學文件只會寫
-DTSTART: . date(&#34;Ymd\\THis\\Z&#34;, strtotime($start)) . &#34;\\n&#34; .
-DTEND: . date(&#34;Ymd\\THis\\Z&#34;, strtotime($end)) . &#34;\\n&#34; .
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="c1">// 一般教學文件只會寫
+</span><span class="c1"></span><span class="nx">DTSTART</span><span class="o">:</span> <span class="o">.</span> <span class="nx">date</span><span class="p">(</span><span class="s2">&#34;Ymd</span><span class="se">\\</span><span class="s2">THis</span><span class="se">\\</span><span class="s2">Z&#34;</span><span class="p">,</span> <span class="nx">strtotime</span><span class="p">(</span><span class="nv">$start</span><span class="p">))</span> <span class="o">.</span> <span class="s2">&#34;</span><span class="se">\\</span><span class="s2">n&#34;</span> <span class="o">.</span>
+<span class="nx">DTEND</span><span class="o">:</span> <span class="o">.</span> <span class="nx">date</span><span class="p">(</span><span class="s2">&#34;Ymd</span><span class="se">\\</span><span class="s2">THis</span><span class="se">\\</span><span class="s2">Z&#34;</span><span class="p">,</span> <span class="nx">strtotime</span><span class="p">(</span><span class="nv">$end</span><span class="p">))</span> <span class="o">.</span> <span class="s2">&#34;</span><span class="se">\\</span><span class="s2">n&#34;</span> <span class="o">.</span>
 
-// 改為
-DTSTART;TZID=Asia/Taipei: . date(&#34;Ymd\\THis\\Z&#34;, strtotime($start)) . &#34;\\n&#34; .
-DTEND;TZID=Asia/Taipei: . date(&#34;Ymd\\THis\\Z&#34;, strtotime($end)) . &#34;\\n&#34; .
+<span class="c1">// 改為
+</span><span class="c1"></span><span class="nx">DTSTART</span><span class="p">;</span><span class="nx">TZID</span><span class="o">=</span><span class="nx">Asia</span><span class="o">/</span><span class="nx">Taipei</span><span class="o">:</span> <span class="o">.</span> <span class="nx">date</span><span class="p">(</span><span class="s2">&#34;Ymd</span><span class="se">\\</span><span class="s2">THis</span><span class="se">\\</span><span class="s2">Z&#34;</span><span class="p">,</span> <span class="nx">strtotime</span><span class="p">(</span><span class="nv">$start</span><span class="p">))</span> <span class="o">.</span> <span class="s2">&#34;</span><span class="se">\\</span><span class="s2">n&#34;</span> <span class="o">.</span>
+<span class="nx">DTEND</span><span class="p">;</span><span class="nx">TZID</span><span class="o">=</span><span class="nx">Asia</span><span class="o">/</span><span class="nx">Taipei</span><span class="o">:</span> <span class="o">.</span> <span class="nx">date</span><span class="p">(</span><span class="s2">&#34;Ymd</span><span class="se">\\</span><span class="s2">THis</span><span class="se">\\</span><span class="s2">Z&#34;</span><span class="p">,</span> <span class="nx">strtotime</span><span class="p">(</span><span class="nv">$end</span><span class="p">))</span> <span class="o">.</span> <span class="s2">&#34;</span><span class="se">\\</span><span class="s2">n&#34;</span> <span class="o">.</span>
 </code></pre></td></tr></table>
 </div>
 </div><h2 id="參考"><strong>參考</strong></h2>
@@ -483,7 +483,7 @@ DTEND;TZID=Asia/Taipei: . date(&#34;Ymd\\THis\\Z&#34;, strtotime($end)) . &#34;\
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.71.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

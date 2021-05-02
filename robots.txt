@@ -61,4 +61,4 @@ Disallow: /
 User-agent: ZoominfoBot
 Disallow: /
 
-Sitemap: https://hdsbook.github.io/sitemap.xml
+Sitemap: https://hdsbook.github.io/fr/sitemap.xml

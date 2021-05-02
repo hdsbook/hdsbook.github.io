@@ -8,10 +8,10 @@
         <title>Laravel Model 命名慣例 - Zang</title><meta name="Description" content="慣例優於設定 Convention over configuration"><meta property="og:title" content="Laravel Model 命名慣例" />
 <meta property="og:description" content="慣例優於設定 Convention over configuration" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://hdsbook.github.io/20201102-laravel-model-naming-convention/" />
-<meta property="og:image" content="https://hdsbook.github.io/20201102-laravel-model-naming-convention/feature.svg"/>
-<meta property="article:published_time" content="2020-11-02T16:36:44+08:00" />
-<meta property="article:modified_time" content="2020-11-03T21:40:23+08:00" />
+<meta property="og:url" content="https://hdsbook.github.io/20201102-laravel-model-naming-convention/" /><meta property="og:image" content="https://hdsbook.github.io/20201102-laravel-model-naming-convention/feature.svg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-11-02T16:36:44&#43;08:00" />
+<meta property="article:modified_time" content="2020-11-03T21:40:23&#43;08:00" />
+
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="https://hdsbook.github.io/20201102-laravel-model-naming-convention/feature.svg"/>
 <meta name="twitter:title" content="Laravel Model 命名慣例"/>
@@ -177,7 +177,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// Sale Model
 </span><span class="c1"></span><span class="k">class</span> <span class="nc">Sale</span> <span class="k">extends</span> <span class="nx">Model</span>
@@ -194,26 +194,26 @@
 <table>
 <thead>
 <tr>
-<th align="center">Model</th>
-<th align="center">table</th>
-<th align="center">Seeder、Factory</th>
+<th style="text-align:center">Model</th>
+<th style="text-align:center">table</th>
+<th style="text-align:center">Seeder、Factory</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center"><code>PascalCase</code>、<code>單數</code></td>
-<td align="center"><code>snake_case</code>、<code>複數</code></td>
-<td align="center"><code>PascalCase</code>、<code>單數</code>、<code>'Seeder/Factory'為結尾</code></td>
+<td style="text-align:center"><code>PascalCase</code>、<code>單數</code></td>
+<td style="text-align:center"><code>snake_case</code>、<code>複數</code></td>
+<td style="text-align:center"><code>PascalCase</code>、<code>單數</code>、<code>'Seeder/Factory'為結尾</code></td>
 </tr>
 <tr>
-<td align="center">Post</td>
-<td align="center">posts</td>
-<td align="center">PostSeeder / PostFactory</td>
+<td style="text-align:center">Post</td>
+<td style="text-align:center">posts</td>
+<td style="text-align:center">PostSeeder / PostFactory</td>
 </tr>
 <tr>
-<td align="center">Mybook</td>
-<td align="center">my_books</td>
-<td align="center">MybookSeeder / MybookFactory</td>
+<td style="text-align:center">Mybook</td>
+<td style="text-align:center">my_books</td>
+<td style="text-align:center">MybookSeeder / MybookFactory</td>
 </tr>
 </tbody>
 </table>
@@ -234,7 +234,7 @@
 </span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// Category Model
 </span><span class="c1"></span><span class="k">class</span> <span class="nc">Category</span> <span class="k">extends</span> <span class="nx">Model</span>
@@ -266,7 +266,7 @@
 </span><span class="lnt">13
 </span></code></pre></td>
 <td class="lntd">
-<pre class="chroma"><code class="language-php" data-lang="php"><span class="cp">&lt;?php</span>
+<pre class="chroma"><code class="language-php" data-lang="php"><span class="o">&lt;?</span><span class="nx">php</span>
 
 <span class="c1">// in Product model
 </span><span class="c1"></span><span class="k">public</span> <span class="k">function</span> <span class="nf">features</span><span class="p">()</span>
@@ -289,21 +289,21 @@
 <table>
 <thead>
 <tr>
-<th align="center"></th>
-<th align="center">命名方式</th>
-<th align="center">範例</th>
+<th style="text-align:center"></th>
+<th style="text-align:center">命名方式</th>
+<th style="text-align:center">範例</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td align="center">Primary key</td>
-<td align="center">一律命名為 <code>id</code></td>
-<td align="center"><code>id</code></td>
+<td style="text-align:center">Primary key</td>
+<td style="text-align:center">一律命名為 <code>id</code></td>
+<td style="text-align:center"><code>id</code></td>
 </tr>
 <tr>
-<td align="center">Foreign key</td>
-<td align="center">來源資料表單數名詞 + <code>_id</code></td>
-<td align="center"><code>post_id</code></td>
+<td style="text-align:center">Foreign key</td>
+<td style="text-align:center">來源資料表單數名詞 + <code>_id</code></td>
+<td style="text-align:center"><code>post_id</code></td>
 </tr>
 </tbody>
 </table>
@@ -353,7 +353,7 @@
                 Please enable JavaScript to view the comments powered by <a href="https://disqus.com/?ref_noscript">Disqus</a>.
             </noscript></div></article></div>
             </main><footer class="footer">
-        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.71.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.82.1">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.10"><i class="far fa-kiss-wink-heart fa-fw"></i> LoveIt</a>
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2019 - 2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Zang</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
         </div>
     </footer></div>

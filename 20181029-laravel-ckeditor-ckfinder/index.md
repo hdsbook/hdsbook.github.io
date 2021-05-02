@@ -161,3 +161,4 @@ CKFinder.setupCKEditor(editor);
 ```html
 <script src="{{ asset('js/ckfinder/ckfinder.js') }}"></script>
 ```
+

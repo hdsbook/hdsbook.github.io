@@ -64,3 +64,4 @@ function upload_image() {
 其他詳細可參考下列文章
 
 [https://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax](https://abandon.ie/notebook/simple-file-uploads-using-jquery-ajax)
+

@@ -114,3 +114,4 @@ $result = array();
 ### **參考資料：**
 
 [PHP Array 相加與 Array_merge](http://blog.hsatac.net/2012/11/php-array-plus-array-versus-array-merge/)
+

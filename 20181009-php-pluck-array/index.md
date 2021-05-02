@@ -83,3 +83,4 @@ $users_3 = array_column($users, null, 'user_id');
 以上，更多php array應用之道可參見以下文章
 
 [https://laravel-china.org/articles/14159/the-way-to-use-the-php-array](https://laravel-china.org/articles/14159/the-way-to-use-the-php-array)
+

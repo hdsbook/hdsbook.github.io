@@ -176,3 +176,4 @@ DTEND;TZID=Asia/Taipei: . date("Ymd\\THis\\Z", strtotime($end)) . "\\n" .
 [MRBS 會議室預約管理系統 之 iCalendar檔案 - iT 邦幫忙::一起幫忙解決難題，拯救 IT 人的一天](https://ithelp.ithome.com.tw/questions/10114708)
 
 [ICS timezone not working](https://stackoverflow.com/questions/7626114/ics-timezone-not-working)
+

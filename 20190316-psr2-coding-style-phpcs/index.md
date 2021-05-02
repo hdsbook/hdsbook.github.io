@@ -112,3 +112,4 @@ php-cs-fixer.onsave 為儲存時自動修正，若不想要可以不加
 其預設是打大括號時自動修正("php-cs-fixer.autoFixByBracket": true)
 
 完成以上設定，在編程時 vscode 就會自動幫你修正符合 PSR-2 的 Coding Style 啦
+
