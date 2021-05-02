@@ -1,0 +1,51 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>php - Tag - Zang</title>
+        <link>https://hdsbook.github.io/tags/php/</link>
+        <description>php - Tag - Zang</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Fri, 09 Oct 2020 15:54:18 &#43;0800</lastBuildDate><atom:link href="https://hdsbook.github.io/tags/php/" rel="self" type="application/rss+xml" /><item>
+    <title>PHPUnit 入門</title>
+    <link>https://hdsbook.github.io/20201009-phpunit-note/</link>
+    <pubDate>Fri, 09 Oct 2020 15:54:18 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20201009-phpunit-note/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/phpunit-logo.svg" referrerpolicy="no-referrer">
+            </div>走進測試的大門]]></description>
+</item><item>
+    <title>php 實作匯出 .ics 檔並解決時區問題</title>
+    <link>https://hdsbook.github.io/20200630-php-export-ics/</link>
+    <pubDate>Tue, 30 Jun 2020 23:10:47 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20200630-php-export-ics/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Xdebug &#43; PHP &#43; Vscode on Mac</title>
+    <link>https://hdsbook.github.io/20190409-php-xdebug-vscode-mac/</link>
+    <pubDate>Tue, 09 Apr 2019 22:29:53 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20190409-php-xdebug-vscode-mac/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>PSR-2 Coding Style</title>
+    <link>https://hdsbook.github.io/20190316-psr2-coding-style-phpcs/</link>
+    <pubDate>Sat, 16 Mar 2019 21:10:08 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20190316-psr2-coding-style-phpcs/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Ajax Post file</title>
+    <link>https://hdsbook.github.io/20181010-ajax-post-file/</link>
+    <pubDate>Wed, 10 Oct 2018 17:54:24 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20181010-ajax-post-file/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>PHP pluck array</title>
+    <link>https://hdsbook.github.io/20181009-php-pluck-array/</link>
+    <pubDate>Tue, 09 Oct 2018 10:54:59 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20181009-php-pluck-array/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>

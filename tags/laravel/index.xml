@@ -1,0 +1,57 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>laravel - Tag - Zang</title>
+        <link>https://hdsbook.github.io/tags/laravel/</link>
+        <description>laravel - Tag - Zang</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><copyright>This work is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.</copyright><lastBuildDate>Sat, 14 Nov 2020 13:20:04 &#43;0800</lastBuildDate><atom:link href="https://hdsbook.github.io/tags/laravel/" rel="self" type="application/rss+xml" /><item>
+    <title>Laravel api authentication</title>
+    <link>https://hdsbook.github.io/20201114-laravel-api-authentication/</link>
+    <pubDate>Sat, 14 Nov 2020 13:20:04 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20201114-laravel-api-authentication/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-authentication.svg" referrerpolicy="no-referrer">
+            </div>解決 api routes authentication 問題]]></description>
+</item><item>
+    <title>Laravel Model 命名慣例</title>
+    <link>https://hdsbook.github.io/20201102-laravel-model-naming-convention/</link>
+    <pubDate>Mon, 02 Nov 2020 16:36:44 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20201102-laravel-model-naming-convention/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/feature.svg" referrerpolicy="no-referrer">
+            </div>慣例優於設定 Convention over configuration]]></description>
+</item><item>
+    <title>Laravel Jetstream</title>
+    <link>https://hdsbook.github.io/20201028-jetstream/</link>
+    <pubDate>Wed, 28 Oct 2020 16:06:22 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20201028-jetstream/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/jetstream-logo.svg" referrerpolicy="no-referrer">
+            </div>New authentication scaffolding for laravel 8]]></description>
+</item><item>
+    <title>Laravel mix 學習筆記</title>
+    <link>https://hdsbook.github.io/20201007-laravel-mix-note/</link>
+    <pubDate>Wed, 07 Oct 2020 15:56:50 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20201007-laravel-mix-note/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/laravel-mix-logo.svg" referrerpolicy="no-referrer">
+            </div>Laravel Mix 提供了一個優雅的 API 來為你的專案設定 Webpack]]></description>
+</item><item>
+    <title>Docker Laradock 快速部署教學</title>
+    <link>https://hdsbook.github.io/20200626-docker-laradock-get-started/</link>
+    <pubDate>Fri, 26 Jun 2020 23:14:10 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20200626-docker-laradock-get-started/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Laravel CKEditor &#43; CKFinder</title>
+    <link>https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/</link>
+    <pubDate>Mon, 29 Oct 2018 22:18:07 &#43;0800</pubDate>
+    <author>Author</author>
+    <guid>https://hdsbook.github.io/20181029-laravel-ckeditor-ckfinder/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>
